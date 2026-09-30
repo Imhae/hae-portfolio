@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="HAE — UI/UX Designer đang học Business Analysis.">
+<title>HAE Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: một cột đọc thoải mái (max 1120px), mỗi phần là một "khung" có nhãn spec ở lề trái;
+   chữ ký thị giác = khung chọn Figma quanh logo + lớp "Ghi chú thiết kế" bật/tắt được. */
+:root{
+  --bg:#EEF1EC;        /* giấy xám-lá, dịu mắt */
+  --surface:#F8FAF6;
+  --ink:#1B211D;
+  --muted:#56605A;
+  --line:#D3DACF;
+  --accent:#3645C4;    /* xanh khung chọn */
+  --accent-soft:#DFE3FA;
+  --mark:#C8285F;      /* hồng redline cho ghi chú */
+  --mark-soft:#FAE2EB;
+  --c1:#D9E3D6; --c2:#E0E2F3; --c3:#EFE3DE;
+
+  --f-display:"Bricolage Grotesque", "Be Vietnam Pro", system-ui, sans-serif;
+  --f-body:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step--1:.8125rem; --step-0:1.0625rem; --step-1:1.25rem; --step-2:1.625rem;
+  --step-3:clamp(1.9rem,1.4rem + 2vw,2.75rem); --step-4:clamp(2.5rem,1.6rem + 4vw,4.75rem);
+  --radius:14px; --wrap:1120px; --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121613; --surface:#1A1F1B; --ink:#E4E9E2; --muted:#9CA69E; --line:#2D352F;
+    --accent:#9FA9FF; --accent-soft:#262C52; --mark:#FF84AC; --mark-soft:#3A1F2B;
+    --c1:#1F2A21; --c2:#222539; --c3:#2D2325; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121613; --surface:#1A1F1B; --ink:#E4E9E2; --muted:#9CA69E; --line:#2D352F;
+  --accent:#9FA9FF; --accent-soft:#262C52; --mark:#FF84AC; --mark-soft:#3A1F2B;
+  --c1:#1F2A21; --c2:#222539; --c3:#2D2325; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-0)/1.65 var(--f-body);-webkit-font-smoothing:antialiased;padding-inline:clamp(16px,4vw,40px);transition:background-color .3s var(--ease),color .3s var(--ease)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.02em;line-height:1.08;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto}
+.mono{font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Logo: khung chọn ---------- */
+.logo{position:relative;display:inline-flex;align-items:center;padding:4px 10px;font:700 1.25rem/1 var(--f-display);letter-spacing:.04em;text-decoration:none;border:1px solid var(--accent)}
+.logo i{position:absolute;width:7px;height:7px;background:var(--surface);border:1px solid var(--accent)}
+.logo i:nth-child(1){top:-4px;left:-4px}.logo i:nth-child(2){top:-4px;right:-4px}
+.logo i:nth-child(3){bottom:-4px;left:-4px}.logo i:nth-child(4){bottom:-4px;right:-4px}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(-1 * clamp(16px,4vw,40px));padding:14px clamp(16px,4vw,40px);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-size:.9375rem;color:var(--muted);transition:color .2s,background-color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a.active{color:var(--ink);background:var(--surface)}
+.tools{display:flex;gap:8px}
+.icon-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;min-width:40px;justify-content:center;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:500 .875rem var(--f-body);cursor:pointer;transition:border-color .2s,background-color .2s}
+.icon-btn:hover{border-color:var(--muted)}
+.icon-btn[aria-pressed="true"]{border-color:var(--mark);color:var(--mark);background:var(--mark-soft)}
+.icon-btn svg{width:18px;height:18px;flex:none}
+@media (max-width:820px){.nav ul{display:none}.tools{margin-left:auto}.icon-btn .lbl{display:none}}
+
+/* ---------- Ghi chú thiết kế (annotation layer) ---------- */
+.anno{position:relative}
+.note{display:none;position:absolute;z-index:5;max-width:240px;padding:6px 10px;border:1px dashed var(--mark);border-radius:8px;background:var(--mark-soft);color:var(--mark);font:500 .75rem/1.45 var(--f-mono);pointer-events:none}
+.note::before{content:"✎ ";}
+body.annotate .note{display:block;animation:pop .25s var(--ease)}
+body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border-radius:4px}
+@keyframes pop{from{transform:translateY(4px);opacity:.4}to{transform:none;opacity:1}}
+
+/* ---------- Sections ---------- */
+section{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head .mono{color:var(--muted);padding-bottom:.5em}
+.sec-head .mono b{color:var(--accent);font-weight:500}
+.sec-head h2{font-size:var(--step-3)}
+.sec-head p{grid-column:2;color:var(--muted);max-width:56ch}
+@media (max-width:700px){.sec-head{grid-template-columns:1fr;gap:10px}.sec-head p{grid-column:1}}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:clamp(48px,8vw,104px) clamp(56px,8vw,96px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.hero h1{isolation:isolate;font-size:var(--step-4);margin:22px 0 24px;font-weight:600}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.12em;background:var(--accent-soft);z-index:-1;border-radius:2px}
+.hero .lead{font-size:var(--step-1);color:var(--muted);max-width:40ch;line-height:1.6}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 1rem var(--f-body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .2s var(--ease),background-color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;transition:transform .2s var(--ease)}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-ghost{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-ghost:hover svg{transform:translateY(2px)}
+.btn:active{transform:scale(.98)}
+
+.ticket{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 1px 0 var(--line),0 24px 48px -32px color-mix(in srgb,var(--ink) 35%,transparent);transform:rotate(1.2deg);transition:transform .4s var(--ease)}
+.ticket:hover{transform:rotate(0)}
+.ticket-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);padding-bottom:16px;border-bottom:1px dashed var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:500 .75rem var(--f-mono);background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.ticket blockquote{margin:18px 0 20px;font:500 1.125rem/1.5 var(--f-display);letter-spacing:-.01em}
+.ticket blockquote b{color:var(--accent);font-weight:600}
+.ticket h3{font:500 var(--step--1) var(--f-mono);color:var(--muted);margin-bottom:10px;letter-spacing:.04em;text-transform:uppercase}
+.ac{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ac a{display:flex;gap:12px;align-items:flex-start;padding:8px 10px;margin-inline:-10px;border-radius:10px;text-decoration:none;font-size:.9375rem;line-height:1.45;transition:background-color .2s}
+.ac a:hover{background:var(--bg)}
+.ac svg{flex:none;width:20px;height:20px;margin-top:1px;color:var(--accent)}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.ticket{transform:none;max-width:520px}}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s var(--ease) both}
+  .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.36s}
+}
+@keyframes rise{from{transform:translateY(14px);opacity:.01}to{transform:none;opacity:1}}
+
+/* ---------- Numbers ---------- */
+.numbers{padding-block:0 clamp(56px,8vw,96px)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:28px 24px 26px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .n{font:600 clamp(2.5rem,2rem + 2vw,3.5rem)/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat .n sup{font-size:.45em;color:var(--accent);vertical-align:top;margin-left:2px}
+.stat .k{font-weight:600}
+.stat .d{color:var(--muted);font-size:.9375rem;line-height:1.5}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(3){border-left:0;padding-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:420px){.stat{padding:22px 14px}.stat:nth-child(odd){padding-left:0}}
+
+/* ---------- Projects ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filter{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font:500 .9375rem var(--f-body);cursor:pointer;transition:all .2s}
+.filter:hover{color:var(--ink);border-color:var(--muted)}
+.filter[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filter span{font-family:var(--f-mono);font-size:.75rem;opacity:.7;margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+@media (max-width:960px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;border-radius:var(--radius);min-width:0}
+.card[hidden]{display:none}
+.cover{position:relative;aspect-ratio:16/11;max-width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.cover svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s var(--ease)}
+.card:hover .cover svg{transform:scale(1.03)}
+.cover .year{position:absolute;top:12px;right:12px;padding:3px 9px;border-radius:999px;background:var(--surface);color:var(--muted);font:500 .75rem var(--f-mono)}
+.bg1{background:var(--c1)}.bg2{background:var(--c2)}.bg3{background:var(--c3)}
+.s{fill:var(--surface)}.i{fill:var(--ink)}.a{fill:var(--accent)}.as{fill:var(--accent-soft)}.l{fill:var(--line)}.m{fill:var(--mark)}.mu{fill:var(--muted)}
+.st{stroke:var(--ink);fill:none;stroke-width:1.5}.sa{stroke:var(--accent);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.sd{stroke:var(--muted);fill:none;stroke-width:1.2;stroke-dasharray:4 4}
+.card-body{display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:var(--step-1);letter-spacing:-.015em;display:flex;align-items:center;gap:8px}
+.card h3 svg{width:18px;height:18px;opacity:0;transform:translate(-4px,4px);transition:all .25s var(--ease);color:var(--accent)}
+.card:hover h3 svg,.card:focus-visible h3 svg{opacity:1;transform:none}
+.card p{color:var(--muted);font-size:.9375rem;line-height:1.55}
+.role{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tag{padding:2px 9px;border-radius:6px;border:1px solid var(--line);font:500 .75rem/1.6 var(--f-mono);color:var(--muted)}
+.tag.ba{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- Experience ---------- */
+.timeline{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);transition:background-color .25s}
+.job .when{color:var(--muted);font-variant-numeric:tabular-nums;padding-top:4px}
+.job h3{font-size:var(--step-1);letter-spacing:-.01em}
+.job .org{color:var(--muted);margin:4px 0 10px}
+.job p.what{max-width:60ch}
+.job .state{align-self:start}
+.job.learning .chip{background:var(--mark-soft);color:var(--mark)}
+@media (max-width:700px){.job{grid-template-columns:1fr;gap:6px}.job .state{order:-1}}
+
+/* ---------- Skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,28px)}
+@media (max-width:860px){.skills{grid-template-columns:1fr}}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.skill .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.skill .ico svg{width:22px;height:22px}
+.skill h3{font-size:var(--step-1)}
+.skill ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.skill li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px dashed var(--line);font-size:.9375rem}
+.skill li small{font:500 .6875rem/1.9 var(--f-mono);color:var(--mark);white-space:nowrap}
+.tools-row{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:24px;align-items:start}
+.tools-row .mono{color:var(--muted);padding-top:10px}
+.tool-list{display:flex;flex-wrap:wrap;gap:10px}
+.tool{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:500;font-size:.9375rem}
+.tool b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:600 .6875rem var(--f-mono);background:var(--bg);color:var(--muted)}
+@media (max-width:700px){.tools-row{grid-template-columns:1fr;gap:10px}}
+
+/* ---------- About ---------- */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+.portrait{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:var(--radius);overflow:hidden;background:var(--c2);border:1px solid var(--line)}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.portrait .cap{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;gap:8px;color:var(--muted)}
+.portrait .cap span{background:var(--surface);padding:3px 9px;border-radius:999px}
+.about h2{font-size:var(--step-3);margin-bottom:24px}
+.about .bio{display:grid;gap:16px;max-width:60ch}
+.about .bio p:first-child{font-size:var(--step-1);line-height:1.55}
+.contact{margin-top:36px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.row .mono{color:var(--muted)}
+.row .val{font-weight:500;overflow-wrap:anywhere;user-select:all}
+.row a.val{user-select:auto;text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+.row a.val:hover{background-size:100% 1px}
+@media (max-width:520px){.row{grid-template-columns:1fr auto;gap:4px 12px}.row .mono{grid-column:1/-1}}
+.small-btn{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .8125rem var(--f-body);cursor:pointer;white-space:nowrap}
+.small-btn:hover{border-color:var(--ink)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding-block:36px 44px}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+footer .copy{color:var(--muted);font-size:.9375rem}
+footer .top{margin-left:auto}
+@media (max-width:520px){footer .top{margin-left:0}}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-size:.9375rem;transition:all .3s var(--ease);z-index:40;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="HAE, về đầu trang"><i></i><i></i><i></i><i></i>HAE</a>
+    <ul>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#experience">Kinh nghiệm</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#about">Liên hệ</a></li>
+    </ul>
+    <div class="tools">
+      <button class="icon-btn" id="annoBtn" aria-pressed="false" title="Hiện ghi chú thiết kế">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        <span class="lbl">Ghi chú</span>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============ 01 HERO ============ -->
+<div class="wrap hero">
+  <div class="anno">
+    <span class="eyebrow mono rise"><span class="dot"></span>UI/UX Designer · đang học Business Analysis</span>
+    <h1 class="rise d1 anno-box">Tôi thiết kế giao diện, và đang học cách <em>hỏi đúng</em> trước khi vẽ.</h1>
+    <span class="note" style="top:-6px;right:0">H1 · Bricolage 600 · 40–76px</span>
+    <p class="lead rise d2">Xin chào, tôi là HAE. Bốn năm làm UI/UX cho sản phẩm tài chính và sản phẩm số. Giờ tôi học thêm Business Analysis để nối yêu cầu kinh doanh với màn hình người dùng chạm vào mỗi ngày.</p>
+    <div class="ctas rise d3">
+      <a class="btn btn-primary" href="#projects">Xem dự án
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost js-cv" href="#about">Tải CV
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
+    </div>
+  </div>
+
+  <aside class="ticket rise d4 anno" aria-label="User story của trang này">
+    <span class="note" style="top:-38px;left:0">Mọi dự án bắt đầu bằng một user story</span>
+    <div class="ticket-top mono"><span>HAE-001 · User story</span><span class="chip">● Đã xong</span></div>
+    <blockquote>Là <b>nhà tuyển dụng</b>, tôi muốn xem nhanh dự án và cách HAE làm việc, để quyết định có hẹn phỏng vấn hay không.</blockquote>
+    <h3>Acceptance criteria</h3>
+    <ul class="ac">
+      <li><a href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Thấy được 6 dự án tiêu biểu sau một lần cuộn</a></li>
+      <li><a href="#about" class="js-cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Tải CV chỉ với một lần nhấn</a></li>
+      <li><a href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Liên hệ qua email hoặc LinkedIn</a></li>
+    </ul>
+  </aside>
+</div>
+
+<!-- ============ 02 NUMBERS ============ -->
+<section class="numbers" aria-label="Tổng quan bằng con số">
+  <div class="wrap anno">
+    <span class="note" style="top:-34px;right:0">Số liệu mẫu, thay bằng số thật từ CV</span>
+    <div class="stats">
+      <div class="stat"><span class="n">4<sup>+</sup></span><span class="k">Năm kinh nghiệm</span><span class="d">UI/UX cho web và mobile</span></div>
+      <div class="stat"><span class="n">18</span><span class="k">Dự án đã tham gia</span><span class="d">Từ nghiên cứu đến bàn giao</span></div>
+      <div class="stat"><span class="n">6</span><span class="k">Sản phẩm ra mắt</span><span class="d">Đang có người dùng thật</span></div>
+      <div class="stat"><span class="n">4</span><span class="k">Lĩnh vực</span><span class="d">Chứng khoán, fintech, e‑commerce, edtech</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono"><b>03</b> / Selected Projects</span>
+      <h2>Dự án tiêu biểu</h2>
+      <p>Mỗi dự án ghi rõ vai trò của tôi. Các dự án có nhãn BA là nơi tôi viết yêu cầu, user story hoặc vẽ quy trình.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Lọc dự án">
+      <button class="filter" data-f="all" aria-pressed="true">Tất cả<span>6</span></button>
+      <button class="filter" data-f="ux" aria-pressed="false">UI/UX<span>5</span></button>
+      <button class="filter" data-f="ba" aria-pressed="false">Business Analysis<span>2</span></button>
+      <button class="filter" data-f="ds" aria-pressed="false">Design System<span>1</span></button>
+    </div>
+
+    <div class="grid anno" id="grid">
+      <span class="note" style="top:-38px;right:0">Grid 3 → 2 → 1 cột · gap 28px</span>
+
+      <a class="card" href="#projects" data-cat="ux">
+        <div class="cover bg1">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="i" x="112" y="26" width="96" height="190" rx="18"/><rect class="s" x="117" y="31" width="86" height="185" rx="14"/>
+            <rect class="l" x="127" y="46" width="40" height="6" rx="3"/><rect class="i" x="127" y="58" width="58" height="12" rx="3"/>
+            <path class="sa" d="M127 118 L140 108 L152 113 L164 96 L176 101 L193 82"/>
+            <rect class="as" x="127" y="136" width="66" height="22" rx="6"/><rect class="l" x="127" y="166" width="66" height="8" rx="4"/><rect class="l" x="127" y="180" width="48" height="8" rx="4"/>
+            <rect class="a" x="127" y="196" width="31" height="14" rx="7"/><rect class="m" x="162" y="196" width="31" height="14" rx="7"/>
+          </svg>
+          <span class="year">2025</span>
+        </div>
+        <div class="card-body">
+          <h3>App giao dịch chứng khoán<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Thiết kế lại luồng đặt lệnh để nhà đầu tư mới đặt lệnh đầu tiên nhanh hơn và ít nhầm lẫn hơn.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Mobile</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="#projects" data-cat="ux ba">
+        <div class="cover bg2">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g><rect class="s" x="22" y="84" width="58" height="52" rx="10"/><rect class="a" x="34" y="98" width="20" height="4" rx="2"/><rect class="l" x="34" y="108" width="34" height="4" rx="2"/><rect class="l" x="34" y="116" width="26" height="4" rx="2"/></g>
+            <g><rect class="s" x="98" y="84" width="58" height="52" rx="10"/><rect class="a" x="110" y="98" width="20" height="4" rx="2"/><rect class="l" x="110" y="108" width="34" height="4" rx="2"/><rect class="l" x="110" y="116" width="26" height="4" rx="2"/></g>
+            <g><rect class="s" x="174" y="84" width="58" height="52" rx="10"/><rect class="a" x="186" y="98" width="20" height="4" rx="2"/><rect class="l" x="186" y="108" width="34" height="4" rx="2"/><rect class="l" x="186" y="116" width="26" height="4" rx="2"/></g>
+            <circle class="a" cx="268" cy="110" r="22"/><path d="M258 110l7 7 13-14" stroke-width="3" fill="none" stroke-linecap="round" style="stroke:var(--surface)"/>
+            <path class="sd" d="M80 110h18M156 110h18M232 110h14"/>
+            <text x="22" y="62" class="mu" style="font:500 11px var(--f-mono)">9 bước → 5 bước</text>
+          </svg>
+          <span class="year">2025</span>
+        </div>
+        <div class="card-body">
+          <h3>Mở tài khoản trực tuyến eKYC<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Phân tích điểm rơi của người dùng, rút luồng từ 9 xuống 5 bước và viết lại yêu cầu cho đội phát triển.</p>
+          <div class="role"><span class="tag">UX Designer</span><span class="tag ba">BA hỗ trợ</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="#projects" data-cat="ux">
+        <div class="cover bg3">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="s" x="24" y="30" width="272" height="170" rx="12"/>
+            <rect class="i" x="24" y="30" width="56" height="170" rx="12"/><rect class="i" x="60" y="30" width="20" height="170"/>
+            <rect class="mu" x="36" y="50" width="30" height="5" rx="2.5"/><rect class="mu" x="36" y="64" width="24" height="5" rx="2.5"/><rect class="mu" x="36" y="78" width="28" height="5" rx="2.5"/>
+            <rect class="as" x="94" y="46" width="60" height="38" rx="8"/><rect class="as" x="162" y="46" width="60" height="38" rx="8"/><rect class="as" x="230" y="46" width="52" height="38" rx="8"/>
+            <rect class="a" x="100" y="130" width="14" height="52" rx="3"/><rect class="a" x="122" y="112" width="14" height="70" rx="3"/><rect class="a" x="144" y="142" width="14" height="40" rx="3"/><rect class="m" x="166" y="100" width="14" height="82" rx="3"/><rect class="a" x="188" y="124" width="14" height="58" rx="3"/>
+            <rect class="l" x="216" y="100" width="66" height="8" rx="4"/><rect class="l" x="216" y="116" width="52" height="8" rx="4"/><rect class="l" x="216" y="132" width="60" height="8" rx="4"/>
+          </svg>
+          <span class="year">2024</span>
+        </div>
+        <div class="card-body">
+          <h3>Dashboard quản trị rủi ro<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Gom 14 báo cáo rời rạc vào một màn hình để bộ phận rủi ro nhìn thấy cảnh báo trong vài giây.</p>
+          <div class="role"><span class="tag">UI Designer</span><span class="tag">Web app</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="#projects" data-cat="ds ux">
+        <div class="cover bg2">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="a" x="30" y="36" width="84" height="30" rx="15"/><rect class="s" x="124" y="36" width="84" height="30" rx="15"/><rect class="i" x="218" y="36" width="72" height="30" rx="15"/>
+            <rect class="s" x="30" y="80" width="130" height="40" rx="8"/><rect class="l" x="42" y="96" width="70" height="8" rx="4"/>
+            <rect class="s" x="170" y="80" width="120" height="104" rx="10"/><rect class="as" x="180" y="90" width="100" height="44" rx="6"/><rect class="l" x="180" y="144" width="80" height="7" rx="3.5"/><rect class="l" x="180" y="158" width="56" height="7" rx="3.5"/>
+            <circle class="a" cx="44" cy="148" r="12"/><circle class="m" cx="76" cy="148" r="12"/><circle class="i" cx="108" cy="148" r="12"/><circle class="l" cx="140" cy="148" r="12"/>
+            <rect class="s" x="30" y="170" width="44" height="24" rx="12"/><circle class="a" cx="62" cy="182" r="8"/>
+          </svg>
+          <span class="year">2024</span>
+        </div>
+        <div class="card-body">
+          <h3>Design system “Sen”<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Hơn 120 component có token màu, chữ và khoảng cách, dùng chung cho 3 sản phẩm của công ty.</p>
+          <div class="role"><span class="tag">Design System Lead</span><span class="tag">Figma</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="#projects" data-cat="ba">
+        <div class="cover bg1">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="s" x="20" y="40" width="280" height="36" rx="4"/><rect class="s" x="20" y="82" width="280" height="36" rx="4"/><rect class="s" x="20" y="124" width="280" height="36" rx="4"/>
+            <circle class="st" cx="46" cy="58" r="9"/>
+            <rect class="as" x="74" y="48" width="52" height="20" rx="5"/><rect class="as" x="150" y="90" width="52" height="20" rx="5"/><rect class="as" x="226" y="132" width="52" height="20" rx="5"/>
+            <path d="M160 100 l10 -10 l10 10 l-10 10 z" transform="translate(-60 -42)" class="a"/>
+            <path class="sa" d="M55 58h19M126 58h14M120 58v0M130 58 q14 0 14 18 v14 h6M202 100h14 q10 0 10 14 v18"/>
+            <circle cx="290" cy="142" r="7" class="m"/>
+            <text x="20" y="188" class="mu" style="font:500 11px var(--f-mono)">BRD · Use case · BPMN</text>
+          </svg>
+          <span class="year">2026</span>
+        </div>
+        <div class="card-body">
+          <h3>Cổng thanh toán nội bộ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Dự án học BA: phỏng vấn 5 bên liên quan, vẽ quy trình BPMN và viết BRD cho luồng hoàn tiền.</p>
+          <div class="role"><span class="tag ba">Business Analyst</span><span class="tag">Case study</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="#projects" data-cat="ux">
+        <div class="cover bg3">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="s" x="54" y="46" width="100" height="140" rx="16" transform="rotate(-8 104 116)"/>
+            <rect class="s" x="166" y="40" width="100" height="140" rx="16" transform="rotate(6 216 110)"/>
+            <circle class="as" cx="104" cy="98" r="24" transform="rotate(-8 104 116)"/>
+            <rect class="l" x="74" y="138" width="60" height="8" rx="4" transform="rotate(-8 104 116)"/>
+            <rect class="a" x="74" y="154" width="42" height="14" rx="7" transform="rotate(-8 104 116)"/>
+            <path d="M216 72 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z" class="m" transform="rotate(6 216 110)"/>
+            <rect class="l" x="186" y="130" width="60" height="8" rx="4" transform="rotate(6 216 110)"/>
+            <rect class="l" x="194" y="146" width="44" height="8" rx="4" transform="rotate(6 216 110)"/>
+          </svg>
+          <span class="year">2023</span>
+        </div>
+        <div class="card-body">
+          <h3>App học tiếng Anh cho trẻ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Thiết kế bài học dạng thẻ và hệ thống phần thưởng, thử nghiệm cùng 12 phụ huynh và các bé 6–9 tuổi.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Edtech</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono"><b>04</b> / Work Experience</span>
+      <h2>Kinh nghiệm làm việc</h2>
+      <p>Mới nhất ở trên cùng.</p>
+    </div>
+    <div class="anno">
+    <span class="note" style="top:-34px;right:0">Cột thời gian cố định 200px để dễ dò</span>
+    <ol class="timeline" reversed>
+      <li class="job learning">
+        <span class="when mono">03/2026 – nay</span>
+        <div><h3>Business Analyst (học việc)</h3><p class="org">Khóa Business Analysis · dự án thực hành</p>
+          <p class="what">Học thu thập yêu cầu, viết use case, BRD và vẽ quy trình BPMN. Áp dụng ngay vào các dự án thiết kế đang làm.</p></div>
+        <span class="state"><span class="chip">● Đang học</span></span>
+      </li>
+      <li class="job">
+        <span class="when mono">2024 – nay</span>
+        <div><h3>UI/UX Designer</h3><p class="org">Công ty chứng khoán · Hà Nội</p>
+          <p class="what">Phụ trách thiết kế app giao dịch và luồng eKYC. Cùng BA viết user story và acceptance criteria trước mỗi sprint.</p></div>
+        <span class="state"><span class="chip">Toàn thời gian</span></span>
+      </li>
+      <li class="job">
+        <span class="when mono">2022 – 2024</span>
+        <div><h3>UI/UX Designer</h3><p class="org">Agency sản phẩm số</p>
+          <p class="what">Thiết kế hơn 10 sản phẩm cho e‑commerce và edtech. Xây design system dùng chung giúp rút thời gian bàn giao khoảng 30%.</p></div>
+        <span class="state"><span class="chip">Toàn thời gian</span></span>
+      </li>
+      <li class="job">
+        <span class="when mono">2021 – 2022</span>
+        <div><h3>Junior UI Designer</h3><p class="org">Startup edtech</p>
+          <p class="what">Thiết kế màn hình bài học và bộ minh họa cho ứng dụng học tiếng Anh dành cho trẻ em.</p></div>
+        <span class="state"><span class="chip">Toàn thời gian</span></span>
+      </li>
+    </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono"><b>05</b> / Skills &amp; Tools</span>
+      <h2>Kỹ năng và công cụ</h2>
+      <p>Ba nhóm kỹ năng bổ trợ cho nhau: hiểu người dùng, hiểu nghiệp vụ, và giữ cho sản phẩm nhất quán.</p>
+    </div>
+    <div class="skills">
+      <div class="skill">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h4"/></svg></span>
+        <h3>UX/UI Design</h3>
+        <ul><li>Nghiên cứu người dùng</li><li>Wireframe &amp; prototype</li><li>Usability testing</li><li>Kiến trúc thông tin</li><li>Visual &amp; interaction design</li></ul>
+      </div>
+      <div class="skill">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/><path d="M6.5 9v4a2 2 0 0 0 2 2H14M17.5 15v-3"/><circle cx="17.5" cy="7" r="3"/></svg></span>
+        <h3>Business Analysis</h3>
+        <ul><li>Thu thập &amp; phân tích yêu cầu</li><li>User story, acceptance criteria</li><li>Use case, BPMN <small>ĐANG HỌC</small></li><li>BRD / SRS <small>ĐANG HỌC</small></li><li>Workshop với stakeholder</li></ul>
+      </div>
+      <div class="skill">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="3.75"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="3.75"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span>
+        <h3>Design Systems</h3>
+        <ul><li>Design token &amp; variables</li><li>Thư viện component</li><li>Tài liệu hướng dẫn</li><li>Accessibility (WCAG AA)</li><li>Bàn giao cho dev</li></ul>
+      </div>
+    </div>
+    <div class="tools-row">
+      <span class="mono">Công cụ</span>
+      <div class="tool-list">
+        <span class="tool"><b>Fi</b>Figma</span><span class="tool"><b>Fj</b>FigJam</span><span class="tool"><b>Ji</b>Jira</span><span class="tool"><b>Co</b>Confluence</span><span class="tool"><b>Mi</b>Miro</span><span class="tool"><b>Dr</b>Draw.io</span><span class="tool"><b>No</b>Notion</span><span class="tool"><b>Ma</b>Maze</span><span class="tool"><b>Sq</b>SQL cơ bản</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ABOUT & CONTACT ============ -->
+<section id="about">
+  <div class="wrap about">
+    <div class="portrait anno">
+      <span class="note" style="top:14px;left:14px">Thay bằng ảnh chân dung 4:5</span>
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle class="as" cx="200" cy="190" r="74"/>
+        <path class="as" d="M70 500c0-90 58-150 130-150s130 60 130 150Z"/>
+        <rect x="118" y="108" width="164" height="164" fill="none" style="stroke:var(--accent)" stroke-width="1.5"/>
+        <rect class="s" x="113" y="103" width="10" height="10" style="stroke:var(--accent)"/><rect class="s" x="277" y="103" width="10" height="10" style="stroke:var(--accent)"/>
+        <rect class="s" x="113" y="267" width="10" height="10" style="stroke:var(--accent)"/><rect class="s" x="277" y="267" width="10" height="10" style="stroke:var(--accent)"/>
+      </svg>
+      <div class="cap mono"><span>HAE</span><span>164 × 164</span></div>
+    </div>
+    <div>
+      <div class="sec-head" style="grid-template-columns:1fr;margin-bottom:20px"><span class="mono"><b>06</b> / About &amp; Contact</span></div>
+      <h2>Người đứng giữa người dùng và nghiệp vụ.</h2>
+      <div class="bio">
+        <p>Tôi thích những bài toán mà người dùng thấy rối còn đội kinh doanh thì thấy cấp bách.</p>
+        <p>Làm designer, tôi hay hỏi “vì sao người dùng cần cái này”. Học BA giúp tôi hỏi thêm “doanh nghiệp được gì, và làm sao đo được”. Tôi đang tìm môi trường có thể làm cả hai: thiết kế trải nghiệm và phân tích yêu cầu.</p>
+      </div>
+      <div class="contact">
+        <div class="row"><span class="mono">Email</span><span class="val" id="email">hello@hae.design</span><button class="small-btn" id="copyEmail">Sao chép</button></div>
+        <div class="row"><span class="mono">LinkedIn</span><a class="val" href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/hae</a><span></span></div>
+        <div class="row"><span class="mono">CV</span><span class="val">HAE_CV_2026.pdf</span><button class="small-btn js-cv">Tải CV</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="HAE, về đầu trang"><i></i><i></i><i></i><i></i>HAE</a>
+    <span class="copy">© <span id="yr">2026</span> HAE. Thiết kế và viết yêu cầu bởi chính tôi.</span>
+    <a href="#top" class="btn btn-ghost top" style="min-height:44px">Về đầu trang
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(180deg)"><path d="M12 4v12M6 11l6 6 6-6"/></svg></a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// Dán link CV thật (Google Drive, Dropbox…) vào đây.
+const CV_URL = "";
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+const toast = msg => { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); };
+
+// Theme
+const root = document.documentElement;
+const saved = store.get('hae-theme'); if (saved) root.dataset.theme = saved;
+$('#themeBtn').addEventListener('click', () => {
+  const cur = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next; store.set('hae-theme', next);
+});
+
+// Annotation layer
+const annoBtn = $('#annoBtn');
+const setAnno = on => { document.body.classList.toggle('annotate', on); annoBtn.setAttribute('aria-pressed', on); store.set('hae-anno', on ? '1' : '0'); };
+setAnno(store.get('hae-anno') === '1');
+annoBtn.addEventListener('click', () => { const on = !document.body.classList.contains('annotate'); setAnno(on); if (on) toast('Đang hiện ghi chú thiết kế. Nhấn lần nữa để ẩn.'); });
+
+// Filter
+$$('.filter').forEach(b => b.addEventListener('click', () => {
+  $$('.filter').forEach(x => x.setAttribute('aria-pressed', x === b));
+  const f = b.dataset.f;
+  $$('#grid .card').forEach(c => c.hidden = !(f === 'all' || c.dataset.cat.split(' ').includes(f)));
+}));
+
+// CV
+$$('.js-cv').forEach(el => el.addEventListener('click', e => {
+  if (CV_URL) { e.preventDefault(); const a=document.createElement('a'); a.href=CV_URL; a.target='_blank'; a.rel='noopener'; a.click(); }
+  else if (el.tagName === 'BUTTON') toast('Chưa gắn link CV. Thêm đường dẫn vào CV_URL.');
+}));
+
+// Copy email
+$('#copyEmail').addEventListener('click', async () => {
+  const txt = $('#email').textContent;
+  try { await navigator.clipboard.writeText(txt); toast('Đã sao chép ' + txt); }
+  catch(e) { const r=document.createRange(); r.selectNodeContents($('#email')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast('Đã chọn email, nhấn ⌘C / Ctrl+C để sao chép'); }
+});
+
+// Nav: border on scroll + active section
+const nav = $('#nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), {passive:true});
+const links = $$('.nav ul a');
+const io = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+}), {rootMargin:'-45% 0px -50% 0px'});
+['projects','experience','skills','about'].forEach(id => io.observe(document.getElementById(id)));
+
+$('#yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
