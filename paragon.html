@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Paragon Asia: ứng dụng di động cho thành viên coworking tại Hong Kong, đặt phòng họp và tiện ích bằng credit, theo dõi lịch và sự kiện.">
+<title>Paragon Asia · Case study · HAE</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<script src="./loader.js"></script>
+<div class="progress" id="progress"></div>
+<header class="nav">
+  <a href="./index.html" class="logo" aria-label="HAE, về trang chủ"><i></i><i></i><i></i><i></i>HAE</a>
+  <a href="./index.html#projects" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    Tất cả dự án
+  </a>
+  <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono"><span class="dot"></span>Mobile app · iOS và Android · VTL Solutions · 2020</span>
+    <h1>Đặt một phòng họp, và luôn biết mình còn <em>bao nhiêu credit</em>.</h1>
+    <p class="lead">Paragon Asia vận hành các không gian làm việc chung và clubhouse tại Hong Kong. Ứng dụng cho thành viên xem không gian, đặt phòng và tiện ích bằng credit, theo dõi lịch của mình và tham gia sự kiện của cộng đồng.</p>
+    <dl class="meta">
+      <div><dt>Vai trò</dt><dd>UI/UX Designer</dd></div>
+      <div><dt>Nền tảng</dt><dd>Mobile app, iOS và Android</dd></div>
+      <div><dt>Khách hàng</dt><dd>Paragon Asia, Hong Kong</dd></div>
+      <div><dt>Phạm vi</dt><dd>Luồng người dùng, UI, app icon</dd></div>
+    </dl>
+    <div class="hero-shot band r" data-r>
+      <div class="phones">
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/home.png" alt="Trang chủ ứng dụng: tìm kiếm, ảnh không gian, lối vào Workspaces và Clubhouse, tin tức sự kiện" width="375" height="1132"></div></div></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/workspace-detail.png" alt="Chi tiết một không gian: ảnh, địa chỉ, mô tả, nút chat" width="375" height="1156"></div></div></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-duration.png" alt="Chọn ngày và khung giờ đặt phòng họp" width="375" height="812"></div></div></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-record.png" alt="Danh sách phòng đã đặt trong My Schedule" width="375" height="812"></div></div></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>01</b> / Bối cảnh</span>
+      <h2>Thành viên trả bằng credit, không trả bằng tiền.</h2>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p>Thành viên của Paragon là các công ty thuê chỗ làm việc. Mỗi tháng họ có một số credit để đặt phòng họp, phòng karaoke hay các tiện ích khác trong clubhouse.</p>
+        <p>Vì vậy, đặt phòng ở đây khác với đặt một dịch vụ thông thường. Người dùng không cân nhắc giá tiền. Họ cân nhắc số credit còn lại, và lần đặt này sẽ trừ đi bao nhiêu.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>2 nhóm người dùng.</strong> Thành viên đã đăng nhập được đặt chỗ và xem lịch. Khách chỉ xem không gian và sự kiện.</span></li>
+        <li><span><strong>2 loại nội dung.</strong> Workspaces là nơi làm việc. Clubhouse là nơi có các tiện ích đặt theo giờ.</span></li>
+        <li><span><strong>1 đơn vị thanh toán.</strong> Mọi lần đặt đều quy về credit theo giờ, có giới hạn số giờ mỗi lần.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>02</b> / Hỏi trước khi vẽ</span>
+      <h2>4 câu hỏi tôi đặt ra trước khi làm luồng đặt chỗ.</h2>
+      <p>Những câu này vẫn còn nằm trong file thiết kế, cạnh các bản nháp đầu tiên. Câu trả lời quyết định cấu trúc của cả luồng.</p>
+    </div>
+    <div class="cards two">
+      <div class="c q" data-r><span class="k">Q1 · Thuật ngữ</span><h3>“Workspace” có bao gồm “facilities” không? Tôi muốn định nghĩa từ ngữ cho rõ.</h3><p>Dẫn tới việc tách 2 lối vào ngay trên trang chủ: Workspaces và Clubhouse.</p></div>
+      <div class="c q" data-r><span class="k">Q2 · Đơn vị</span><h3>Điểm đặt chỗ có phải là credit không? Nếu không thì điểm được tính thế nào?</h3><p>Dẫn tới việc chỉ dùng một đơn vị duy nhất, hiển thị theo giờ ở mọi bước.</p></div>
+      <div class="c q" data-r><span class="k">Q3 · Thời gian</span><h3>Ở bước chọn ngày giờ, đó là một thời điểm hay một khoảng từ lúc bắt đầu tới lúc kết thúc?</h3><p>Dẫn tới cách chọn theo khung giờ, có giới hạn số giờ cho mỗi lần đặt.</p></div>
+      <div class="c q" data-r><span class="k">Q4 · Trường hợp biên</span><h3>Nếu dùng hết credit trước khi hết tháng và muốn đặt thêm thì người dùng làm gì?</h3><p>Dẫn tới việc luôn cho thấy số credit còn lại, trước và sau khi xác nhận.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>03</b> / Luồng đặt chỗ</span>
+      <h2>Từ chọn phòng tới xác nhận, credit hiện ở mọi bước.</h2>
+    </div>
+    <ol class="steps" data-r>
+      <li><b>Chọn tiện ích</b><span>Mỗi thẻ ghi rõ số credit mỗi giờ.</span></li>
+      <li><b>Chọn ngày</b><span>Lịch tháng, ngày đã có lịch được đánh dấu chấm.</span></li>
+      <li><b>Chọn khung giờ</b><span>Giờ đã kín bị làm mờ, có ghi số giờ tối đa.</span></li>
+      <li><b>Xác nhận</b><span>Tổng credit bị trừ và số credit còn lại.</span></li>
+    </ol>
+    <div class="band" style="margin-top:clamp(28px,4vw,48px)" data-r>
+      <div class="phones">
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-options.png" alt="Thông báo đặt phòng thành công và tóm tắt: phòng họp, ngày, giờ, tổng 4 credit" width="375" height="812" loading="lazy"></div></div><figcaption>Tóm tắt lượt đặt: phòng, ngày, giờ, tổng credit.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-calendar.png" alt="Lịch chọn ngày đặt chỗ" width="375" height="812" loading="lazy"></div></div><figcaption>Lịch tháng, có chấm ở ngày đã đặt.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-duration.png" alt="Chọn khung giờ, tối đa 4 giờ mỗi lần đặt" width="375" height="812" loading="lazy"></div></div><figcaption>Khung giờ dạng chip, ghi “Max. 4 hours per booking”.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-summary.png" alt="Xác nhận đặt chỗ, hiện số credit còn lại" width="375" height="812" loading="lazy"></div></div><figcaption>Sau khi xác nhận: trừ 4 credit, còn lại 36.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>04</b> / Khám phá không gian</span>
+      <h2>2 lối vào rõ ràng ngay trên trang chủ.</h2>
+    </div>
+    <div class="cols wide-right">
+      <div class="prose" data-r>
+        <p>Trang chủ mở đầu bằng ảnh không gian và 2 nút lớn: <strong>Workspaces</strong> và <strong>Clubhouse</strong>. Người dùng không cần hiểu cách công ty phân loại sản phẩm, chỉ cần biết mình đang tìm chỗ làm việc hay tìm tiện ích.</p>
+        <p>Trang chi tiết ưu tiên ảnh thật, địa chỉ và mô tả ngắn. Nút chat nằm ngay cạnh tên không gian, vì câu hỏi thường nảy ra đúng lúc đang xem.</p>
+        <p>Tin tức và sự kiện nằm dưới cùng trang chủ. Thành viên đăng ký tham gia được, khách chỉ xem.</p>
+      </div>
+      <div class="phones three" data-r>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/workspace-list.png" alt="Danh sách không gian làm việc, có tab Workspaces và Clubhouse" width="375" height="812" loading="lazy"></div></div><figcaption>Danh sách không gian.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/news-event.png" alt="Chi tiết sự kiện sắp diễn ra, có số người đã tham gia" width="375" height="812" loading="lazy"></div></div><figcaption>Sự kiện sắp diễn ra.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/chatbox.png" alt="Màn hình chat với nhân viên" width="375" height="812" loading="lazy"></div></div><figcaption>Chat với nhân viên.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>05</b> / Lịch và hồ sơ</span>
+      <h2>Mọi thứ đã đặt nằm ở một chỗ.</h2>
+    </div>
+    <div class="cols wide-right">
+      <div class="phones three" data-r>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/schedule.png" alt="Lịch cá nhân theo tháng" width="375" height="812" loading="lazy"></div></div><figcaption>Lịch cá nhân theo tháng.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/booking-record.png" alt="Danh sách các phòng đã đặt" width="375" height="812" loading="lazy"></div></div><figcaption>Danh sách lượt đặt.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/paragon/member-profile.png" alt="Hồ sơ thành viên có số credit, công ty và lối vào lịch sử đặt chỗ" width="375" height="812" loading="lazy"></div></div><figcaption>Hồ sơ thành viên.</figcaption></figure>
+      </div>
+      <div class="prose" data-r>
+        <p><strong>My Schedule</strong> gom cả lượt đặt phòng lẫn sự kiện đã đăng ký. Người dùng xem dạng danh sách hoặc dạng lịch, và huỷ được ngay từ đây.</p>
+        <p>Hồ sơ thành viên đặt số credit ở vị trí nổi bật nhất, cạnh tên. Bên dưới là công ty, phòng đang thuê và đường dẫn tới lịch sử đặt chỗ.</p>
+        <p>Màu đỏ của thương hiệu chỉ dùng cho thanh trên cùng và hành động chính. Màu xanh dành riêng cho credit và trạng thái đang chọn, nên con số credit luôn nổi lên dù ở màn hình nào.</p>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:clamp(32px,5vw,56px)" data-r>
+      <div class="stat"><span class="n">111</span><span class="kk">Màn hình</span><span class="d">Trong bản UI chính</span></div>
+      <div class="stat"><span class="n">4</span><span class="kk">Bước đặt chỗ</span><span class="d">Từ chọn tiện ích tới xác nhận</span></div>
+      <div class="stat"><span class="n">2</span><span class="kk">Nhóm người dùng</span><span class="d">Thành viên và khách</span></div>
+      <div class="stat"><span class="n">1</span><span class="kk">Đơn vị thanh toán</span><span class="d">Credit theo giờ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <a class="next" href="./cityu-vmc.html" data-r>
+      <div><span class="mono">Dự án tiếp theo · Website đặt lịch</span><h3>CityU VMC</h3><p>Đặt lịch khám thú y trực tuyến trên desktop và mobile.</p></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 HAE. Dự án thực hiện tại VTL Solutions.</span>
+  <a href="./index.html#contact">Liên hệ</a>
+</footer>
+<script type="module" src="/src/case.js"></script>
+</body>
+</html>

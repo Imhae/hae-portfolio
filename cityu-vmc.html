@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="CityU VMC: hệ thống đặt lịch khám thú y trực tuyến, thiết kế responsive cho desktop và mobile, gồm đặt mới, đổi lịch và thanh toán.">
+<title>CityU VMC · Case study · HAE</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<script src="./loader.js"></script>
+<div class="progress" id="progress"></div>
+<header class="nav">
+  <a href="./index.html" class="logo" aria-label="HAE, về trang chủ"><i></i><i></i><i></i><i></i>HAE</a>
+  <a href="./index.html#projects" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    Tất cả dự án
+  </a>
+  <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono"><span class="dot"></span>Website · Responsive · VTL Solutions · 2022</span>
+    <h1>Đặt lịch khám cho thú cưng mà <em>không cần gọi điện</em>.</h1>
+    <p class="lead">CityU Veterinary Medical Centre là trung tâm thú y tại Hong Kong. Tôi thiết kế hệ thống đặt lịch trực tuyến gắn vào website của trung tâm: đặt lịch mới, đổi lịch đã có và thanh toán, trên cả desktop lẫn điện thoại.</p>
+    <dl class="meta">
+      <div><dt>Vai trò</dt><dd>UI/UX Designer</dd></div>
+      <div><dt>Nền tảng</dt><dd>Web responsive, desktop và mobile</dd></div>
+      <div><dt>Khách hàng</dt><dd>CityU Veterinary Medical Centre</dd></div>
+      <div><dt>Phạm vi</dt><dd>Đặt mới, đổi lịch, đăng ký, thanh toán</dd></div>
+    </dl>
+    <figure class="hero-shot shot" data-r>
+      <div class="bar"><i></i><i></i><i></i><span>For Pet Owners / New Booking / Booking Info.</span></div>
+      <img src="/src/assets/images/cityu-vmc/booking-info.png" alt="Bước Booking Info trên desktop: chọn loại lịch hẹn, chọn bác sĩ thú y, chọn khung giờ trong tuần" width="1440" height="1621">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>01</b> / Bối cảnh</span>
+      <h2>Người đặt lịch đang lo cho thú cưng của mình.</h2>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p>Chủ nuôi thường đặt lịch khi con vật có vấn đề. Họ không muốn tạo tài khoản dài dòng, và cũng không chắc mình cần loại lịch hẹn nào.</p>
+        <p>Phía trung tâm thì cần biết trước một số thông tin để xếp đúng bác sĩ: loài, lý do khám, thuốc đang dùng, tiền sử dị ứng. Luồng đặt lịch phải lấy đủ những thông tin đó mà không biến thành một tờ khai y tế.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>2 việc chính.</strong> Đặt lịch mới và đổi lịch đã đặt, tách thành 2 lối vào ngay trang đầu.</span></li>
+        <li><span><strong>3 cách vào.</strong> Đăng nhập, đăng ký mới, hoặc tiếp tục với tư cách khách.</span></li>
+        <li><span><strong>2 kích thước màn hình.</strong> Cùng một luồng, nhưng số bước chia khác nhau giữa desktop và mobile.</span></li>
+      </ul>
+    </div>
+    <figure style="margin-top:clamp(28px,4vw,48px)" data-r>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span>For Pet Owners / Online Booking</span></div>
+        <img src="/src/assets/images/cityu-vmc/home.png" alt="Trang đầu của hệ thống đặt lịch với 2 lựa chọn New Booking và Reschedule Booking" width="1440" height="900" loading="lazy"></div>
+      <figcaption><b>Trang đầu chỉ có 2 lựa chọn.</b> Phần ghi chú bên dưới nói rõ dịch vụ nào đặt được trực tuyến và số điện thoại cho trường hợp khẩn cấp.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>02</b> / Luồng đặt lịch mới</span>
+      <h2>Từ hồ sơ thú cưng tới thanh toán, gói trong 3 chặng.</h2>
+      <p>Trên desktop, thanh tiến độ có 3 chặng: Your Details, Booking Info và Confirmation. Chặng đã qua đổi sang màu nhạt hơn, chặng chưa tới có màu xám.</p>
+    </div>
+    <ol class="steps" data-r>
+      <li><b>Thông tin của bạn</b><span>Thông tin liên hệ và hồ sơ thú cưng.</span></li>
+      <li><b>Khảo sát ngắn</b><span>Lý do khám, thuốc đang dùng, dị ứng.</span></li>
+      <li><b>Thông tin lịch hẹn</b><span>Loại lịch, bác sĩ và khung giờ.</span></li>
+      <li><b>Xác nhận và thanh toán</b><span>Rà lại toàn bộ rồi đặt cọc.</span></li>
+    </ol>
+    <div class="shots" style="margin-top:clamp(28px,4vw,48px)">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>New Booking / Your pet details</span></div>
+          <img src="/src/assets/images/cityu-vmc/pet-details.png" alt="Chọn hồ sơ thú cưng đã lưu hoặc tạo hồ sơ mới" width="1440" height="1185" loading="lazy"></div>
+        <figcaption><b>Hồ sơ thú cưng lưu lại để dùng lần sau.</b> Một tài khoản có nhiều hồ sơ. Chọn một hồ sơ là form bên phải tự điền.</figcaption>
+      </figure>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>New Booking / Short survey</span></div>
+          <img src="/src/assets/images/cityu-vmc/survey.png" alt="Khảo sát ngắn trước khi khám: lý do, loài, thuốc, dị ứng" width="1440" height="1419" loading="lazy"></div>
+        <figcaption><b>Khảo sát bắt đầu bằng 4 biểu tượng.</b> Thú cưng bị ốm, khám định kỳ, lý do khác hay khẩn cấp. Các câu sau đều là chọn có hoặc không.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>03</b> / Chọn bác sĩ và giờ khám</span>
+      <h2>3 lựa chọn nối tiếp nhau trên cùng một trang.</h2>
+    </div>
+    <div class="cols wide-right">
+      <div class="prose" data-r>
+        <p>Loại lịch hẹn, bác sĩ và khung giờ phụ thuộc lẫn nhau. Tôi đặt cả ba trên một trang, theo thứ tự từ trên xuống, để người dùng thấy lựa chọn phía trên làm thay đổi phần phía dưới ra sao.</p>
+        <p>Bác sĩ hiện bằng ảnh chân dung. Lựa chọn được ưu tiên có nhãn <strong>Preferred</strong> và được chọn sẵn. Ai muốn tìm hiểu thêm thì mở Details, không phải rời trang.</p>
+        <p>Lưới giờ hiện theo tuần. Ô đã kín được làm mờ nhưng vẫn giữ nguyên chỗ, nên người dùng nhìn ra ngay ngày nào còn nhiều giờ trống.</p>
+      </div>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>New Booking / Confirmation</span></div>
+          <img src="/src/assets/images/cityu-vmc/confirmation.png" alt="Trang xác nhận: thông tin liên hệ, thú cưng, bác sĩ, thời gian và tổng tiền" width="1440" height="1297" loading="lazy"></div>
+        <figcaption><b>Xác nhận trước khi trả tiền.</b> Thông tin người đặt và thú cưng ở bên trái, lịch hẹn và bác sĩ ở bên phải, tổng tiền nằm riêng một dòng.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>04</b> / Mobile</span>
+      <h2>Cùng một luồng, chia thành 5 bước ngắn.</h2>
+      <p>Trên điện thoại, một trang desktop dài quá một lần cuộn thoải mái. Tôi tách khung giờ và thanh toán thành bước riêng, đánh số từ 1 tới 5 trên thanh tiến độ.</p>
+    </div>
+    <div class="band r" data-r>
+      <div class="phones five">
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/cityu-vmc/m-home.png" alt="Trang đầu trên mobile" width="375" height="812" loading="lazy"></div></div><figcaption>Trang đầu.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/cityu-vmc/m-booking-info.png" alt="Bước 1 trên mobile: chọn loại lịch hẹn" width="375" height="1011" loading="lazy"></div></div><figcaption>1. Loại lịch hẹn.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/cityu-vmc/m-time-slot.png" alt="Bước 3 trên mobile: chọn khung giờ" width="375" height="811" loading="lazy"></div></div><figcaption>3. Khung giờ.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/cityu-vmc/m-confirmation.png" alt="Bước 4 trên mobile: xác nhận thông tin" width="375" height="1303" loading="lazy"></div></div><figcaption>4. Xác nhận.</figcaption></figure>
+        <figure class="phone"><div class="frame"><div class="img"><img src="/src/assets/images/cityu-vmc/m-payment.png" alt="Bước 5 trên mobile: chọn phương thức thanh toán" width="375" height="1107" loading="lazy"></div></div><figcaption>5. Thanh toán.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>05</b> / Đổi lịch</span>
+      <h2>Tìm lại lịch đã đặt mà không cần tài khoản.</h2>
+    </div>
+    <div class="shots">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Reschedule Booking / Find existing booking</span></div>
+          <img src="/src/assets/images/cityu-vmc/find-booking.png" alt="Form tìm lịch đã đặt bằng mã đặt lịch, số điện thoại và email" width="1440" height="900" loading="lazy"></div>
+        <figcaption><b>Khách vẫn đổi được lịch.</b> Nhập mã đặt lịch cùng số điện thoại hoặc email, hoặc đăng nhập để xem toàn bộ.</figcaption>
+      </figure>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Reschedule Booking / Time slot</span></div>
+          <img src="/src/assets/images/cityu-vmc/reschedule-slot.png" alt="Chọn khung giờ mới khi đổi lịch" width="1440" height="1012" loading="lazy"></div>
+        <figcaption><b>Dùng lại đúng lưới giờ của luồng đặt mới.</b> Người dùng không phải học thêm một giao diện khác.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>06</b> / Quyết định thiết kế</span>
+      <h2>3 lựa chọn định hình sản phẩm.</h2>
+    </div>
+    <div class="cards">
+      <div class="c" data-r><span class="k">A</span><h3>Không bắt buộc tạo tài khoản</h3><p>Khách đặt được lịch và đổi được lịch. Tài khoản là lợi ích thêm, giúp lưu hồ sơ thú cưng cho lần sau.</p></div>
+      <div class="c" data-r><span class="k">B</span><h3>Hỏi bằng lựa chọn, không hỏi bằng ô trống</h3><p>Khảo sát y tế dùng biểu tượng, ô chọn và câu có hoặc không. Ô nhập tự do chỉ hiện khi câu trả lời là có.</p></div>
+      <div class="c" data-r><span class="k">C</span><h3>Số bước theo kích thước màn hình</h3><p>Desktop gom 3 chặng lớn. Mobile tách thành 5 bước ngắn. Nội dung và thứ tự giữ nguyên.</p></div>
+    </div>
+    <div class="stats" style="margin-top:clamp(32px,5vw,56px)" data-r>
+      <div class="stat"><span class="n">34</span><span class="kk">Màn hình desktop</span><span class="d">Đặt mới, đổi lịch, đăng ký</span></div>
+      <div class="stat"><span class="n">19</span><span class="kk">Màn hình mobile</span><span class="d">Cùng luồng, chia lại bước</span></div>
+      <div class="stat"><span class="n">4</span><span class="kk">Loại lịch hẹn</span><span class="d">Tái khám, tiêm phòng, xét nghiệm, chuyên khoa</span></div>
+      <div class="stat"><span class="n">5</span><span class="kk">Cách thanh toán</span><span class="d">Thẻ và ví điện tử</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <a class="next" href="./swapifly.html" data-r>
+      <div><span class="mono">Dự án tiếp theo · Marketplace</span><h3>Swapifly</h3><p>Sàn mua bán C2C trên web và app, có AI hỗ trợ đăng tin.</p></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 HAE. Dự án thực hiện tại VTL Solutions.</span>
+  <a href="./index.html#contact">Liên hệ</a>
+</footer>
+<script type="module" src="/src/case.js"></script>
+</body>
+</html>

@@ -99,28 +99,15 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 @keyframes grow{from{transform:scaleX(0)}}
 .lead{font-size:var(--step-1);color:var(--muted);max-width:40ch;line-height:1.6}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 1rem var(--f-body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background-color .2s,border-color .2s,color .2s;will-change:transform}
-.btn svg{width:18px;height:18px;transition:transform .3s var(--out)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 1rem var(--f-body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background-color .2s,border-color .2s,color .2s}
+.btn svg{width:18px;height:18px}
 .btn-primary{background:var(--ink);color:var(--bg)}
-.btn-primary:hover svg{transform:translateX(4px)}
+.btn-primary:hover{background:color-mix(in srgb,var(--ink) 80%,#fff)}
 .btn-ghost{border-color:var(--line);background:var(--surface);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
-.btn-ghost:hover svg{transform:translateY(2px)}
-.ticket{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 1px 0 var(--line),0 30px 60px -36px color-mix(in srgb,var(--ink) 40%,transparent);transition:transform .6s var(--out);will-change:transform}
-.ticket-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);padding-bottom:16px;border-bottom:1px dashed var(--line)}
+.btn-ghost:hover{border-color:var(--accent);background:color-mix(in srgb,var(--surface) 84%,#fff)}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:500 .75rem var(--f-mono);background:var(--accent-soft);color:var(--accent);white-space:nowrap}
-.ticket blockquote{margin:18px 0 20px;font:500 1.125rem/1.5 var(--f-display);letter-spacing:-.01em}
-.ticket blockquote b{color:var(--accent);font-weight:600}
-.ticket h3{font:500 var(--step--1) var(--f-mono);color:var(--muted);margin-bottom:10px;letter-spacing:.04em;text-transform:uppercase}
-.ac{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.ac a{display:flex;gap:12px;align-items:flex-start;padding:8px 10px;margin-inline:-10px;border-radius:10px;text-decoration:none;font-size:.9375rem;line-height:1.45;transition:background-color .2s}
-.ac a:hover{background:var(--bg)}
-.ac svg{flex:none;width:20px;height:20px;margin-top:1px;color:var(--accent)}
-.ac path{stroke-dasharray:14;stroke-dashoffset:14;animation:tick .5s var(--out) forwards}
-.ac li:nth-child(1) path{animation-delay:1.2s}.ac li:nth-child(2) path{animation-delay:1.4s}.ac li:nth-child(3) path{animation-delay:1.6s}
-@keyframes tick{to{stroke-dashoffset:0}}
 .scroll-hint{display:none}
-@media (max-width:900px){.hero{grid-template-columns:1fr}.ticket{max-width:520px}}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero .portrait{max-width:420px}}
 
 /* Hero intro (chạy một lần khi tải trang) */
 @media (prefers-reduced-motion:no-preference){
@@ -156,8 +143,9 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 .card[hidden]{display:none}
 .cover{position:relative;aspect-ratio:16/11;max-width:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:border-color .3s}
 .card:hover .cover{border-color:var(--accent)}
-.cover svg{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.08);transition:scale .6s var(--out)}
-.card:hover .cover svg{scale:1.05}
+.cover svg,.cover img{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.08);transition:scale .6s var(--out)}
+.cover img{object-fit:cover;object-position:top}
+.card:hover .cover svg,.card:hover .cover img{scale:1.05}
 .cover .year{position:absolute;top:12px;right:12px;padding:3px 9px;border-radius:999px;background:var(--surface);color:var(--muted);font:500 .75rem var(--f-mono)}
 .bg1{background:var(--c1)}.bg2{background:var(--c2)}.bg3{background:var(--c3)}
 .s{fill:var(--surface)}.i{fill:var(--ink)}.a{fill:var(--accent)}.as{fill:var(--accent-soft)}.l{fill:var(--line)}.m{fill:var(--mark)}.mu{fill:var(--muted)}
@@ -187,6 +175,8 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 @media (max-width:860px){.skills{grid-template-columns:1fr}}
 .skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .3s,transform .5s var(--out)}
 .skill:hover{border-color:var(--accent);transform:translateY(-4px)}
+.skill,.tool{position:relative}
+.skill::after,.tool::after{content:"";position:absolute;left:0;right:0;top:100%;height:6px}
 .skill .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
 .skill .ico svg{width:22px;height:22px}
 .skill h3{font-size:var(--step-1)}
@@ -197,31 +187,30 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 .tools-row .mono{color:var(--muted)}
 .tool-list{display:flex;flex-wrap:wrap;gap:10px}
 .tool{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:500;font-size:.9375rem;transition:transform .4s var(--out),border-color .3s}
-.tool:hover{transform:translateY(-3px) rotate(-2deg);border-color:var(--accent)}
+.tool:hover{transform:translateY(-3px);border-color:var(--accent)}
 .tool b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:600 .6875rem var(--f-mono);background:var(--bg);color:var(--muted)}
 
 /* ---------- About ---------- */
-.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
-@media (max-width:820px){.about{grid-template-columns:1fr}}
 .portrait{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:var(--radius);overflow:hidden;background:var(--c2);border:1px solid var(--line)}
-.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.portrait img,.portrait svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .portrait{width:100%;justify-self:end;box-shadow:0 30px 60px -36px color-mix(in srgb,var(--ink) 40%,transparent);transition:transform .6s var(--out);will-change:transform}
+.hero-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.9375rem;max-width:560px}
+.hero-contact .hc-mail{display:inline-flex;align-items:center;gap:10px;font-weight:500}
+.hero-contact a{display:inline-flex;align-items:center;gap:4px;font-weight:500;text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:background-size .4s var(--out)}
+.hero-contact a:hover{background-size:100% 1px}
+.hero-contact a svg{width:14px;height:14px;color:var(--accent)}
 .portrait .cap{position:absolute;left:14px;bottom:14px;right:14px;display:flex;justify-content:space-between;gap:8px;color:var(--muted)}
 .portrait .cap span{background:var(--surface);padding:3px 9px;border-radius:999px}
-.about h2{font-size:var(--step-3);margin-bottom:22px}
-.about .bio{display:grid;gap:14px;max-width:56ch}
-.about .bio p:first-child{font-size:var(--step-1);line-height:1.55}
-.contact{margin-top:30px;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-.row .mono{color:var(--muted)}
-.row .val{font-weight:500;overflow-wrap:anywhere}
-.row a.val{text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 1px no-repeat;transition:background-size .4s var(--out)}
-.row a.val:hover{background-size:100% 1px}
-@media (max-width:520px){.row{grid-template-columns:1fr auto;gap:4px 12px}.row .mono{grid-column:1/-1}}
 .small-btn{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .8125rem var(--f-body);cursor:pointer;white-space:nowrap}
 .small-btn:hover{border-color:var(--ink)}
 
 /* ---------- Footer ---------- */
 .end{display:flex;flex-direction:column;gap:28px;border-top:1px solid var(--line)}
+.end-info{display:flex;flex-direction:column;gap:26px;max-width:560px}
+.end-info .ctas{margin-top:0}
+.end-info .copy{color:var(--muted);font-size:.9375rem}
+.end .btn{font-family:var(--f-body)}
+.end .to-top{align-self:flex-end}
 .big{font:800 clamp(6rem,4rem + 16vw,18rem)/.8 var(--f-display);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--ink);position:relative;display:inline-block;align-self:flex-start;transition:color .6s var(--ease)}
 .big:hover{color:var(--accent-soft)}
 .end-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
@@ -263,7 +252,7 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 .h-mode .sec-head h2{font-size:clamp(2.2rem,1.4rem + 2.4vw,3.6rem)}
 
 .h-mode .hero{width:100vw;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);padding-inline:clamp(40px,7vw,120px)}
-.h-mode .ticket{max-width:460px}
+.h-mode .hero .portrait{height:min(60vh,540px);width:auto;justify-self:center}
 .h-mode .scroll-hint{display:inline-flex;position:absolute;left:clamp(40px,7vw,120px);bottom:clamp(96px,13vh,124px);align-items:center;gap:12px;color:var(--muted);transition:opacity .5s}
 .scroll-hint .arrow{width:46px;height:1px;background:var(--muted);position:relative;overflow:hidden}
 .scroll-hint .arrow::after{content:"";position:absolute;inset:0;background:var(--accent);animation:slide 1.8s var(--ease) infinite}
@@ -296,16 +285,13 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 .h-mode .skill li{padding:6px 0;font-size:.875rem}
 .h-mode .tools-row{margin:0;width:240px;flex:none;padding:22px 0 0 20px;border-left:1px dashed var(--line)}
 
-.h-mode .about{display:flex;align-items:center}
 .h-mode .portrait{height:min(62vh,560px);width:auto;flex:none}
-.h-mode .about>div:last-child{width:min(560px,40vw);flex:none}
-.h-mode .about .sec-head{width:auto}
-.h-mode .about h2{font-size:clamp(1.8rem,1.2rem + 1.6vw,2.6rem)}
-.h-mode .about .bio p:first-child{font-size:1.125rem}
-.h-mode .contact{margin-top:22px}
 
-.h-mode .end{border:0;justify-content:center;padding-right:clamp(80px,10vw,160px)}
-.h-mode .big{font-size:clamp(8rem,34vh,20rem)}
+.h-mode .end{border:0;flex-direction:row;align-items:center;gap:clamp(48px,7vw,120px);padding-right:clamp(80px,10vw,160px)}
+.h-mode .end-info{width:min(520px,38vw);flex:none}
+.h-mode .end .sec-head{width:auto}
+.h-mode .end .to-top{position:absolute;right:clamp(40px,5vw,88px);bottom:clamp(96px,13vh,124px)}
+.h-mode .big{font-size:clamp(8rem,34vh,20rem);align-self:center}
 
 .h-mode .ruler{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;align-items:center;gap:20px;padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .ruler .xy{flex:none;width:112px;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -326,6 +312,7 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 </style>
 </head>
 <body>
+<script src="./loader.js"></script>
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <a href="#top" class="logo js-top" aria-label="HAE, về đầu trang"><i></i><i></i><i></i><i></i>HAE</a>
@@ -334,7 +321,7 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
     <li><a href="#projects">Dự án</a></li>
     <li><a href="#experience">Kinh nghiệm</a></li>
     <li><a href="#skills">Kỹ năng</a></li>
-    <li><a href="#about">Liên hệ</a></li>
+    <li><a href="#contact">Liên hệ</a></li>
   </ul>
   <div class="tools">
     <button class="icon-btn" id="annoBtn" aria-pressed="false" title="Hiện ghi chú thiết kế">
@@ -355,30 +342,32 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 <section class="panel hero" id="top" data-label="Hero">
   <div class="anno">
     <span class="eyebrow mono intro d1"><span class="dot"></span>UI/UX Designer · đang học Business Analysis</span>
-    <h1 class="anno-box" aria-label="Tôi thiết kế giao diện, và đang học cách hỏi đúng trước khi vẽ.">
+    <h1 class="anno-box" data-i18n-words data-i18n-skip aria-label="Tôi thiết kế giao diện, và đang học cách hỏi đúng trước khi vẽ.">
       <span class="w"><span style="--i:0">Tôi</span></span> <span class="w"><span style="--i:1">thiết</span></span> <span class="w"><span style="--i:2">kế</span></span> <span class="w"><span style="--i:3">giao</span></span> <span class="w"><span style="--i:4">diện,</span></span> <span class="w"><span style="--i:5">và</span></span> <span class="w"><span style="--i:6">đang</span></span> <span class="w"><span style="--i:7">học</span></span> <span class="w"><span style="--i:8">cách</span></span> <span class="w"><span style="--i:9"><em>hỏi&nbsp;đúng</em></span></span> <span class="w"><span style="--i:10">trước</span></span> <span class="w"><span style="--i:11">khi</span></span> <span class="w"><span style="--i:12">vẽ.</span></span>
     </h1>
     <span class="note" style="top:-6px;right:0">H1 · Bricolage 600 · chữ trồi lên từng từ</span>
-    <p class="lead intro d2">Xin chào, tôi là HAE. Bốn năm làm UI/UX cho sản phẩm tài chính và sản phẩm số. Giờ tôi học thêm Business Analysis để nối yêu cầu kinh doanh với màn hình người dùng chạm vào mỗi ngày.</p>
+    <p class="lead intro d2">Xin chào, tôi là HAE. Hơn 7 năm làm UI/UX, từ dashboard và app nông nghiệp thông minh đến phần mềm cho nhiều khách hàng doanh nghiệp. Giờ tôi học thêm Business Analysis để nối yêu cầu kinh doanh với màn hình người dùng chạm vào mỗi ngày.</p>
     <div class="ctas intro d3">
-      <a class="btn btn-primary mag" href="#projects">Xem dự án
+      <a class="btn btn-primary" href="#projects">Xem dự án
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost mag js-cv" href="#about">Tải CV
+      <a class="btn btn-ghost js-cv" href="#contact">Tải CV
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
+    </div>
+    <div class="hero-contact intro d3">
+      <span class="hc-mail"><span class="val" id="email">tramlt.design@gmail.com</span><button class="small-btn" id="copyEmail">Sao chép</button></span>
+      <a href="https://www.linkedin.com/in/tramle198" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a href="https://www.behance.net/lthae" target="_blank" rel="noopener">Behance<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </div>
   </div>
 
-  <aside class="ticket intro d4 anno" id="ticket" aria-label="User story của trang này">
-    <span class="note" style="top:-38px;left:0">Nghiêng theo con trỏ · spring 0.6s</span>
-    <div class="ticket-top mono"><span>HAE-001 · User story</span><span class="chip">● Đã xong</span></div>
-    <blockquote>Là <b>nhà tuyển dụng</b>, tôi muốn xem nhanh dự án và cách HAE làm việc, để quyết định có hẹn phỏng vấn hay không.</blockquote>
-    <h3>Acceptance criteria</h3>
-    <ul class="ac">
-      <li><a href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Thấy được 6 dự án tiêu biểu chỉ sau vài lần cuộn</a></li>
-      <li><a href="#about" class="js-cv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Tải CV chỉ với một lần nhấn</a></li>
-      <li><a href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m8 12 3 3 5-6"/></svg>Liên hệ qua email hoặc LinkedIn</a></li>
-    </ul>
-  </aside>
+  <div class="portrait intro d4 anno" id="portrait">
+    <span class="note" style="top:14px;left:14px">Thay bằng ảnh chân dung 4:5</span>
+    <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ảnh chân dung mẫu">
+      <circle class="as" cx="200" cy="190" r="74"/>
+      <path class="as" d="M70 500c0-90 58-150 130-150s130 60 130 150Z"/>
+    </svg>
+    <div class="cap mono"><span>HAE</span><span>UI/UX · BA</span></div>
+  </div>
 
   <span class="scroll-hint mono" id="hint">Cuộn chuột hoặc vuốt để đi tiếp <span class="arrow"></span></span>
 </section>
@@ -387,15 +376,15 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
 <section class="panel numbers" id="numbers" data-label="Số liệu" aria-label="Tổng quan bằng con số">
   <div class="sec-head" data-r>
     <span class="mono"><b>02</b> / Overview in Numbers</span>
-    <h2>Bốn năm, gói trong bốn con số.</h2>
+    <h2>10 năm, gói trong 4 con số.</h2>
   </div>
   <div class="anno">
-    <span class="note" style="top:-34px;right:0">Số liệu mẫu, thay bằng số thật từ CV</span>
+    <span class="note" style="top:-34px;right:0">Số liệu lấy từ CV</span>
     <div class="stats">
-      <div class="stat" data-r="up"><span class="n"><span data-count="4">4</span><sup>+</sup></span><span class="k">Năm kinh nghiệm</span><span class="d">UI/UX cho web và mobile</span></div>
-      <div class="stat" data-r="up"><span class="n"><span data-count="18">18</span></span><span class="k">Dự án đã tham gia</span><span class="d">Từ nghiên cứu đến bàn giao</span></div>
-      <div class="stat" data-r="up"><span class="n"><span data-count="6">6</span></span><span class="k">Sản phẩm ra mắt</span><span class="d">Đang có người dùng thật</span></div>
-      <div class="stat" data-r="up"><span class="n"><span data-count="4">4</span></span><span class="k">Lĩnh vực</span><span class="d">Chứng khoán, fintech, e‑commerce, edtech</span></div>
+      <div class="stat" data-r="up"><span class="n"><span data-count="7">7</span><sup>+</sup></span><span class="k">Năm làm UI/UX</span><span class="d">Web và mobile, từ 2019</span></div>
+      <div class="stat" data-r="up"><span class="n"><span data-count="10">10</span><sup>+</sup></span><span class="k">Năm trong nghề thiết kế</span><span class="d">Bắt đầu từ graphic design, 2015</span></div>
+      <div class="stat" data-r="up"><span class="n"><span data-count="4">4</span></span><span class="k">Chương trình đào tạo</span><span class="d">Kinh doanh, thiết kế, animation, UI/UX</span></div>
+      <div class="stat" data-r="up"><span class="n"><span data-count="4">4</span></span><span class="k">Ngôn ngữ</span><span class="d">Việt, Anh, Trung giản thể, Pháp</span></div>
     </div>
   </div>
 </section>
@@ -409,83 +398,56 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
     <div class="filters" role="group" aria-label="Lọc dự án">
       <button class="filter" data-f="all" aria-pressed="true">Tất cả<span>6</span></button>
       <button class="filter" data-f="ux" aria-pressed="false">UI/UX<span>5</span></button>
-      <button class="filter" data-f="ba" aria-pressed="false">BA<span>2</span></button>
-      <button class="filter" data-f="ds" aria-pressed="false">Design System<span>1</span></button>
+      <button class="filter" data-f="ba" aria-pressed="false">BA<span>1</span></button>
     </div>
   </div>
   <div class="grid anno" id="grid">
     <span class="note" style="top:-38px;left:0">Parallax trong ảnh cover + nghiêng theo tốc độ cuộn</span>
-      <a class="card" data-r href="#projects" data-cat="ux">
+      <a class="card" data-r href="./swapifly.html" data-cat="ux">
+        <div class="cover bg2">
+          <img src="/src/assets/images/swapifly/hero-composite.png" alt="Swapifly trên desktop và mobile" loading="lazy">
+          <span class="year">2021</span>
+        </div>
+        <div class="card-body">
+          <h3>Swapifly<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Sàn mua bán C2C trên web và app: đăng tin có AI hỗ trợ, trả giá và chat trong cùng một luồng giao dịch.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Web + App</span></div>
+        </div>
+      </a>
+
+      <a class="card" data-r href="./hong-da.html" data-cat="ux">
         <div class="cover bg1">
-          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect class="i" x="112" y="26" width="96" height="190" rx="18"/><rect class="s" x="117" y="31" width="86" height="185" rx="14"/>
-            <rect class="l" x="127" y="46" width="40" height="6" rx="3"/><rect class="i" x="127" y="58" width="58" height="12" rx="3"/>
-            <path class="sa" d="M127 118 L140 108 L152 113 L164 96 L176 101 L193 82"/>
-            <rect class="as" x="127" y="136" width="66" height="22" rx="6"/><rect class="l" x="127" y="166" width="66" height="8" rx="4"/><rect class="l" x="127" y="180" width="48" height="8" rx="4"/>
-            <rect class="a" x="127" y="196" width="31" height="14" rx="7"/><rect class="m" x="162" y="196" width="31" height="14" rx="7"/>
-          </svg>
-          <span class="year">2025</span>
+          <img src="/src/assets/images/hongda/tender-create.png" alt="Màn hình tạo hồ sơ thầu của Hong Da Landscaping" loading="lazy">
+          <span class="year">2022</span>
         </div>
         <div class="card-body">
-          <h3>App giao dịch chứng khoán<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-          <p>Thiết kế lại luồng đặt lệnh để nhà đầu tư mới đặt lệnh đầu tiên nhanh hơn và ít nhầm lẫn hơn.</p>
-          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Mobile</span></div>
+          <h3>Hong Da Landscaping<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Hệ thống quản trị cho công ty cảnh quan: danh mục sản phẩm song ngữ, nhà cung cấp, kho và hồ sơ thầu có giá tham chiếu.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Web admin</span></div>
         </div>
       </a>
 
-      <a class="card" data-r href="#projects" data-cat="ux ba">
-        <div class="cover bg2">
-          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <g><rect class="s" x="22" y="84" width="58" height="52" rx="10"/><rect class="a" x="34" y="98" width="20" height="4" rx="2"/><rect class="l" x="34" y="108" width="34" height="4" rx="2"/><rect class="l" x="34" y="116" width="26" height="4" rx="2"/></g>
-            <g><rect class="s" x="98" y="84" width="58" height="52" rx="10"/><rect class="a" x="110" y="98" width="20" height="4" rx="2"/><rect class="l" x="110" y="108" width="34" height="4" rx="2"/><rect class="l" x="110" y="116" width="26" height="4" rx="2"/></g>
-            <g><rect class="s" x="174" y="84" width="58" height="52" rx="10"/><rect class="a" x="186" y="98" width="20" height="4" rx="2"/><rect class="l" x="186" y="108" width="34" height="4" rx="2"/><rect class="l" x="186" y="116" width="26" height="4" rx="2"/></g>
-            <circle class="a" cx="268" cy="110" r="22"/><path d="M258 110l7 7 13-14" stroke-width="3" fill="none" stroke-linecap="round" style="stroke:var(--surface)"/>
-            <path class="sd" d="M80 110h18M156 110h18M232 110h14"/>
-            <text x="22" y="62" class="mu" style="font:500 11px var(--f-mono)">9 bước → 5 bước</text>
-          </svg>
-          <span class="year">2025</span>
-        </div>
-        <div class="card-body">
-          <h3>Mở tài khoản trực tuyến eKYC<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-          <p>Phân tích điểm rơi của người dùng, rút luồng từ 9 xuống 5 bước và viết lại yêu cầu cho đội phát triển.</p>
-          <div class="role"><span class="tag">UX Designer</span><span class="tag ba">BA hỗ trợ</span></div>
-        </div>
-      </a>
-
-      <a class="card" data-r href="#projects" data-cat="ux">
+      <a class="card" data-r href="./paragon.html" data-cat="ux">
         <div class="cover bg3">
-          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect class="s" x="24" y="30" width="272" height="170" rx="12"/>
-            <rect class="i" x="24" y="30" width="56" height="170" rx="12"/><rect class="i" x="60" y="30" width="20" height="170"/>
-            <rect class="mu" x="36" y="50" width="30" height="5" rx="2.5"/><rect class="mu" x="36" y="64" width="24" height="5" rx="2.5"/><rect class="mu" x="36" y="78" width="28" height="5" rx="2.5"/>
-            <rect class="as" x="94" y="46" width="60" height="38" rx="8"/><rect class="as" x="162" y="46" width="60" height="38" rx="8"/><rect class="as" x="230" y="46" width="52" height="38" rx="8"/>
-            <rect class="a" x="100" y="130" width="14" height="52" rx="3"/><rect class="a" x="122" y="112" width="14" height="70" rx="3"/><rect class="a" x="144" y="142" width="14" height="40" rx="3"/><rect class="m" x="166" y="100" width="14" height="82" rx="3"/><rect class="a" x="188" y="124" width="14" height="58" rx="3"/>
-            <rect class="l" x="216" y="100" width="66" height="8" rx="4"/><rect class="l" x="216" y="116" width="52" height="8" rx="4"/><rect class="l" x="216" y="132" width="60" height="8" rx="4"/>
-          </svg>
-          <span class="year">2024</span>
+          <img src="/src/assets/images/paragon/home.png" alt="Trang chủ ứng dụng Paragon Asia" loading="lazy">
+          <span class="year">2020</span>
         </div>
         <div class="card-body">
-          <h3>Dashboard quản trị rủi ro<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-          <p>Gom 14 báo cáo rời rạc vào một màn hình để bộ phận rủi ro nhìn thấy cảnh báo trong vài giây.</p>
-          <div class="role"><span class="tag">UI Designer</span><span class="tag">Web app</span></div>
+          <h3>Paragon Asia<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Ứng dụng cho thành viên coworking tại Hong Kong: đặt phòng họp và tiện ích bằng credit, xem lịch và sự kiện.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Mobile app</span></div>
         </div>
       </a>
 
-      <a class="card" data-r href="#projects" data-cat="ds ux">
-        <div class="cover bg2">
-          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect class="a" x="30" y="36" width="84" height="30" rx="15"/><rect class="s" x="124" y="36" width="84" height="30" rx="15"/><rect class="i" x="218" y="36" width="72" height="30" rx="15"/>
-            <rect class="s" x="30" y="80" width="130" height="40" rx="8"/><rect class="l" x="42" y="96" width="70" height="8" rx="4"/>
-            <rect class="s" x="170" y="80" width="120" height="104" rx="10"/><rect class="as" x="180" y="90" width="100" height="44" rx="6"/><rect class="l" x="180" y="144" width="80" height="7" rx="3.5"/><rect class="l" x="180" y="158" width="56" height="7" rx="3.5"/>
-            <circle class="a" cx="44" cy="148" r="12"/><circle class="m" cx="76" cy="148" r="12"/><circle class="i" cx="108" cy="148" r="12"/><circle class="l" cx="140" cy="148" r="12"/>
-            <rect class="s" x="30" y="170" width="44" height="24" rx="12"/><circle class="a" cx="62" cy="182" r="8"/>
-          </svg>
-          <span class="year">2024</span>
+      <a class="card" data-r href="./cityu-vmc.html" data-cat="ux">
+        <div class="cover bg3">
+          <img src="/src/assets/images/cityu-vmc/booking-info.png" alt="Bước chọn bác sĩ và khung giờ của CityU VMC" loading="lazy">
+          <span class="year">2022</span>
         </div>
         <div class="card-body">
-          <h3>Design system “Sen”<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
-          <p>Hơn 120 component có token màu, chữ và khoảng cách, dùng chung cho 3 sản phẩm của công ty.</p>
-          <div class="role"><span class="tag">Design System Lead</span><span class="tag">Figma</span></div>
+          <h3>CityU VMC<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+          <p>Đặt lịch khám thú y trực tuyến: đặt mới, đổi lịch và thanh toán, thiết kế cho cả desktop lẫn mobile.</p>
+          <div class="role"><span class="tag">UI/UX Designer</span><span class="tag">Website responsive</span></div>
         </div>
       </a>
 
@@ -543,28 +505,52 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
     <span class="note" style="top:-38px;left:0">Mốc hồng = đang diễn ra</span>
     <ol class="timeline">
       <li class="job learning" data-r>
-        <span class="when mono">03/2026 – nay</span>
-        <span class="state"><span class="chip">● Đang học</span></span>
-        <div><h3>Business Analyst (học việc)</h3><p class="org">Khóa Business Analysis · dự án thực hành</p>
-          <p class="what">Học thu thập yêu cầu, viết use case, BRD và vẽ quy trình BPMN. Áp dụng ngay vào các dự án thiết kế đang làm.</p></div>
+        <span class="when mono">Đầu 2026 – nay</span>
+        <span class="state"><span class="chip">● Hiện tại · Onsite</span></span>
+        <div><h3>Product Designer → Business Analyst</h3><p class="org">KIS Việt Nam (KISVN) · TP.HCM</p>
+          <p class="what">Khi mô hình team thay đổi, tôi chuyển dần sang mảng BA. Phạm vi công việc rộng hơn: phân tích yêu cầu, thiết kế và cả kiểm thử sản phẩm.</p></div>
       </li>
       <li class="job" data-r>
-        <span class="when mono">2024 – nay</span>
-        <span class="state"><span class="chip">Toàn thời gian</span></span>
-        <div><h3>UI/UX Designer</h3><p class="org">Công ty chứng khoán · Hà Nội</p>
-          <p class="what">Phụ trách thiết kế app giao dịch và luồng eKYC. Cùng BA viết user story và acceptance criteria trước mỗi sprint.</p></div>
+        <span class="when mono">10/2024 – đầu 2026</span>
+        <span class="state"><span class="chip">Onsite</span></span>
+        <div><h3>Product Designer</h3><p class="org">KIS Việt Nam (KISVN) · TP.HCM</p>
+          <p class="what">Gia nhập KIS ở vị trí Product Designer, thiết kế sản phẩm số cho công ty chứng khoán.</p></div>
       </li>
       <li class="job" data-r>
-        <span class="when mono">2022 – 2024</span>
-        <span class="state"><span class="chip">Toàn thời gian</span></span>
-        <div><h3>UI/UX Designer</h3><p class="org">Agency sản phẩm số</p>
-          <p class="what">Thiết kế hơn 10 sản phẩm cho e‑commerce và edtech. Xây design system dùng chung giúp rút thời gian bàn giao khoảng 30%.</p></div>
+        <span class="when mono">2020 – 06/2026</span>
+        <span class="state"><span class="chip">Remote</span></span>
+        <div><h3>Product Designer</h3><p class="org">ListenField</p>
+          <p class="what">Thiết kế và duy trì dashboard, ứng dụng mobile cho giải pháp nông nghiệp dự báo thông minh, giúp nông dân theo dõi sức khỏe cây trồng, đất và thời tiết. Làm việc cùng đội vận hành và chuyên gia nông học để đưa phân tích dự báo, dữ liệu thời gian thực vào sản phẩm. Xây design system và style guide dùng chung cho các sản phẩm.</p></div>
       </li>
       <li class="job" data-r>
-        <span class="when mono">2021 – 2022</span>
-        <span class="state"><span class="chip">Toàn thời gian</span></span>
-        <div><h3>Junior UI Designer</h3><p class="org">Startup edtech</p>
-          <p class="what">Thiết kế màn hình bài học và bộ minh họa cho ứng dụng học tiếng Anh dành cho trẻ em.</p></div>
+        <span class="when mono">Giữa 2023 – 2024</span>
+        <span class="state"><span class="chip">Onsite</span></span>
+        <div><h3>Lead Designer</h3><p class="org">VTL Solutions</p>
+          <p class="what">Dẫn dắt và quản lý đội UI/UX, chịu trách nhiệm về kết quả thiết kế của nhiều dự án khách hàng. Phối hợp với đội phát triển, product và marketing. Mentor và định hướng phát triển nghề cho designer junior.</p></div>
+      </li>
+      <li class="job" data-r>
+        <span class="when mono">2019 – giữa 2023</span>
+        <span class="state"><span class="chip">Onsite</span></span>
+        <div><h3>Senior UI/UX Designer</h3><p class="org">VTL Solutions</p>
+          <p class="what">Thiết kế giao diện và trải nghiệm cho nhiều dự án phần mềm của khách hàng. Cùng dev, BA và khách hàng thu thập yêu cầu rồi chuyển thành giải pháp thiết kế. Làm wireframe, prototype và bản thiết kế hoàn chỉnh trên Figma, xây design system và kèm cặp designer junior.</p></div>
+      </li>
+      <li class="job" data-r>
+        <span class="when mono">2017 – 2019</span>
+        <span class="state"><span class="chip">Onsite</span></span>
+        <div><h3>Senior Graphic Designer</h3><p class="org">Phoenix Voyages</p>
+          <p class="what">Thiết kế bộ nhận diện gồm logo, brochure và ấn phẩm quảng bá cho cả in ấn lẫn digital. Tham gia thiết kế lại website công ty để cải thiện trải nghiệm và sự nhất quán thương hiệu.</p></div>
+      </li>
+      <li class="job" data-r>
+        <span class="when mono">2016 – 2017</span>
+        <span class="state"><span class="chip">Onsite</span></span>
+        <div><h3>Graphic Designer</h3><p class="org">ANTS · Programmatic Ad</p>
+          <p class="what">Thiết kế banner tĩnh, banner động và hình ảnh mạng xã hội cho các chiến dịch quảng cáo programmatic, bám sát nhận diện của từng khách hàng.</p></div>
+      </li>
+      <li class="job" data-r>
+        <span class="when mono">2015</span>
+        <span class="state"><span class="chip">Thực tập · Onsite</span></span>
+        <div><h3>Intern Designer</h3><p class="org">Anphabe JSC</p>
+          <p class="what">Hỗ trợ lên ý tưởng hình ảnh cho các chiến dịch thương hiệu và mạng xã hội bằng Adobe Creative Suite.</p></div>
       </li>
     </ol>
   </div>
@@ -575,14 +561,14 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
   <div class="sec-head" data-r>
     <span class="mono"><b>05</b> / Skills &amp; Tools</span>
     <h2>Kỹ năng và công cụ</h2>
-    <p>Ba nhóm bổ trợ cho nhau: hiểu người dùng, hiểu nghiệp vụ, và giữ cho sản phẩm nhất quán.</p>
+    <p>4 nhóm bổ trợ cho nhau: hiểu người dùng, hiểu nghiệp vụ, giữ cho sản phẩm nhất quán, và dẫn dắt đội thiết kế.</p>
   </div>
   <div class="body">
     <div class="skills">
       <div class="skill" data-r>
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h4"/></svg></span>
         <h3>UX/UI Design</h3>
-        <ul><li>Nghiên cứu người dùng</li><li>Wireframe &amp; prototype</li><li>Usability testing</li><li>Kiến trúc thông tin</li><li>Visual &amp; interaction design</li></ul>
+        <ul><li>Trải nghiệm người dùng</li><li>Thiết kế web &amp; mobile</li><li>Wireframe &amp; prototype</li><li>Usability testing</li><li>Visual &amp; interaction design</li></ul>
       </div>
       <div class="skill" data-r>
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/><path d="M6.5 9v4a2 2 0 0 0 2 2H14M17.5 15v-3"/><circle cx="17.5" cy="7" r="3"/></svg></span>
@@ -594,54 +580,51 @@ body.annotate .anno-box{outline:1px dashed var(--mark);outline-offset:8px;border
         <h3>Design Systems</h3>
         <ul><li>Design token &amp; variables</li><li>Thư viện component</li><li>Tài liệu hướng dẫn</li><li>Accessibility (WCAG AA)</li><li>Bàn giao cho dev</li></ul>
       </div>
+      <div class="skill" data-r>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17.5 14c2.4 0 4 1.7 4 4"/></svg></span>
+        <h3>Quản lý &amp; dẫn dắt</h3>
+        <ul><li>Mentor designer junior</li><li>Quản lý dự án</li><li>Giao tiếp với khách hàng &amp; đội nhóm</li><li>Quản lý thời gian</li><li>Ra quyết định, thích nghi</li></ul>
+      </div>
+      <div class="skill" data-r>
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5Z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5M22 9v5"/></svg></span>
+        <h3>Học vấn</h3>
+        <ul><li>CoderSchool · Khóa UI/UX Design <small>2019</small></li><li>Red Cat Academy · Animation cơ bản <small>2017</small></li><li>FPT Arena Multimedia · Thiết kế <small>2014–2016</small></li><li>ĐH Ngân hàng TP.HCM · Cử nhân Quản trị kinh doanh <small>2010–2014</small></li></ul>
+      </div>
     </div>
     <div class="tools-row" data-r="up">
       <span class="mono">Công cụ</span>
       <div class="tool-list">
-        <span class="tool"><b>Fi</b>Figma</span><span class="tool"><b>Fj</b>FigJam</span><span class="tool"><b>Ji</b>Jira</span><span class="tool"><b>Co</b>Confluence</span><span class="tool"><b>Mi</b>Miro</span><span class="tool"><b>Dr</b>Draw.io</span><span class="tool"><b>No</b>Notion</span><span class="tool"><b>Ma</b>Maze</span><span class="tool"><b>Sq</b>SQL cơ bản</span>
+        <span class="tool"><b>Fi</b>Figma</span><span class="tool"><b>Fj</b>FigJam</span><span class="tool"><b>Ji</b>Jira</span><span class="tool"><b>No</b>Notion</span><span class="tool"><b>Ai</b>Illustrator</span><span class="tool"><b>Ps</b>Photoshop</span><span class="tool"><b>Bl</b>Blender</span><span class="tool"><b>Wf</b>Webflow</span><span class="tool"><b>Sq</b>SQL cơ bản</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 06 ABOUT & CONTACT ============ -->
-<section class="panel" id="about" data-label="Liên hệ">
-  <div class="about">
-    <div class="portrait anno" data-r="clip">
-      <span class="note" style="top:14px;left:14px">Thay bằng ảnh chân dung 4:5</span>
-      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <circle class="as" cx="200" cy="190" r="74"/>
-        <path class="as" d="M70 500c0-90 58-150 130-150s130 60 130 150Z"/>
-        <rect x="118" y="108" width="164" height="164" fill="none" style="stroke:var(--accent)" stroke-width="1.5"/>
-        <rect class="s" x="113" y="103" width="10" height="10" style="stroke:var(--accent)"/><rect class="s" x="277" y="103" width="10" height="10" style="stroke:var(--accent)"/>
-        <rect class="s" x="113" y="267" width="10" height="10" style="stroke:var(--accent)"/><rect class="s" x="277" y="267" width="10" height="10" style="stroke:var(--accent)"/>
-      </svg>
-      <div class="cap mono"><span>HAE</span><span>164 × 164</span></div>
-    </div>
-    <div data-r>
-      <div class="sec-head" style="margin-bottom:18px"><span class="mono"><b>06</b> / About &amp; Contact</span></div>
-      <h2>Người đứng giữa người dùng và nghiệp vụ.</h2>
-      <div class="bio">
-        <p>Tôi thích những bài toán mà người dùng thấy rối còn đội kinh doanh thì thấy cấp bách.</p>
-        <p>Làm designer, tôi hay hỏi “vì sao người dùng cần cái này”. Học BA giúp tôi hỏi thêm “doanh nghiệp được gì, và làm sao đo được”. Tôi đang tìm môi trường có thể làm cả hai.</p>
-      </div>
-      <div class="contact">
-        <div class="row"><span class="mono">Email</span><span class="val" id="email">hello@hae.design</span><button class="small-btn" id="copyEmail">Sao chép</button></div>
-        <div class="row"><span class="mono">LinkedIn</span><a class="val" href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/hae</a><span></span></div>
-        <div class="row"><span class="mono">CV</span><span class="val">HAE_CV_2026.pdf</span><button class="small-btn js-cv">Tải CV</button></div>
+    <div class="tools-row" data-r="up">
+      <span class="mono">Ngôn ngữ</span>
+      <div class="tool-list">
+        <span class="tool"><b>VI</b>Việt · bản ngữ</span><span class="tool"><b>EN</b>Anh · công việc</span><span class="tool"><b>ZH</b>Trung · sơ cấp</span><span class="tool"><b>FR</b>Pháp · sơ cấp</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="panel end" id="end" data-label="Kết">
-  <span class="big" data-r aria-hidden="true">HAE</span>
-  <div class="end-row" data-r="up">
-    <span class="copy">© <span id="yr">2026</span> HAE. Thiết kế và viết yêu cầu bởi chính tôi.</span>
-    <a href="#top" class="btn btn-ghost mag js-top">Về đầu trang
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(90deg)"><path d="M12 4v12M6 11l6 6 6-6"/></svg></a>
+<footer class="panel end" id="contact" data-label="Liên hệ">
+  <div class="end-info">
+    <div class="sec-head" data-r style="margin-bottom:0">
+      <span class="mono"><b>06</b> / Contact</span>
+      <h2>Người đứng giữa người dùng và nghiệp vụ.</h2>
+      <p>Tôi thích những bài toán mà người dùng thấy rối còn đội kinh doanh thì thấy cấp bách. Tôi đang tìm môi trường có thể làm cả hai: thiết kế và phân tích nghiệp vụ.</p>
+    </div>
+    <div class="ctas" data-r="up">
+      <a class="btn btn-primary" href="mailto:tramlt.design@gmail.com">Liên hệ qua email
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="btn btn-ghost js-cv" type="button">Tải CV
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></button>
+    </div>
+    <span class="copy" data-r="up">© <span id="yr">2026</span> HAE. Thiết kế và viết yêu cầu bởi chính tôi.</span>
   </div>
+  <span class="big" data-r aria-hidden="true">HAE</span>
+  <a href="#top" class="btn btn-ghost js-top to-top">Về đầu trang
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:rotate(180deg)"><path d="M12 4v12M6 11l6 6 6-6"/></svg></a>
 </footer>
 
 </main>
@@ -666,7 +649,8 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 const root = document.documentElement;
 root.classList.add('js');
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
-const toast = msg => { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); };
+const tr = s => window.haeT ? window.haeT(s) : s;
+const toast = msg => { const t=$('#toast'); t.textContent=tr(msg); t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); };
 const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
 
 /* ---------- Theme & ghi chú ---------- */
@@ -750,7 +734,7 @@ function buildMarks(){
     b.className = 'mk' + (pct > 92 ? ' last' : ''); b.type = 'button';
     b.style.left = pct + '%';
     b.innerHTML = '<span>' + p.dataset.label + '</span>';
-    b.setAttribute('aria-label', 'Đi tới ' + p.dataset.label);
+    b.setAttribute('aria-label', tr('Đi tới') + ' ' + p.dataset.label);
     b.addEventListener('click', () => go(p));
     b._p = p; box.appendChild(b);
   });
@@ -784,7 +768,7 @@ function reveal(){
 }
 
 /* ---------- Vòng lặp chính ---------- */
-const covers = $$('.cover svg'), cards = $$('.card'), hint = $('#hint');
+const cards = $$('.card'), covers = cards.map(c => c.querySelector('.cover svg, .cover img')), hint = $('#hint');
 const xval = $('#xval'), fill = $('#fill'), ticks = $('#ticks');
 let activeId = '';
 function frame(now){
@@ -838,12 +822,7 @@ if (matchMedia('(pointer: fine)').matches && !mqReduce.matches) {
   document.addEventListener('pointerleave', () => cursor.classList.remove('on'));
   (function loop(){ cx += (mx - cx) * .2; cy += (my - cy) * .2; cursor.style.transform = `translate3d(${cx}px,${cy}px,0)`; requestAnimationFrame(loop); })();
 
-  $$('.mag').forEach(b => {
-    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect();
-      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px,${(e.clientY - r.top - r.height / 2) * .35}px)`; });
-    b.addEventListener('pointerleave', () => { b.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)'; b.style.transform = ''; setTimeout(() => b.style.transition = '', 600); });
-  });
-  const tk = $('#ticket');
+  const tk = $('#portrait');
   tk.addEventListener('pointermove', e => { const r = tk.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
     tk.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`; });
@@ -865,7 +844,7 @@ $$('.js-cv').forEach(el => el.addEventListener('click', e => {
 }));
 $('#copyEmail').addEventListener('click', async () => {
   const txt = $('#email').textContent;
-  try { await navigator.clipboard.writeText(txt); toast('Đã sao chép ' + txt); }
+  try { await navigator.clipboard.writeText(txt); toast(tr('Đã sao chép') + ' ' + txt); }
   catch(e) { const r = document.createRange(); r.selectNodeContents($('#email')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Đã chọn email, nhấn ⌘C / Ctrl+C để sao chép'); }
 });
 
@@ -877,7 +856,25 @@ addEventListener('resize', () => { layout(); });
 mqH.addEventListener?.('change', () => { layout(); scrollTo(0, 0); cur = 0; });
 if (document.fonts) document.fonts.ready.then(layout);
 addEventListener('load', layout);
+// Vào trang kèm #neo (ví dụ từ nút Liên hệ ở case study): trình duyệt tự cuộn khung .stage theo chiều ngang,
+// làm lệch cả track. Trả khung về 0 rồi đưa đúng frame đó vào khung nhìn bằng cơ chế cuộn của trang.
+const stage = $('.stage');
+stage.addEventListener('scroll', () => { if (stage.scrollLeft || stage.scrollTop) { stage.scrollLeft = 0; stage.scrollTop = 0; } });
+function goHash(){ const el = location.hash.length > 1 && document.getElementById(location.hash.slice(1)); stage.scrollLeft = 0; if (el && el.id !== 'top') { layout(); go(el, true); } }
+addEventListener('load', () => requestAnimationFrame(goHash));
+addEventListener('hashchange', goHash);
 requestAnimationFrame(frame);
+</script>
+<script type="module">
+// Chuyển động nhận diện dùng chung toàn site: khung chọn quanh ảnh bìa dự án
+import { initSelect } from '/src/select.js';
+import { initI18n } from '/src/i18n.js';
+import { initBg } from '/src/bg.js';
+initSelect('.card .cover:has(img), #portrait');
+// Nền chuyển động: các khung chọn tự phác phía sau nội dung (lưới chấm đã có sẵn trên track)
+initBg({ dots: false });
+// Nút chuyển ngôn ngữ VI / EN
+initI18n();
 </script>
 </body>
 </html>

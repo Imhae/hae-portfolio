@@ -1,0 +1,10 @@
+/* Nút chuyển ngôn ngữ VI / EN: dùng chung cho nav trang chủ, case study và Swapifly */
+.lang-btn{
+  --lb-line:var(--s-line,var(--line,#D3DACF)); --lb-surface:var(--s-surface,var(--surface,#F8FAF6));
+  --lb-ink:var(--s-ink,var(--ink,#1B211D)); --lb-muted:var(--s-muted,var(--muted,#56605A)); --lb-bg:var(--s-bg,var(--bg,#EEF1EC));
+  display:inline-flex;align-items:center;gap:2px;min-height:40px;padding:3px;border:1px solid var(--lb-line);border-radius:999px;background:var(--lb-surface);cursor:pointer;flex:none;
+  font:500 .75rem/1 "JetBrains Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;transition:border-color .2s}
+.lang-btn:hover{border-color:var(--lb-muted)}
+.lang-btn:focus-visible{outline:2px solid var(--sel-c,#3645C4);outline-offset:3px}
+.lang-btn span{display:grid;place-items:center;min-width:32px;height:32px;padding:0 6px;border-radius:999px;color:var(--lb-muted);transition:background-color .25s,color .25s}
+.lang-btn[data-lang="vi"] span[data-l="vi"],.lang-btn[data-lang="en"] span[data-l="en"]{background:var(--lb-ink);color:var(--lb-bg)}

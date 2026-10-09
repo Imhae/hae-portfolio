@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Swapifly — designing the moment a listing becomes a transaction. A cross-platform C2C marketplace with AI-assisted listing, negotiation, and chat." />
+    <title>Swapifly · Case study · HAE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+  </head>
+  <body class="cs-body swap-body">
+<script src="./loader.js"></script>
+    <div class="scroll-progress"><div class="scroll-progress__bar" id="scroll-progress-bar"></div></div>
+
+    <header class="hnav">
+      <a href="./index.html" class="hlogo" aria-label="HAE, về trang chủ"><i></i><i></i><i></i><i></i>HAE</a>
+      <a href="./index.html#projects" class="hback">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        Tất cả dự án
+      </a>
+      <button class="hicon" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+      </button>
+    </header>
+
+    <main>
+      <!-- 01 · HERO / PRODUCT WORLD -->
+      <section class="swap-hero" id="hero">
+        <div class="swap-hero__glow swap-hero__glow--1" data-parallax-slow aria-hidden="true"></div>
+        <div class="swap-hero__glow swap-hero__glow--2" data-parallax-slow aria-hidden="true"></div>
+        <div class="container swap-hero__content" data-reveal>
+          <p class="swap-hero__kicker">SWAPIFLY&nbsp;&nbsp;·&nbsp;&nbsp;MARKETPLACE C2C&nbsp;&nbsp;·&nbsp;&nbsp;RA MẮT 2021</p>
+          <h1 class="swap-hero__title">Thiết kế một sàn mua bán nơi người mua và người bán thật sự gặp nhau.</h1>
+          <p class="swap-hero__lead">
+            Một sàn mua bán đa nền tảng, nơi AI, trả giá và trò chuyện cùng giúp người mua và người bán đi tới thoả thuận một cách yên tâm.
+          </p>
+          <p class="swap-hero__role">PRODUCT DESIGNER&nbsp;&nbsp;·&nbsp;&nbsp;UX/UI TỪ ĐẦU TỚI CUỐI&nbsp;&nbsp;·&nbsp;&nbsp;WEB + MOBILE</p>
+        </div>
+        <div class="swap-hero__visual" data-reveal>
+          <div class="swap-hero__mock swap-hero__mock--desktop" data-parallax-desktop>
+            <img
+              src="/src/assets/images/swapifly/hero-desktop.png"
+              width="1606"
+              height="1259"
+              alt="Trang chủ marketplace Swapifly trên desktop"
+            />
+          </div>
+          <div class="swap-hero__mock swap-hero__mock--mobile" data-parallax-mobile>
+            <img
+              src="/src/assets/images/swapifly/hero-mobile.png"
+              width="632"
+              height="1126"
+              alt="Trang chủ marketplace Swapifly trên mobile"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 · SNAPSHOT / OWNERSHIP -->
+      <section class="swap-section swap-section--light" id="overview">
+        <div class="container">
+          <p class="eyebrow swap-eyebrow--pink" data-reveal>Tổng quan dự án</p>
+          <h2 class="swap-h2 swap-h2--dark" data-reveal>Từ đăng tin tới giao dịch, trọn một hành trình.</h2>
+          <div class="swap-snapshot" data-reveal>
+            <div class="swap-snapshot__item">
+              <span class="swap-snapshot__num">01</span>
+              <span class="swap-snapshot__label">Thiết kế sản phẩm</span>
+              <p>Phụ trách luồng UX, interaction, UI và bàn giao.</p>
+            </div>
+            <div class="swap-snapshot__item">
+              <span class="swap-snapshot__num">02</span>
+              <span class="swap-snapshot__label">Nền tảng</span>
+              <p>App mobile, web responsive và desktop.</p>
+            </div>
+            <div class="swap-snapshot__item">
+              <span class="swap-snapshot__num">03</span>
+              <span class="swap-snapshot__label">Cộng tác</span>
+              <p>Làm việc trực tiếp với PM và developer.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 · MARKETPLACE LOOP -->
+      <section class="swap-section swap-section--dark swap-section--ecosystem" id="ecosystem">
+        <div class="container">
+          <div class="swap-loop__intro" data-reveal>
+            <p class="eyebrow swap-eyebrow--pink">Hệ sinh thái sản phẩm</p>
+            <h2 class="swap-h2 swap-loop__heading">2 phía. 1 hành trình giao dịch chung.</h2>
+            <p class="swap-lead swap-loop__lead">
+              Người bán tạo nguồn hàng. Người mua tạo nhu cầu. Swapifly nối 2 phía từ lúc đăng tin tới lúc thoả thuận, và xây lòng tin cho những lần sau.
+            </p>
+          </div>
+
+          <div class="swap-loop" id="loop-diagram">
+            <div class="swap-loop__wrap">
+              <div class="swap-loop__stage">
+                <!-- External lanes -->
+                <div class="swap-loop__lane swap-loop__lane--seller" data-loop-node data-loop-step="0">
+                  <span class="swap-loop__lane-title">NGƯỜI BÁN</span>
+                  <span class="swap-loop__lane-sub">Tạo nguồn hàng</span>
+                </div>
+                <div class="swap-loop__lane swap-loop__lane--buyer" data-loop-node data-loop-step="0">
+                  <span class="swap-loop__lane-title">NGƯỜI MUA</span>
+                  <span class="swap-loop__lane-sub">Tạo nhu cầu</span>
+                </div>
+
+                <!-- List / Browse cards -->
+                <div class="swap-loop__card swap-loop__card--list" data-loop-node data-loop-step="1">
+                  <span class="swap-loop__card-num">01&nbsp; ĐĂNG TIN</span>
+                  <p>Người bán tạo tin đăng</p>
+                </div>
+                <div class="swap-loop__card swap-loop__card--browse" data-loop-node data-loop-step="1">
+                  <span class="swap-loop__card-num">02&nbsp; TÌM KIẾM</span>
+                  <p>Người mua tìm thấy sản phẩm</p>
+                </div>
+
+                <!-- Curved connectors: List → Core, Browse → Core -->
+                <svg class="swap-loop__connector swap-loop__connector--list-core" data-loop-node data-loop-step="2" viewBox="0 0 36 61" fill="none" aria-hidden="true">
+                  <path class="swap-loop__connector-line" d="M1 1C19 1 5 54 30.5 55" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <svg class="swap-loop__connector swap-loop__connector--browse-core" data-loop-node data-loop-step="2" viewBox="0 0 36 61" fill="none" aria-hidden="true">
+                  <path class="swap-loop__connector-line" d="M1 60C19 60 5 7 30.5 6" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+
+                <!-- Core -->
+                <div class="swap-loop__core" data-loop-node data-loop-step="3">
+                  <svg viewBox="0 0 170 170" width="170" height="170" aria-hidden="true">
+                    <circle cx="85" cy="85" r="84.5" fill="url(#loopCoreGradient)" stroke="#A94B82" />
+                    <defs>
+                      <radialGradient id="loopCoreGradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(85 85) scale(85)">
+                        <stop stop-color="#FF0073" stop-opacity="0.55" />
+                        <stop offset="1" stop-color="#30082E" />
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                  <span class="swap-loop__core-label">TIN ĐĂNG<br />LÀ ĐIỂM GẶP NHAU</span>
+                </div>
+
+                <!-- Core → Offer -->
+                <svg class="swap-loop__connector swap-loop__connector--core-offer" data-loop-node data-loop-step="4" viewBox="0 0 36 12" fill="none" aria-hidden="true">
+                  <path class="swap-loop__connector-line" d="M1 6H35" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="swap-loop__card swap-loop__card--flow swap-loop__card--offer" data-loop-node data-loop-step="4">
+                  <span class="swap-loop__card-num">03&nbsp; TRẢ GIÁ</span>
+                  <p>Người mua đề xuất giá</p>
+                </div>
+
+                <!-- Offer → Negotiate -->
+                <svg class="swap-loop__connector swap-loop__connector--offer-negotiate" data-loop-node data-loop-step="5" viewBox="0 0 30 12" fill="none" aria-hidden="true">
+                  <path class="swap-loop__connector-line" d="M1 6H29" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="swap-loop__card swap-loop__card--flow swap-loop__card--negotiate swap-loop__card--accent" data-loop-node data-loop-step="5">
+                  <span class="swap-loop__card-num">04&nbsp; THƯƠNG LƯỢNG</span>
+                  <p>Hai bên thống nhất giá và điều kiện</p>
+                </div>
+
+                <!-- Negotiate → Close & Rate -->
+                <svg class="swap-loop__connector swap-loop__connector--negotiate-trust" data-loop-node data-loop-step="6" viewBox="0 0 30 12" fill="none" aria-hidden="true">
+                  <path class="swap-loop__connector-line" d="M1 6H29" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="swap-loop__card swap-loop__card--flow swap-loop__card--trust" data-loop-node data-loop-step="6">
+                  <span class="swap-loop__card-num">05&nbsp; CHỐT &amp; ĐÁNH GIÁ</span>
+                  <p>Hoàn tất giao dịch, xây lòng tin, quay lại</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile (<=768px) vertical journey: same content, rebuilt as a
+                 top-to-bottom layout instead of the desktop's absolute-positioned
+                 horizontal stage. Hidden above 768px; see the max-width:768px
+                 block in swapifly.css. -->
+            <div class="swap-loop__mobile">
+              <div class="swap-loop-m__labels">
+                <div class="swap-loop-m__label-col">
+                  <span class="swap-loop__lane-title">NGƯỜI BÁN</span>
+                  <span class="swap-loop__lane-sub">Tạo nguồn hàng</span>
+                </div>
+                <div class="swap-loop-m__label-col">
+                  <span class="swap-loop__lane-title">NGƯỜI MUA</span>
+                  <span class="swap-loop__lane-sub">Tạo nhu cầu</span>
+                </div>
+              </div>
+
+              <div class="swap-loop-m__pair">
+                <div class="swap-loop__card swap-loop-m__card" data-loop-m-node data-loop-m-step="0">
+                  <span class="swap-loop__card-num">01&nbsp; ĐĂNG TIN</span>
+                  <p>Người bán tạo tin đăng</p>
+                </div>
+                <div class="swap-loop__card swap-loop-m__card" data-loop-m-node data-loop-m-step="0">
+                  <span class="swap-loop__card-num">02&nbsp; TÌM KIẾM</span>
+                  <p>Người mua tìm thấy sản phẩm</p>
+                </div>
+              </div>
+
+              <!-- Curved connectors: List -> Core, Browse -> Core. Fixed 1:1
+                   viewBox (no stretch/distortion); endpoints deliberately
+                   run a few px past the circle's rim and get hidden behind
+                   it via z-index (see the max-width:768px block in
+                   swapifly.css), so they read as terminating cleanly at the
+                   border regardless of minor width changes. -->
+              <svg class="swap-loop-m__curves" data-loop-m-node data-loop-m-step="1" viewBox="0 0 220 76" width="220" height="76" fill="none" aria-hidden="true">
+                <path class="swap-loop__connector-line" d="M28 1C28 32 68 30 76 74" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                <path class="swap-loop__connector-line" d="M192 1C192 32 152 30 144 74" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+              </svg>
+
+              <div class="swap-loop__core swap-loop-m__core" data-loop-m-node data-loop-m-step="2">
+                <svg viewBox="0 0 170 170" width="170" height="170" aria-hidden="true">
+                  <circle cx="85" cy="85" r="84.5" fill="url(#loopCoreGradientMobile)" stroke="#A94B82" />
+                  <defs>
+                    <radialGradient id="loopCoreGradientMobile" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(85 85) scale(85)">
+                      <stop stop-color="#FF0073" stop-opacity="0.55" />
+                      <stop offset="1" stop-color="#30082E" />
+                    </radialGradient>
+                  </defs>
+                </svg>
+                <span class="swap-loop__core-label">TIN ĐĂNG<br />LÀ ĐIỂM GẶP NHAU</span>
+              </div>
+
+              <div class="swap-loop-m__flow">
+                <!-- A CSS border can't animate a moving dash pattern, so this
+                     is an svg line (like every other connector) sharing the
+                     .swap-loop__connector-line conveyor-belt animation.
+                     x1/x2/y2 as percentages resolve against the svg's own
+                     rendered box, so it stays pixel-crisp and perfectly
+                     centered at any height without a viewBox. -->
+                <svg class="swap-loop-m__line" data-loop-m-node data-loop-m-step="3" aria-hidden="true">
+                  <line class="swap-loop__connector-line" x1="50%" y1="0" x2="50%" y2="100%" stroke="#6B3C67" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="swap-loop__card swap-loop-m__card swap-loop-m__card--full" data-loop-m-node data-loop-m-step="3">
+                  <span class="swap-loop__card-num">03&nbsp; TRẢ GIÁ</span>
+                  <p>Người mua đề xuất giá</p>
+                </div>
+                <div class="swap-loop__card swap-loop-m__card swap-loop-m__card--full swap-loop__card--accent" data-loop-m-node data-loop-m-step="4">
+                  <span class="swap-loop__card-num">04&nbsp; THƯƠNG LƯỢNG</span>
+                  <p>Hai bên thống nhất giá và điều kiện</p>
+                </div>
+                <div class="swap-loop__card swap-loop-m__card swap-loop-m__card--full" data-loop-m-node data-loop-m-step="5">
+                  <span class="swap-loop__card-num">05&nbsp; CHỐT &amp; ĐÁNH GIÁ</span>
+                  <p>Hoàn tất giao dịch, xây lòng tin, quay lại</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 · CORE FLOW 01 · LISTING (interactive demo) -->
+      <section class="swap-section swap-section--light swap-section--listing" id="listing-flow">
+        <div class="container">
+          <p class="eyebrow swap-eyebrow--pink" data-reveal>Luồng chính 01 · Đăng tin</p>
+          <h2 class="swap-h2 swap-h2--dark swap-listing__heading" data-reveal>Từ một tấm ảnh tới tin đăng sẵn sàng lên sàn.</h2>
+          <p class="swap-lead swap-lead--dark swap-listing__lead" data-reveal>
+            Demo tương tác cho thấy AI giảm phần nhập tay ra sao, trong khi mọi gợi ý vẫn xem lại và sửa được trước khi đăng.
+          </p>
+          <div class="swap-demo" data-reveal>
+            <!-- Left column: 4-step vertical timeline (Figma "Listing / Visual
+                 timeline", node 333:625) — desktop/tablet only (hidden below
+                 1024px in favor of .swap-demo__mtimeline below). -->
+            <div class="swap-demo__timeline">
+              <span class="swap-demo__connector" style="top: 62px"></span>
+              <span class="swap-demo__connector" style="top: 222px"></span>
+              <span class="swap-demo__connector" style="top: 382px"></span>
+
+              <div class="swap-demo__step">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">01</span>
+                </div>
+                <div class="swap-demo__step-content">
+                  <div class="swap-demo__step-icon"><img src="/src/assets/icons/swapifly/timeline-icon-image-first.svg" alt="" width="30" height="30" /></div>
+                  <div class="swap-demo__step-text">
+                    <strong>Bắt đầu bằng ảnh</strong>
+                    <p>Một hành động quen thuộc: chụp món đồ.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swap-demo__step">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">02</span>
+                </div>
+                <div class="swap-demo__step-content">
+                  <div class="swap-demo__step-icon"><img src="/src/assets/icons/swapifly/timeline-icon-ai-draft.svg" alt="" width="23" height="26" /></div>
+                  <div class="swap-demo__step-text">
+                    <strong>AI tạo bản nháp</strong>
+                    <p>Gợi ý các trường từ dữ liệu ảnh.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swap-demo__step">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">03</span>
+                </div>
+                <div class="swap-demo__step-content">
+                  <div class="swap-demo__step-icon"><img src="/src/assets/icons/swapifly/timeline-icon-quick-review.svg" alt="" width="24" height="24" /></div>
+                  <div class="swap-demo__step-text">
+                    <strong>Rà nhanh</strong>
+                    <p>Sửa từng trường, không phải làm lại từ đầu.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swap-demo__step">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">04</span>
+                </div>
+                <div class="swap-demo__step-content">
+                  <div class="swap-demo__step-icon"><img src="/src/assets/icons/swapifly/timeline-icon-seller-confirms.svg" alt="" width="30" height="30" /></div>
+                  <div class="swap-demo__step-text">
+                    <strong>Người bán xác nhận</strong>
+                    <p>Xem trước rồi đăng, toàn quyền quyết định.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile/tablet-only compact stepper: replaces the vertical
+                 icon+description timeline above (hidden below 1024px, see
+                 swapifly.css) with 4 numbered circles on a connecting line
+                 and a short label each, matching the mobile reference
+                 layout. Reuses .swap-demo__marker for the same pink-ring
+                 numeral look as the desktop timeline. -->
+            <div class="swap-demo__mtimeline">
+              <span class="swap-demo__mtimeline-line" aria-hidden="true"></span>
+              <div class="swap-demo__mstep">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">01</span>
+                </div>
+                <span class="swap-demo__mstep-label">Photo-first</span>
+              </div>
+              <div class="swap-demo__mstep">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">02</span>
+                </div>
+                <span class="swap-demo__mstep-label">AI draft</span>
+              </div>
+              <div class="swap-demo__mstep">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">03</span>
+                </div>
+                <span class="swap-demo__mstep-label">Quick review</span>
+              </div>
+              <div class="swap-demo__mstep">
+                <div class="swap-demo__marker">
+                  <img class="swap-demo__marker-bg" src="/src/assets/icons/swapifly/timeline-step-marker-bg.svg" alt="" width="94" height="94" />
+                  <span class="swap-demo__marker-num">04</span>
+                </div>
+                <span class="swap-demo__mstep-label">Publish</span>
+              </div>
+            </div>
+
+            <div class="swap-demo__frame">
+              <div class="swap-demo__phone" id="swap-demo-phone">
+                <!-- Scene 1 -->
+                <div class="swap-scene" data-scene="1">
+                  <div class="swap-screen-header">
+                    <img src="/src/assets/icons/swapifly/icon-back.svg" alt="" width="20" height="20" />
+                    <h3>Add photos &amp; videos</h3>
+                    <span>1 of 4</span>
+                  </div>
+                  <div class="swap-scene-scroll">
+                    <h4 class="swap-screen-heading">Show buyers what you&rsquo;re selling</h4>
+                    <p class="swap-screen-hint">Add clear photos or a short video. You can arrange them before continuing.</p>
+                    <!-- Simulated upload (portfolio demo — no real file picker or
+                         upload). Idle and loading states share the same grid
+                         cell so the card's height never jumps between them;
+                         JS toggles .is-loading on the card to crossfade. -->
+                    <div class="swap-upload-card" id="swap-upload-card">
+                      <div class="swap-upload-card__idle">
+                        <img src="/src/assets/icons/swapifly/icon-upload.svg" alt="" width="64" height="64" class="swap-upload-card__icon" />
+                        <p class="swap-upload-card__title">Upload photos or video</p>
+                        <p class="swap-upload-card__sub">Up to 10 photos or 1 video</p>
+                        <button type="button" class="swap-btn swap-btn--pink" id="swap-choose-files-btn">
+                          <img src="/src/assets/icons/swapifly/icon-plus-white.svg" alt="" width="14" height="14" />
+                          Choose files
+                        </button>
+                      </div>
+                      <div class="swap-upload-card__loading">
+                        <span class="swap-spinner" aria-hidden="true"></span>
+                        <p class="swap-upload-card__loading-text">Uploading photos&hellip;</p>
+                      </div>
+                    </div>
+                    <div class="swap-format-note">JPG, PNG, HEIC, MP4 or MOV · Max. 100 MB</div>
+                    <p class="swap-tips-title">Quick tips</p>
+                    <ul class="swap-tips">
+                      <li>Use natural lighting</li>
+                      <li>Show the item from multiple angles</li>
+                      <li>Keep the background clean</li>
+                    </ul>
+                  </div>
+                  <div class="swap-bottom-action"><button type="button" class="swap-btn swap-btn--disabled" id="swap-next-btn-1" disabled>Next</button></div>
+                </div>
+
+                <!-- Scene 2 -->
+                <div class="swap-scene" data-scene="2">
+                  <div class="swap-screen-header">
+                    <img src="/src/assets/icons/swapifly/icon-back.svg" alt="" width="20" height="20" />
+                    <h3>Add photos &amp; videos</h3>
+                    <span>1 of 4</span>
+                  </div>
+                  <div class="swap-scene-scroll">
+                    <h4 class="swap-screen-heading">Show buyers what you&rsquo;re selling</h4>
+                    <p class="swap-screen-hint">Add clear photos or a short video. You can arrange them before continuing.</p>
+                    <div class="swap-photos-card">
+                      <p class="swap-photos-card__title" id="swap-photo-count-hint">3 photos added</p>
+                      <p class="swap-photos-card__sub">Tap a photo to set it as the cover</p>
+                      <div class="swap-photo-row" id="swap-photo-row">
+                        <div class="swap-photo swap-photo--cover">
+                          <img src="/src/assets/images/swapifly/listing-photo-1.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, set as cover" loading="lazy" />
+                          <span class="swap-photo__badge">Cover</span>
+                          <img src="/src/assets/icons/swapifly/remove-photo-bg.svg" alt="" width="20" height="20" class="swap-photo__remove-bg" />
+                          <img src="/src/assets/icons/swapifly/remove-photo-x.svg" alt="" width="10" height="10" class="swap-photo__remove-x" />
+                        </div>
+                        <div class="swap-photo">
+                          <img src="/src/assets/images/swapifly/listing-photo-2.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, angle two" loading="lazy" />
+                        </div>
+                        <div class="swap-photo">
+                          <img src="/src/assets/images/swapifly/listing-photo-3.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, side angle" loading="lazy" />
+                        </div>
+                      </div>
+                      <div class="swap-add-more">
+                        <img src="/src/assets/icons/swapifly/icon-plus.svg" alt="" width="14" height="14" />
+                        <span>Add more</span>
+                      </div>
+                    </div>
+                    <div class="swap-format-note">JPG, PNG, HEIC, MP4 or MOV · Max. 100 MB</div>
+                    <p class="swap-tips-title">Quick tips</p>
+                    <ul class="swap-tips">
+                      <li>Use natural lighting</li>
+                      <li>Show the item from multiple angles</li>
+                      <li>Keep the background clean</li>
+                    </ul>
+                  </div>
+                  <div class="swap-bottom-action"><button type="button" class="swap-btn swap-btn--pink" id="swap-next-btn-2">Next</button></div>
+                </div>
+
+                <!-- AI analyzing: a dimmed overlay + centered modal shown on top
+                     of the still-visible photos-added screen (Figma "AI
+                     analyzing overlay", node 333:607) — not a full-screen
+                     scene, so scene 2 stays active and visible underneath. -->
+                <div class="swap-analyzing-overlay" id="swap-analyzing-overlay" aria-hidden="true">
+                  <div class="swap-analyzing-overlay__backdrop"></div>
+                  <div class="swap-analyzing">
+                    <span class="swap-analyzing__orb">
+                      <img src="/src/assets/icons/swapifly/ai-sparkle.svg" alt="" width="20" height="20" />
+                    </span>
+                    <p class="swap-analyzing__title">AI is analyzing your photos</p>
+                    <p class="swap-analyzing__sub">Identifying product details and writing your listing…</p>
+                    <div class="swap-progress"><span class="swap-progress__fill"></span></div>
+                  </div>
+                </div>
+
+                <!-- Scene 4: AI draft + review (scrollable) -->
+                <div class="swap-scene" data-scene="4">
+                  <div class="swap-screen-header swap-screen-header--compact">
+                    <img src="/src/assets/icons/swapifly/icon-back.svg" alt="" width="18" height="18" />
+                    <h3>Review your listing</h3>
+                    <span>2 of 4</span>
+                  </div>
+                  <div class="swap-review-scroll">
+                    <div class="swap-review-banner">
+                      <img src="/src/assets/icons/swapifly/ai-sparkle.svg" alt="" width="20" height="20" class="swap-review-banner__icon" />
+                      <div class="swap-review-banner__text">
+                        <p class="swap-review-ready">Your draft is ready</p>
+                        <p class="swap-review-hint">AI filled the details from your photos. Review and edit anything before continuing.</p>
+                      </div>
+                    </div>
+
+                    <div class="swap-photo-row">
+                      <div class="swap-photo swap-photo--cover">
+                        <img src="/src/assets/images/swapifly/listing-photo-1.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, set as cover" loading="lazy" />
+                        <span class="swap-photo__badge">Cover</span>
+                      </div>
+                      <div class="swap-photo">
+                        <img src="/src/assets/images/swapifly/listing-photo-2.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, angle two" loading="lazy" />
+                      </div>
+                      <div class="swap-photo">
+                        <img src="/src/assets/images/swapifly/listing-photo-3.jpg" alt="Uploaded photo of Beats Solo 3 Wireless headphones, side angle" loading="lazy" />
+                      </div>
+                      <div class="swap-photo swap-photo--edit">Edit</div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Category</p>
+                      <div class="swap-field"><span class="swap-field__value">Electronics · Audio</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Item name</p>
+                      <div class="swap-field"><span class="swap-field__value">Beats Solo 3 Wireless</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Brand</p>
+                      <div class="swap-field"><span class="swap-field__value">Beats</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Condition</p>
+                      <div class="swap-field"><span class="swap-field__value">Like new</span><em class="swap-ai-badge">AI</em></div>
+                      <p class="swap-review-field-hint">Used only a few times, with minimal signs of wear.</p>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Description</p>
+                      <div class="swap-field swap-field--wide"><span class="swap-field__value">Beats Solo 3 Wireless headphones in excellent condition. Clear sound, comfortable fit and long battery life. Includes the original carrying case.</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <p class="swap-review-item swap-review-section-title">More details</p>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Country / Area</p>
+                      <div class="swap-field"><span class="swap-field__value">Hong Kong</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Price</p>
+                      <div class="swap-field"><span class="swap-field__value">HK$ 200</span><em class="swap-ai-badge">AI</em></div>
+                      <p class="swap-review-field-hint">Suggested from similar listings. You can adjust it.</p>
+                    </div>
+
+                    <p class="swap-review-item swap-review-section-title">Chat settings</p>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Auto reply</p>
+                      <div class="swap-field swap-field--wide"><span class="swap-field__value">Enabled · Replies to common buyer questions</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">Reply availability</p>
+                      <div class="swap-field"><span class="swap-field__value">Any time</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <p class="swap-review-label">AI chatting style</p>
+                      <div class="swap-field"><span class="swap-field__value">Friendly and helpful</span><em class="swap-ai-badge">AI</em></div>
+                    </div>
+
+                    <div class="swap-review-item swap-review-group">
+                      <div class="swap-deal-card">
+                        <div class="swap-deal-card__head">
+                          <span class="swap-review-label">Deal method</span>
+                          <em class="swap-ai-badge">AI</em>
+                        </div>
+                        <div class="swap-deal-card__option">
+                          <span class="swap-deal-check" aria-hidden="true">
+                            <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1.25 4.5L4 7.25L9.75 1.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                          <div>
+                            <strong>Meet in person</strong>
+                            <span>Hong Kong Island · ABC Mall</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swap-bottom-action"><button type="button" class="swap-btn swap-btn--pink" id="swap-preview-btn">Preview</button></div>
+                </div>
+
+                <!-- Scene 5: Preview -->
+                <div class="swap-scene" data-scene="5">
+                  <div class="swap-review-scroll swap-review-scroll--preview">
+                    <div class="swap-preview-media">
+                      <img src="/src/assets/images/swapifly/listing-photo-1.jpg" alt="Listing preview photo of Beats Solo 3 Wireless" loading="lazy" />
+                      <div class="swap-preview-media__actions">
+                        <button type="button" class="swap-preview-media__icon-btn" aria-label="Back">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </button>
+                        <div class="swap-preview-media__actions-right">
+                          <button type="button" class="swap-preview-media__icon-btn" aria-label="Share">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 15V4M12 4L8 8M12 4L16 8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M5 14V18C5 19.1 5.9 20 7 20H17C18.1 20 19 19.1 19 18V14" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </button>
+                          <button type="button" class="swap-preview-media__icon-btn" aria-label="More options">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="5" cy="12" r="1.6" fill="#fff" />
+                              <circle cx="12" cy="12" r="1.6" fill="#fff" />
+                              <circle cx="19" cy="12" r="1.6" fill="#fff" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="swap-preview-media__count">1 / 3</span>
+                    </div>
+                    <div class="swap-preview-body">
+                      <p class="swap-preview-label">Listing preview</p>
+                      <h3>Beats Solo 3 Wireless</h3>
+                      <p class="swap-preview-price">HK$ 200</p>
+                      <div class="swap-chips"><span>Like new</span><span>Electronics · Audio</span><span>Beats</span></div>
+
+                      <div class="swap-seller">
+                        <span class="swap-seller__avatar" aria-hidden="true">AW</span>
+                        <div><strong>Alex Wong</strong><small>Verified seller · ABC Mall</small></div>
+                        <span class="swap-seller__verified" aria-hidden="true">
+                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <hr class="swap-preview-divider" />
+
+                      <p class="swap-preview-section-title">Description</p>
+                      <p class="swap-preview-description">Beats Solo 3 Wireless headphones in excellent condition. Clear sound, comfortable fit and long battery life. Includes the original carrying case.</p>
+
+                      <p class="swap-preview-section-title">Listing details</p>
+                      <div class="swap-details-list">
+                        <div class="swap-details-list__row"><span>Category</span><strong>Electronics · Audio</strong></div>
+                        <div class="swap-details-list__row"><span>Condition</span><strong>Like new</strong></div>
+                        <div class="swap-details-list__row"><span>Location</span><strong>Hong Kong · ABC Mall</strong></div>
+                        <div class="swap-details-list__row"><span>Deal method</span><strong>Meet in person</strong></div>
+                      </div>
+
+                      <p class="swap-preview-note">This is how buyers will see your listing.</p>
+                    </div>
+                  </div>
+                  <div class="swap-bottom-action swap-bottom-action--split">
+                    <button type="button" class="swap-btn swap-btn--ghost" id="swap-edit-btn">Edit</button>
+                    <button type="button" class="swap-btn swap-btn--pink" id="swap-publish-btn">Publish</button>
+                  </div>
+                </div>
+
+                <!-- Scene 6: Published -->
+                <div class="swap-scene" data-scene="6">
+                  <div class="swap-review-scroll swap-review-scroll--preview">
+                    <div class="swap-preview-media">
+                      <img src="/src/assets/images/swapifly/listing-photo-1.jpg" alt="Published listing photo of Beats Solo 3 Wireless" loading="lazy" />
+                      <div class="swap-preview-media__actions">
+                        <button type="button" class="swap-preview-media__icon-btn" aria-label="Back">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </button>
+                        <div class="swap-preview-media__actions-right">
+                          <button type="button" class="swap-preview-media__icon-btn" aria-label="Share">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 15V4M12 4L8 8M12 4L16 8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M5 14V18C5 19.1 5.9 20 7 20H17C18.1 20 19 19.1 19 18V14" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </button>
+                          <button type="button" class="swap-preview-media__icon-btn" aria-label="More options">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="5" cy="12" r="1.6" fill="#fff" />
+                              <circle cx="12" cy="12" r="1.6" fill="#fff" />
+                              <circle cx="19" cy="12" r="1.6" fill="#fff" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="swap-published-banner" id="swap-published-toast">
+                        <img src="/src/assets/icons/swapifly/publish-success-bg.svg" alt="" width="40" height="40" class="swap-published-banner__bg" />
+                        <img src="/src/assets/icons/swapifly/publish-success-check.svg" alt="" width="20" height="20" class="swap-published-banner__check" />
+                        <div>
+                          <strong>Your listing is live!</strong>
+                          <small>Buyers can now discover and contact you.</small>
+                        </div>
+                      </div>
+                      <span class="swap-preview-media__count">1 / 3</span>
+                    </div>
+                    <div class="swap-preview-body">
+                      <p class="swap-preview-label swap-preview-label--live">Live listing</p>
+                      <h3>Beats Solo 3 Wireless</h3>
+                      <p class="swap-preview-price">HK$ 200</p>
+                      <div class="swap-chips"><span>Like new</span><span>Electronics · Audio</span><span>Beats</span></div>
+
+                      <div class="swap-seller">
+                        <span class="swap-seller__avatar" aria-hidden="true">AW</span>
+                        <div><strong>Alex Wong</strong><small>Verified seller · ABC Mall</small></div>
+                        <span class="swap-seller__verified" aria-hidden="true">
+                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <hr class="swap-preview-divider" />
+
+                      <p class="swap-preview-section-title">Description</p>
+                      <p class="swap-preview-description">Beats Solo 3 Wireless headphones in excellent condition. Clear sound, comfortable fit and long battery life. Includes the original carrying case.</p>
+
+                      <p class="swap-preview-section-title">Listing details</p>
+                      <div class="swap-details-list">
+                        <div class="swap-details-list__row"><span>Category</span><strong>Electronics · Audio</strong></div>
+                        <div class="swap-details-list__row"><span>Condition</span><strong>Like new</strong></div>
+                        <div class="swap-details-list__row"><span>Location</span><strong>Hong Kong · ABC Mall</strong></div>
+                        <div class="swap-details-list__row"><span>Deal method</span><strong>Meet in person</strong></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tap indicator: a single reusable pulsing cue, repositioned by
+                     JS over whichever button the visitor should click next.
+                     pointer-events:none so it never blocks the real button. -->
+                <span class="swap-tap-indicator" id="swap-tap-indicator" aria-hidden="true" hidden>
+                  <span class="swap-tap-indicator__ring"></span>
+                  <span class="swap-tap-indicator__dot"></span>
+                </span>
+              </div>
+
+              <p class="swap-demo__live-region" id="swap-demo-live-region" role="status" aria-live="polite"></p>
+
+              <!-- Replay: resets the click-driven flow back to state 1. Not
+                   part of the desktop Figma frame (hidden there via
+                   swap-section--listing rules in swapifly.css), kept for the
+                   mobile layout and as a reduced-motion-friendly restart. -->
+              <div class="swap-demo__controls">
+                <button type="button" class="swap-demo__replay" id="swap-demo-replay">
+                  <span class="swap-demo__replay-icon" aria-hidden="true">↻</span>
+                  Replay demo
+                </button>
+              </div>
+              <p class="swap-demo__fallback-note" id="swap-demo-fallback-note" hidden>
+                Motion is reduced in your browser settings — the flow still responds to clicks; use Replay to start over.
+              </p>
+            </div>
+          </div>
+
+          <hr class="swap-divider" />
+          <p class="swap-caption swap-listing__caption" data-reveal>Phần phức tạp nằm trong hệ thống, không nằm trong đầu người bán.</p>
+        </div>
+      </section>
+
+      <!-- 05 · CORE FLOW 02 · OFFER & CHAT -->
+      <section class="swap-section swap-section--dark" id="offer-chat">
+        <div class="container">
+          <div class="swap-offer__intro" data-reveal>
+            <p class="eyebrow swap-eyebrow--pink">Luồng chính 02 · Trả giá, thương lượng và chat</p>
+            <h2 class="swap-h2 swap-offer__title">Biến việc mặc cả thành một giao dịch theo dõi được.</h2>
+            <p class="swap-lead">
+              Cái khó không nằm ở khung chat. Cái khó là giữ cho giá, ý định và trạng thái giao dịch luôn rõ khi cuộc trò chuyện thay đổi từng phút.
+            </p>
+          </div>
+          <div class="swap-offer">
+            <div class="swap-offer__text" data-reveal>
+              <div class="swap-decision-list">
+                <div class="swap-decision">
+                  <strong>Vai trò tách bạch</strong>
+                  <p>Người mua đưa ra đề nghị, người bán phản hồi trong cùng ngữ cảnh.</p>
+                </div>
+                <div class="swap-decision">
+                  <strong>Đề nghị giá là một trạng thái có cấu trúc</strong>
+                  <p>Giá, thời điểm và phản hồi không bị trôi mất trong dòng chat.</p>
+                </div>
+                <div class="swap-decision">
+                  <strong>Hai bên đều thấy bước tiếp theo</strong>
+                  <p>Chấp nhận, trả giá lại hay từ chối được trình bày nhất quán.</p>
+                </div>
+              </div>
+              <span class="swap-tag-line">THIẾT KẾ TRẠNG THÁI&nbsp; /&nbsp; TƯƠNG TÁC THỜI GIAN THỰC&nbsp; /&nbsp; LÒNG TIN</span>
+            </div>
+            <div class="swap-offer__visual" data-reveal data-parallax-slow>
+            <div class="swap-chat-panel" aria-hidden="true">
+              <div class="swap-chat-col swap-chat-col--buyer">
+                <span class="swap-chat-role">Sara · Buyer</span>
+                <div class="swap-phone">
+                  <div class="swap-phone__header">
+                    <span class="swap-phone__back">
+                      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </span>
+                    <span class="swap-phone__title">Chat with Sam</span>
+                    <span class="swap-phone__ai">
+                      <span>AI</span>
+                      <span class="swap-phone__toggle"></span>
+                    </span>
+                  </div>
+                  <div class="swap-phone__listing">
+                    <img src="/src/assets/images/swapifly/chat-watch-thumb.jpg" width="44" height="44" alt="" class="swap-phone__listing-img" />
+                    <div class="swap-phone__listing-info">
+                      <p>Chanel J12 pink limited 38mm</p>
+                      <strong>HK$216,27</strong>
+                    </div>
+                  </div>
+                  <div class="swap-phone__thread">
+                    <span class="swap-phone__timestamp">2026/03/21 11:27</span>
+                    <p class="swap-bubble swap-bubble--in"><span>Hi! Yes, it&rsquo;s still available.</span><time>11:27</time></p>
+                    <p class="swap-bubble swap-bubble--out"><span>Great! Is the watch in good condition?</span><time>11:29</time></p>
+                    <p class="swap-bubble swap-bubble--in"><span>Yes, lightly used. I can share more photos if needed.</span><time>11:31</time></p>
+                    <p class="swap-bubble swap-bubble--out"><span>Thanks! I&rsquo;d like to make an offer.</span><time>11:33</time></p>
+                  </div>
+                  <div class="swap-phone__footer">
+                    <span class="swap-phone__footer-label">Make an offer</span>
+                    <div class="swap-phone__footer-row">
+                      <span class="swap-phone__icon-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4.5h16v12H9l-4.5 4V4.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+                      </span>
+                      <span class="swap-phone__amount"><span class="swap-phone__amount-cur">HK$</span><span class="swap-phone__amount-placeholder">Enter amount</span></span>
+                      <span class="swap-phone__cta">Offer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swap-chat-divider"></div>
+              <div class="swap-chat-col swap-chat-col--seller">
+                <span class="swap-chat-role">Sam · Seller</span>
+                <div class="swap-phone">
+                  <div class="swap-phone__header">
+                    <span class="swap-phone__back">
+                      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    </span>
+                    <span class="swap-phone__title">Chat with Sara</span>
+                    <span class="swap-phone__ai">
+                      <span>AI</span>
+                      <span class="swap-phone__toggle"></span>
+                    </span>
+                  </div>
+                  <div class="swap-phone__listing">
+                    <img src="/src/assets/images/swapifly/chat-watch-thumb.jpg" width="44" height="44" alt="" class="swap-phone__listing-img" />
+                    <div class="swap-phone__listing-info">
+                      <p>Chanel J12 pink limited 38mm</p>
+                      <strong>HK$216,27</strong>
+                    </div>
+                  </div>
+                  <div class="swap-phone__thread">
+                    <span class="swap-phone__timestamp">2026/03/21 11:27</span>
+                    <p class="swap-bubble swap-bubble--out"><span>Hi! Yes, it&rsquo;s still available.</span><time>11:27</time></p>
+                    <p class="swap-bubble swap-bubble--in"><span>Great! Is the watch in good condition?</span><time>11:29</time></p>
+                    <p class="swap-bubble swap-bubble--out"><span>Yes, lightly used. I can share more photos if needed.</span><time>11:31</time></p>
+                    <p class="swap-bubble swap-bubble--in"><span>Thanks! I&rsquo;d like to make an offer.</span><time>11:33</time></p>
+                    <div class="swap-offer-card">
+                      <div class="swap-offer-card__head">
+                        <span>New offer</span>
+                        <span class="swap-offer-card__pill">Pending</span>
+                      </div>
+                      <strong class="swap-offer-card__price">HK$200.00</strong>
+                      <p class="swap-offer-card__note">HK$216.27 below asking price</p>
+                      <time class="swap-offer-card__time">11:33</time>
+                    </div>
+                  </div>
+                  <div class="swap-phone__footer">
+                    <span class="swap-phone__footer-label">Respond to Sara&rsquo;s offer</span>
+                    <div class="swap-phone__footer-row">
+                      <span class="swap-phone__icon-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 7 4 12l5 5M4 12h11a5 5 0 0 0 0-10h-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                      </span>
+                      <span class="swap-phone__pill swap-phone__pill--decline">Decline</span>
+                      <span class="swap-phone__pill swap-phone__pill--counter">Counter</span>
+                      <span class="swap-phone__pill swap-phone__pill--accept">Accept</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swap-chat-flow" aria-hidden="true">
+              <span>Chat</span>
+              <span class="swap-chat-flow__arrow">&rarr;</span>
+              <span class="swap-chat-flow__active">Offer</span>
+              <span class="swap-chat-flow__arrow">&rarr;</span>
+              <span>Counter / Accept</span>
+            </div>
+            <p class="swap-chat-caption">1 giao dịch, 2 góc nhìn: trạng thái đề nghị giá giống hệt nhau ở phía người mua và người bán.</p>
+            <span class="swap-sr-only">Side-by-side buyer and seller chat views showing the same offer state, from Sara's and Sam's perspectives.</span>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 · CORE FLOW 03 · AI SELLER -->
+      <section class="swap-section swap-section--magenta" id="ai-seller">
+        <div class="swap-ai-glow" aria-hidden="true"></div>
+        <div class="container">
+          <p class="eyebrow swap-eyebrow--pink" data-reveal>Luồng chính 03 · Bán hàng có AI hỗ trợ</p>
+          <h2 class="swap-h2" data-reveal>AI hỗ trợ. Người bán quyết định.</h2>
+          <p class="swap-lead swap-lead--wide" data-reveal>
+            AI trả lời những câu hỏi lặp lại, và chuyển cho người bán những tình huống cần cân nhắc.
+          </p>
+
+          <div class="swap-ai-grid">
+            <div class="swap-ai-visuals" data-reveal>
+              <div class="swap-phone swap-ai-phone swap-ai-phone--left" aria-hidden="true">
+                <div class="swap-phone__header">
+                  <span class="swap-phone__back">
+                    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </span>
+                  <span class="swap-phone__title">Chat with Sara</span>
+                  <span class="swap-phone__ai">
+                    <span>AI</span>
+                    <span class="swap-phone__toggle swap-phone__toggle--on"></span>
+                  </span>
+                </div>
+                <div class="swap-ai-phone__body">
+                  <div class="swap-ai-info">
+                    <strong>Answers learned from previous buyer chats</strong>
+                    <p>AI found 24 similar conversations about pickup, delivery and product condition.</p>
+                  </div>
+                  <p class="swap-bubble swap-bubble--in"><span>Can I pick it up near Central station?</span><time>11:27</time></p>
+                  <p class="swap-bubble swap-bubble--out">
+                    <span>
+                      Yes &mdash; pickup is available at Central station on weekdays after 6 PM.
+                      <span class="swap-ai-tag">Sent automatically</span>
+                    </span>
+                    <time class="swap-ai-note-time">Based on seller settings + 24 previous chats</time>
+                  </p>
+                </div>
+                <div class="swap-ai-note">
+                  <strong>Auto-reply is handling common questions</strong>
+                  <p>Seller is notified, and can pause or take over any time.</p>
+                  <div class="swap-ai-note__actions">
+                    <span class="swap-phone__pill swap-phone__pill--ghost">Take over chat</span>
+                    <span class="swap-phone__pill swap-phone__pill--decline">Pause AI</span>
+                  </div>
+                </div>
+                <div class="swap-phone__footer">
+                  <div class="swap-phone__footer-row">
+                    <span class="swap-phone__amount"><span class="swap-phone__amount-placeholder">Write a message&hellip;</span></span>
+                    <span class="swap-phone__cta">Send</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swap-phone swap-ai-phone swap-ai-phone--right" aria-hidden="true">
+                <div class="swap-phone__header">
+                  <span class="swap-phone__back">
+                    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </span>
+                  <span class="swap-phone__title">Chat with Sara</span>
+                  <span class="swap-phone__ai">
+                    <span>AI</span>
+                    <span class="swap-phone__toggle swap-phone__toggle--on"></span>
+                  </span>
+                </div>
+                <div class="swap-ai-phone__body">
+                  <p class="swap-bubble swap-bubble--in">
+                    <span>
+                      Would you accept HK$160 if I pick it up today?
+                      <span class="swap-ai-price-tag">Price negotiation</span>
+                    </span>
+                  </p>
+                </div>
+                <div class="swap-ai-suggestion">
+                  <span class="swap-ai-suggestion__pill">AI paused before replying</span>
+                  <span class="swap-ai-suggestion__label">Suggested reply</span>
+                  <p class="swap-ai-suggestion__text">Thanks for the offer. I can do HK$185 if we meet at Central station today.</p>
+                  <p class="swap-ai-suggestion__note">Based on your minimum price and prior negotiations</p>
+                  <div class="swap-ai-suggestion__actions">
+                    <span class="swap-phone__pill swap-phone__pill--ghost">Edit</span>
+                    <span class="swap-phone__pill swap-phone__pill--accept">Reply now</span>
+                  </div>
+                </div>
+              </div>
+              <span class="swap-sr-only">Left: AI auto-replying to a buyer's pickup question with a seller-editable pause/take-over control. Right: AI drafting a price-negotiation reply for the seller to review before sending.</span>
+            </div>
+            <div class="swap-ai-log" data-reveal>
+              <h3>AI Activity log</h3>
+              <ul class="swap-ai-log__list">
+                <li><time>11:27</time><strong>Auto reply sent</strong><p>Condition question · matched listing data</p></li>
+                <li><time>11:34</time><strong>Seller review requested</strong><p>Buyer asked for a discount</p></li>
+                <li><time>11:36</time><strong>Reply edited by Sam</strong><p>AI draft adjusted before sending</p></li>
+                <li><time>11:42</time><strong>Knowledge updated</strong><p>New approved reply added to future suggestions</p></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swap-decision-list swap-decision-list--row" data-reveal>
+            <div class="swap-decision swap-decision--dark">
+              <strong>Tự trả lời câu hỏi thường gặp</strong>
+              <p>Dựa trên dữ liệu tin đăng và các cuộc trò chuyện trước đó.</p>
+            </div>
+            <div class="swap-decision swap-decision--dark">
+              <strong>Gợi ý khi cần cân nhắc</strong>
+              <p>AI soạn sẵn câu trả lời để người bán sửa hoặc gửi.</p>
+            </div>
+            <div class="swap-decision swap-decision--dark">
+              <strong>Minh bạch và kiểm soát được</strong>
+              <p>Người bán luôn tắt được AI hoặc tiếp quản.</p>
+            </div>
+          </div>
+          <span class="swap-tag-line" data-reveal>AI LO PHẦN LẶP LẠI&nbsp; /&nbsp; NGƯỜI BÁN GIỮ QUYỀN KIỂM SOÁT</span>
+        </div>
+      </section>
+
+      <!-- 07 · SYSTEM & REFLECTION -->
+      <section class="swap-section swap-section--light" id="system">
+        <div class="container">
+          <p class="eyebrow swap-eyebrow--pink" data-reveal>Tư duy hệ thống · Nhìn lại</p>
+          <h2 class="swap-h2 swap-h2--dark" data-reveal>Thiết kế vượt ra ngoài màn hình điện thoại.</h2>
+          <p class="swap-lead swap-lead--dark" data-reveal>
+            Một mô hình tư duy nhất quán giữa mobile và desktop, đi kèm các trạng thái về lòng tin, bản địa hoá và bộ bàn giao sẵn sàng cho phát triển.
+          </p>
+
+          <div class="swap-showcase" data-reveal>
+            <div class="swap-showcase__group swap-showcase__group--00">
+              <p class="swap-showcase__label">00 · Tổng quan marketplace</p>
+              <figure class="swap-showcase__item">
+                <img src="/src/assets/images/swapifly/showcase-01-home.png" width="1236" height="881" alt="Trang chủ trên desktop: banner, dải thương hiệu và sản phẩm gợi ý" loading="lazy" />
+              </figure>
+            </div>
+
+            <div class="swap-showcase__collage">
+              <div class="swap-showcase__group swap-showcase__group--01">
+                <p class="swap-showcase__label">01 · Trải nghiệm người mua</p>
+                <figure class="swap-showcase__item">
+                  <img src="/src/assets/images/swapifly/showcase-02-buyer.png" width="639" height="479" alt="Trang chi tiết sản phẩm từ góc nhìn người mua, có nút Make an offer" loading="lazy" />
+                </figure>
+              </div>
+              <div class="swap-showcase__group swap-showcase__group--02">
+                <p class="swap-showcase__label">02 · Quyền kiểm soát của người bán</p>
+                <figure class="swap-showcase__item">
+                  <img src="/src/assets/images/swapifly/showcase-03-seller.png" width="639" height="479" alt="Trang chi tiết sản phẩm từ góc nhìn người bán, có hiệu quả tin đăng và hoạt động của AI" loading="lazy" />
+                </figure>
+              </div>
+              <div class="swap-showcase__group swap-showcase__group--03">
+                <p class="swap-showcase__label">03 · Đăng tin có AI hỗ trợ</p>
+                <figure class="swap-showcase__item">
+                  <img src="/src/assets/images/swapifly/showcase-04-ai-listing.png" width="776" height="576" alt="Màn hình rà tin đăng trên desktop, các trường do AI điền đều sửa được" loading="lazy" />
+                </figure>
+              </div>
+              <div class="swap-showcase__group swap-showcase__group--04">
+                <p class="swap-showcase__label">04 · Thương lượng và hoàn tất</p>
+                <figure class="swap-showcase__item">
+                  <img src="/src/assets/images/swapifly/showcase-05-inbox.png" width="776" height="576" alt="Hộp thư và màn hình thương lượng với thẻ đề nghị giá và tóm tắt giao dịch" loading="lazy" />
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="swap-pills" data-reveal>
+            <span class="swap-pill">Đa nền tảng</span>
+            <span class="swap-pill">Lòng tin &amp; an toàn</span>
+            <span class="swap-pill">Bản địa hoá</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 · OUTCOME & REFLECTION -->
+      <section class="swap-section swap-section--dark" id="outcome">
+        <div class="container">
+          <div class="swap-outcome-row" data-reveal>
+            <div class="swap-outcome-card">
+              <p class="eyebrow swap-eyebrow--pink">Kết quả dự án</p>
+              <h3>Ra mắt năm 2021</h3>
+              <p>Tôi dẫn dắt UX/UI từ đầu tới cuối, cùng PM và developer đưa các luồng chính thành sản phẩm ra thị trường.</p>
+            </div>
+            <div class="swap-outcome-card">
+              <p class="eyebrow swap-eyebrow--pink">Nếu thiết kế lại hôm nay</p>
+              <p class="swap-outcome-card__lead">
+                Tôi sẽ rút gọn luồng đăng tin, cải thiện accessibility và nói rõ hơn vai trò của AI, đồng thời giữ tư duy hệ thống xuyên suốt mobile và desktop.
+              </p>
+            </div>
+          </div>
+          <div class="swap-closing" data-reveal>
+            <p class="swap-closing__statement">
+              Thứ còn lại không chỉ là một bộ màn hình. Đó là một hệ thống nối người mua, người bán và lòng tin trên cùng một hành trình.
+            </p>
+            <div class="swap-closing__footer">
+              <span>HAE&nbsp; ·&nbsp; DỰ ÁN TIÊU BIỂU</span>
+              <span>SWAPIFLY&nbsp; ·&nbsp; 2021&nbsp; ·&nbsp; ĐÃ RA MẮT</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-section cs-next" id="next-project">
+        <div class="container">
+          <p class="cs-next__label" data-reveal>Dự án tiếp theo</p>
+          <a href="./hong-da.html" class="cs-next__card" data-reveal>
+            <div class="cs-next__body">
+              <span class="tag">Web admin</span>
+              <h3 class="cs-next__title">Hong Da Landscaping</h3>
+              <p class="cs-next__subtitle">Hệ thống quản trị và lập hồ sơ thầu cho công ty cảnh quan</p>
+            </div>
+            <div class="cs-next__action">
+              <span class="cs-next__view">Xem case study</span>
+              <span class="cs-next__icon" aria-hidden="true">
+                <img src="/src/assets/icons/arrow-up-right.svg" alt="" width="14" height="14" />
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="cs-section cs-cta">
+        <div class="container cs-cta__inner" data-reveal>
+          <h2 class="cs-h2">Bạn có một luồng marketplace cần gỡ rối?</h2>
+          <div class="cs-cta__actions">
+            <a href="./index.html#contact" class="btn btn--primary">
+              Liên hệ
+              <img src="/src/assets/icons/connect-arrow.svg" alt="" width="14" height="14" />
+            </a>
+            <a href="./index.html#projects" class="btn btn--outline">Về danh sách dự án</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating restart: reuses the interaction demo's reset logic, but
+         fixed to the viewport (kept outside <main> since .swap-demo carries
+         a data-reveal transform once visible, which would otherwise become
+         the containing block for position:fixed). Pinned level with the
+         phone frame's vertical center, not the viewport corner, so it's
+         reachable without hunting for it. Shown only while the demo
+         section is in view. -->
+    <button type="button" class="swap-float-restart" id="swap-float-restart" aria-label="Restart interactive demo">
+      <span class="swap-float-restart__icon" aria-hidden="true">↻</span>
+      <span class="swap-float-restart__label">Restart demo</span>
+    </button>
+
+    <footer class="hfoot">
+      <span>© 2026 HAE. Dự án thực hiện tại VTL Solutions.</span>
+      <a href="./index.html#contact">Liên hệ</a>
+    </footer>
+
+    <script type="module" src="/src/swapifly.js"></script>
+  </body>
+</html>

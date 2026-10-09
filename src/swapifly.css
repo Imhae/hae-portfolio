@@ -1,0 +1,3727 @@
+@import './hong-da.css';
+
+:root {
+  --swap-pink: #ff0073;
+  --swap-pink-bright: #ff1f7a;
+  --swap-magenta: #ff4b9b;
+  --swap-magenta-soft: #ff9aca;
+  --swap-blue: #4f73ed;
+  --swap-dark-1: #030305;
+  --swap-dark-2: #07060a;
+  --swap-dark-3: #170517;
+  --swap-dark-4: #17131c;
+  --swap-light-1: #f5f2fa;
+  --swap-light-2: #f8f7fb;
+}
+
+.swap-body {
+  background: var(--swap-dark-1);
+}
+
+/* Shared type/section primitives -------------------------------------- */
+.swap-h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.18;
+  letter-spacing: -0.6px;
+  color: var(--text-100);
+  margin: 14px 0 0;
+  max-width: 760px;
+}
+
+.swap-h2--dark {
+  color: #17131c;
+}
+
+.swap-lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #a29ca9;
+  max-width: 640px;
+  margin: 20px 0 0;
+}
+
+.swap-lead--wide {
+  max-width: 800px;
+}
+
+.swap-lead--dark {
+  color: #6f6875;
+}
+
+.swap-eyebrow--pink {
+  color: var(--swap-pink);
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+.swap-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.swap-section {
+  padding: 88px 0;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.6s var(--ease-premium);
+}
+
+.swap-section--dark {
+  background: var(--swap-dark-2);
+}
+
+.swap-section--light {
+  background: var(--swap-light-1);
+}
+
+.swap-section--magenta {
+  background: var(--swap-dark-3);
+}
+
+.swap-tag-line {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--swap-magenta-soft);
+  margin-top: 36px;
+}
+
+.swap-caption {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #231a25;
+  text-align: center;
+  max-width: 760px;
+  margin: 56px auto 0;
+}
+
+/* 01 · Hero -------------------------------------------------------------- */
+.swap-hero {
+  position: relative;
+  padding: 152px 0 96px;
+  overflow: hidden;
+  background: var(--swap-dark-1);
+}
+
+.swap-hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.swap-hero__glow--1 {
+  width: 640px;
+  height: 640px;
+  left: -10%;
+  top: 5%;
+  background: radial-gradient(circle, rgba(255, 0, 115, 0.5), transparent 70%);
+}
+
+.swap-hero__glow--2 {
+  width: 560px;
+  height: 560px;
+  right: -8%;
+  top: 38%;
+  background: radial-gradient(circle, rgba(255, 75, 155, 0.4), transparent 70%);
+}
+
+.swap-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.swap-hero__kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--swap-magenta);
+  margin: 0;
+}
+
+.swap-hero__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.14;
+  letter-spacing: -1.2px;
+  color: #f9f7ff;
+  margin: 22px 0 0;
+}
+
+.swap-hero__lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #bdb8c9;
+  max-width: 680px;
+  margin: 22px auto 0;
+}
+
+.swap-hero__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #716d7d;
+  margin: 28px 0 0;
+}
+
+.swap-hero__visual {
+  position: relative;
+  z-index: 1;
+  max-width: 814px;
+  margin: 64px auto 0;
+  padding: 0 24px;
+  aspect-ratio: 3614 / 3122;
+}
+
+.swap-hero__mock {
+  position: absolute;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.swap-hero__mock img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.swap-hero__mock--desktop {
+  left: 3.3%;
+  top: 2.7%;
+  width: 80.3%;
+  z-index: 1;
+}
+
+.swap-hero__mock--desktop img {
+  transform: rotate(1.2deg);
+}
+
+.swap-hero__mock--mobile {
+  left: 63%;
+  top: 29.5%;
+  width: 30.5%;
+  z-index: 2;
+}
+
+.swap-hero__mock--mobile img {
+  transform: rotate(10.6deg);
+}
+
+/* 02 · Snapshot ------------------------------------------------------------ */
+.swap-snapshot {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.swap-snapshot__item {
+  border-top: 1px solid #d7cedb;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.swap-snapshot__num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--swap-pink);
+}
+
+.swap-snapshot__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #4e4554;
+}
+
+.swap-snapshot__item p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #716978;
+  margin: 0;
+}
+
+/* 03 · Marketplace loop ---------------------------------------------------- */
+
+/* Intro: this section's heading/lead run wider than the shared .swap-h2 /
+   .swap-lead defaults (Figma: 1050px / 900px, single-line heading) so they
+   get section-scoped overrides rather than changing the shared classes. */
+.swap-loop__heading {
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  max-width: 1050px;
+  white-space: nowrap;
+}
+
+.swap-loop__lead {
+  max-width: 900px;
+  margin-top: 12px;
+}
+
+.swap-loop {
+  margin-top: 122px;
+}
+
+.swap-section--ecosystem {
+  padding-bottom: 180px;
+}
+
+/* .container's max-width already includes its 24px side padding
+   (border-box), so its content box is only 1104px — 48px short of the
+   1152px-wide canvas the Figma coordinates above are authored against.
+   Widen just this section's container so the content box lines up
+   exactly with those pixel positions. */
+.swap-section--ecosystem .container {
+  max-width: calc(var(--max-width) + 48px);
+}
+
+/* Horizontal scroll shell: keeps the exact desktop diagram intact and lets
+   it scroll at widths that can't fit 1152px, instead of redesigning it. */
+.swap-loop__wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pixel-accurate stage: coordinates below are lifted directly from the
+   Figma frame (03 · Marketplace loop, node 333:246), local to this
+   1152×276 canvas — every node position matches the design 1:1. */
+.swap-loop__stage {
+  position: relative;
+  width: 1152px;
+  height: 276px;
+  min-width: 1152px;
+}
+
+.swap-loop__lane {
+  position: absolute;
+  left: 0;
+  width: 95px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.swap-loop__lane--seller {
+  top: 18px;
+}
+
+.swap-loop__lane--buyer {
+  top: 196px;
+}
+
+.swap-loop__lane-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--swap-magenta);
+  line-height: 20px;
+}
+
+.swap-loop__lane-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--swap-magenta);
+  line-height: 20px;
+}
+
+.swap-loop__card {
+  position: absolute;
+  background: #0c0a10;
+  border: 1px solid #342536;
+  border-radius: 12px;
+  padding: 16px 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.swap-loop__card--list,
+.swap-loop__card--browse {
+  left: 122px;
+  width: 194px;
+  height: 85px;
+}
+
+.swap-loop__card--list {
+  top: 0;
+}
+
+.swap-loop__card--browse {
+  top: 174px;
+}
+
+.swap-loop__card--flow {
+  width: 180px;
+  height: 97px;
+  top: 90px;
+}
+
+.swap-loop__card--offer {
+  left: 552px;
+}
+
+.swap-loop__card--negotiate {
+  left: 762px;
+}
+
+.swap-loop__card--trust {
+  left: 972px;
+}
+
+.swap-loop__card--accent {
+  background: #2b1230;
+  border-color: #b04d87;
+}
+
+.swap-loop__card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--swap-magenta);
+  line-height: 18px;
+}
+
+.swap-loop__card p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #aaa3b2;
+  margin: 0;
+}
+
+/* Core node */
+.swap-loop__core {
+  position: absolute;
+  left: 346px;
+  top: 42px;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swap-loop__core svg {
+  position: absolute;
+  inset: 0;
+  filter: drop-shadow(0 0 40px rgba(255, 0, 115, 0.35));
+}
+
+.swap-loop__core-label {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #fff2fa;
+}
+
+/* Connectors — straight (Core→Offer, Offer→Negotiate, Negotiate→Trust) */
+.swap-loop__connector {
+  position: absolute;
+  overflow: visible;
+}
+
+.swap-loop__connector--core-offer {
+  left: 516px;
+  top: 132px;
+  width: 36px;
+  height: 12px;
+}
+
+.swap-loop__connector--offer-negotiate {
+  left: 732px;
+  top: 132px;
+  width: 30px;
+  height: 12px;
+}
+
+.swap-loop__connector--negotiate-trust {
+  left: 942px;
+  top: 132px;
+  width: 30px;
+  height: 12px;
+}
+
+/* Connectors — curved (List→Core, Browse→Core).
+   Browse→Core is authored as its own path (a vertical mirror of the
+   List→Core curve) rather than a CSS transform on the shared path — a
+   rotate+scaleX transform was landing the arrowhead outside the circle. */
+.swap-loop__connector--list-core,
+.swap-loop__connector--browse-core {
+  left: 316px;
+  width: 36px;
+  height: 61px;
+}
+
+.swap-loop__connector--list-core {
+  top: 42px;
+}
+
+.swap-loop__connector--browse-core {
+  top: 151px;
+}
+
+/* Mobile vertical journey — hidden above 768px (see the max-width:768px
+   block below for the full layout). */
+.swap-loop__mobile {
+  display: none;
+}
+
+/* Scroll-triggered entrance animation ------------------------------------- */
+.swap-loop[data-loop-node],
+.swap-loop [data-loop-node] {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--loop-step, 0) * 120ms);
+}
+
+.swap-loop__connector[data-loop-node] {
+  transform: none;
+  transition: opacity 0.3s ease;
+  transition-delay: calc(var(--loop-step, 0) * 120ms);
+}
+
+.swap-loop__connector-line {
+  stroke-dasharray: 6 4;
+  stroke-dashoffset: 0;
+  animation: swapConnectorFlow 0.8s linear infinite;
+}
+
+@keyframes swapConnectorFlow {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.swap-loop.is-active [data-loop-node] {
+  opacity: 1;
+  transform: none;
+}
+
+/* 04 · Listing flow demo ---------------------------------------------------- */
+/* Figma (node 333:274, "04 · Core flow / Listing") authors this section's
+   content against a precise 1152px-wide canvas with no extra gutter, same
+   discrepancy already solved for the ecosystem section: .container's
+   max-width is border-box, so its content box is 48px short of 1152.
+   Widen it here too so the rounded demo container and heading hit Figma's
+   literal pixel values. Desktop/tablet only — mobile keeps the default
+   .container width. */
+.swap-section--listing {
+  /* Trimmed from the base .swap-section 88px so the whole flow — heading
+     through the demo card — fits inside a normal laptop viewport at 100%
+     zoom without shrinking any type, image, or component inside it. */
+  padding: 48px 0 56px;
+}
+
+.swap-section--listing .container {
+  max-width: calc(var(--max-width) + 48px);
+}
+
+.swap-listing__heading {
+  font-size: 66px;
+  line-height: 70px;
+  max-width: 960px;
+  margin-top: 6px;
+}
+
+.swap-listing__lead {
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 860px;
+  margin-top: 6px;
+}
+
+.swap-listing__caption {
+  margin-top: 28px;
+  font-size: 30px;
+  line-height: 38px;
+  max-width: none;
+}
+
+/* Horizontal rule above the closing statement (Figma "Listing / Divider",
+   node 333:284): 1px, full container width, positioned below the rounded
+   demo container rather than inside it. */
+.swap-divider {
+  margin: 48px 0 0;
+  border: none;
+  height: 1px;
+  background: #d6ccdb;
+}
+
+/* Demo row (Figma "VIDEO · Listing Flow / 12 sec", node 333:286): two
+   columns — timeline left, phone right — no card background/frame, so the
+   row's own height is whatever the taller column (the phone) needs;
+   align-items: center balances the shorter timeline column against it
+   instead of pinning it to the top. Shown at its native size — no
+   zoom/transform shrink. The tap indicator (see positionTapIndicator in
+   swapifly.js) positions itself from getBoundingClientRect() deltas
+   applied as plain style.left/top, so any CSS zoom/transform scaling on
+   this box throws that math off; keeping this unscaled is what keeps the
+   indicator lined up with its target.
+   Desktop/tablet only; the max-width:900px block below reverts this to a
+   stacked column for tablet/mobile. */
+.swap-demo {
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 1152px;
+  padding: 39px 112px 39px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swap-demo__frame {
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swap-demo__phone {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: #fbfcfe;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 28px -10px rgba(255, 0, 115, 0.08), 0 22px 42px -6px rgba(31, 18, 41, 0.16);
+  overflow: hidden;
+}
+
+/* Left column: 4-step vertical timeline (Figma "Listing / Visual timeline",
+   node 333:625). Rows are spaced with an explicit flex gap rather than
+   absolute positioning, chosen so that row-top + row-height reproduces
+   Figma's marker top offsets (0, 160, 320, 480px) exactly: each row is as
+   tall as its 72px icon tile, and 160 - 72 = 88px of gap lands the next
+   row's top precisely on the next marker. The connectors are absolutely
+   positioned across that same gap using Figma's own top values, since a
+   flex `gap` has no box of its own to hold decorative content. */
+.swap-demo__timeline {
+  position: relative;
+  width: 420px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+.swap-demo__connector {
+  position: absolute;
+  left: 30px;
+  width: 2px;
+  height: 98px;
+  background: #d1a8bf;
+  opacity: 0.72;
+  border-radius: 1px;
+}
+
+/* Mobile-only compact stepper (see max-width:1024px block for its layout):
+   hidden on desktop, where .swap-demo__timeline is shown instead. */
+.swap-demo__mtimeline {
+  display: none;
+}
+
+.swap-demo__step {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.swap-demo__marker {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* max-width: none overrides the global `img { max-width: 100% }` reset
+   (style.css) — without it, the containing block (the 62px marker) caps
+   this 94px-wide shadow-bleed image down to 62px while its height stays
+   94px, stretching the circle into an oval. */
+.swap-demo__marker-bg {
+  position: absolute;
+  left: -16px;
+  top: -10px;
+  width: 94px;
+  height: 94px;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+}
+
+.swap-demo__marker-num {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--swap-pink);
+}
+
+.swap-demo__step-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.swap-demo__step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  background: #fff0f7;
+  border: 1px solid #fff;
+  border-radius: 18px;
+}
+
+.swap-demo__step-text {
+  width: 220px;
+}
+
+.swap-demo__step-text strong {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  color: #1a141c;
+  text-transform: uppercase;
+}
+
+.swap-demo__step-text p {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+  color: #4f4552;
+}
+
+/* Pagination dots + Replay: not part of the desktop Figma frame, only
+   the mobile layout's manual scene control (see max-width:900px block).
+   Desktop uses the floating .swap-float-restart button instead. */
+.swap-demo__controls,
+.swap-demo__fallback-note {
+  display: none;
+}
+
+.swap-scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s var(--ease-premium);
+  background: #fbfcfe;
+}
+
+.swap-scene.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.swap-screen-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 92px;
+  padding: 0 20px;
+  border-bottom: 1px solid #f0f0f6;
+}
+
+.swap-screen-header h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+  flex: 1;
+}
+
+.swap-screen-header span {
+  font-size: 13px;
+  color: #6b7385;
+}
+
+.swap-screen-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+  padding: 22px 20px 0;
+}
+
+.swap-screen-hint {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b7385;
+  padding: 9px 20px 0;
+  margin: 0;
+}
+
+/* Grid, not flex: .swap-upload-card__idle and .swap-upload-card__loading
+   both occupy the same 1/1 cell so the card crossfades between them
+   in place (see below) without ever changing height — the "loading"
+   state is centered within whatever height the (taller) idle content
+   established. */
+.swap-upload-card {
+  margin: 26px 20px 0;
+  border: 1px dashed #bfccfa;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 46, 89, 0.07);
+  padding: 27px 20px 26px;
+  display: grid;
+  position: relative;
+}
+
+.swap-upload-card__idle {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.swap-upload-card__loading {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.swap-upload-card.is-loading .swap-upload-card__idle {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.swap-upload-card.is-loading .swap-upload-card__loading {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.swap-spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #f0f2ff;
+  border-top-color: var(--swap-pink);
+  animation: swapSpin 0.8s linear infinite;
+}
+
+@keyframes swapSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.swap-upload-card__loading-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7385;
+  margin: 0;
+}
+
+.swap-upload-card__icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 14px;
+}
+
+.swap-upload-card__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 4px 0 0;
+}
+
+.swap-upload-card__sub {
+  font-size: 13px;
+  color: #6b7385;
+  margin: 4px 0 18px;
+}
+
+.swap-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 14px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.swap-btn:disabled {
+  cursor: not-allowed;
+}
+
+.swap-btn:focus-visible {
+  outline: 2px solid var(--swap-pink);
+  outline-offset: 2px;
+}
+
+.swap-btn--pink {
+  background: var(--swap-pink);
+  color: #fff;
+}
+
+.swap-btn--pink:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.swap-btn--disabled,
+.swap-btn--pink:disabled {
+  background: #e8ebf2;
+  color: #9499a8;
+}
+
+.swap-btn--ghost {
+  background: #fff;
+  color: #1f212b;
+  border: 1px solid #e3e5f0;
+}
+
+.swap-btn--ghost:disabled {
+  color: #b7bccb;
+  border-color: #edeef3;
+  background: #fafafc;
+}
+
+.swap-format-note {
+  margin: 18px 20px 0;
+  background: #f4f6ff;
+  border-radius: 16px;
+  padding: 13px 16px;
+  font-size: 12px;
+  color: #4057ad;
+}
+
+.swap-tips-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 21px 20px 0;
+}
+
+.swap-tips {
+  margin: 11px 20px 0;
+  padding: 13px 18px;
+  background: #fff;
+  border: 1px solid #e3e5f0;
+  border-radius: 18px;
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #6b7385;
+}
+
+.swap-tips li::before {
+  content: '•';
+  color: #bfccfa;
+  margin-right: 6px;
+}
+
+.swap-bottom-action {
+  margin-top: auto;
+  padding: 16px 20px;
+  box-shadow: 0 -6px 18px rgba(26, 33, 64, 0.08);
+  display: flex;
+  gap: 12px;
+}
+
+.swap-bottom-action--split .swap-btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.swap-bottom-action .swap-btn:only-child {
+  width: 100%;
+  justify-content: center;
+}
+
+.swap-photos-card {
+  margin: 26px 20px 0;
+  border: 1px solid #ececf3;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 46, 89, 0.07);
+  padding: 20px;
+}
+
+.swap-photos-card__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+}
+
+.swap-photos-card__sub {
+  font-size: 13px;
+  color: #6b7385;
+  margin: 4px 0 0;
+}
+
+.swap-photo-row {
+  display: flex;
+  gap: 10px;
+}
+
+.swap-photos-card .swap-photo-row {
+  margin-top: 16px;
+}
+
+.swap-photo {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f2f2f7;
+}
+
+.swap-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swap-photo__badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* `img.` prefix (not just the bare class) needed here: `.swap-photo img`
+   above is a class+type selector, so a plain class selector loses to it on
+   specificity regardless of what properties it sets — without matching that
+   specificity, the remove badge/x stretch to fill the whole photo
+   thumbnail instead of sitting as a small corner control. */
+img.swap-photo__remove-bg,
+img.swap-photo__remove-x {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+}
+
+img.swap-photo__remove-x {
+  top: 12.5px;
+  right: 12.5px;
+  width: 13px;
+  height: 13px;
+}
+
+.swap-add-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #f0f2ff;
+  border-radius: 14px;
+  color: var(--swap-blue);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Floating modal card (Figma "AI analyzing overlay", node 333:607) — shown
+   centered over a dimmed backdrop by .swap-analyzing-overlay, not as its
+   own full-screen scene, so the photos-added screen stays visible (and
+   blocked from interaction) underneath while analysis runs. */
+.swap-analyzing {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  max-width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 28px rgba(26, 33, 64, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+  padding: 28px 42px;
+}
+
+.swap-analyzing__orb {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f3f5ff, #dfe4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: swapOrbPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes swapOrbPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.swap-analyzing__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+}
+
+.swap-analyzing__sub {
+  font-size: 12px;
+  color: #6b7385;
+  margin: 8px 0 28px;
+}
+
+.swap-progress {
+  width: 100%;
+  max-width: 286px;
+  height: 6px;
+  border-radius: 999px;
+  background: #eef0f8;
+  overflow: hidden;
+}
+
+.swap-progress__fill {
+  display: block;
+  height: 100%;
+  width: 8%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--swap-pink), var(--swap-blue));
+}
+
+.swap-analyzing-overlay.is-open .swap-progress__fill {
+  animation: swapProgressFill 2s var(--ease-premium) forwards;
+}
+
+@keyframes swapProgressFill {
+  from { width: 8%; }
+  to { width: 96%; }
+}
+
+/* Dimmed backdrop + centered modal card; sits above the (still-visible,
+   now unclickable) photos-added screen beneath it. */
+.swap-analyzing-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-premium), visibility 0.3s;
+}
+
+.swap-analyzing-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.swap-analyzing-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 26, 0.45);
+}
+
+.swap-screen-header--compact {
+  padding: 18px 20px 13px;
+  height: auto;
+}
+
+/* overscroll-behavior:contain stops the inner scroll from chaining to the
+   page once it hits its own top/bottom edge — required so reviewing a
+   listing inside the phone never scrolls the surrounding portfolio page. */
+.swap-review-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Scene 1/2 (upload, photos-added): header and bottom action stay fixed,
+   only the middle content scrolls. Needed once .swap-demo__phone got
+   shorter than this content's natural height — see .swap-demo__phone. */
+.swap-scene-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+}
+
+.swap-review-scroll--preview {
+  padding: 0 0 20px;
+  gap: 0;
+}
+
+.swap-review-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0f2ff;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.swap-review-banner__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.swap-review-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.swap-review-ready {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+}
+
+.swap-review-hint {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7385;
+  margin: 0;
+}
+
+.swap-review-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.swap-review-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b4f5a;
+  margin: 0;
+}
+
+.swap-review-field-hint {
+  font-size: 12px;
+  color: #9a94a5;
+  margin: 0;
+}
+
+.swap-review-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 4px 0 0;
+}
+
+.swap-review-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium);
+}
+
+.swap-scene[data-scene='4'].is-active .swap-review-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* nth-child counts from .swap-review-scroll's start (the banner and photo
+   row are children 1-2), so the 13 review items — Category through Deal
+   method, including the two section titles — land on nth-child(3) through
+   nth-child(15). */
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(3) { transition-delay: 0.04s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(4) { transition-delay: 0.08s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(5) { transition-delay: 0.12s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(6) { transition-delay: 0.16s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(7) { transition-delay: 0.2s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(8) { transition-delay: 0.24s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(9) { transition-delay: 0.28s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(10) { transition-delay: 0.32s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(11) { transition-delay: 0.36s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(12) { transition-delay: 0.4s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(13) { transition-delay: 0.44s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(14) { transition-delay: 0.48s; }
+.swap-scene[data-scene='4'].is-active .swap-review-item:nth-child(15) { transition-delay: 0.52s; }
+
+.swap-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #ececf3;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.swap-field--wide {
+  align-items: flex-start;
+}
+
+.swap-field__value {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f212b;
+  line-height: 1.5;
+}
+
+.swap-ai-badge {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 20px;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: #4f73ed;
+  background: #f0f2ff;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.swap-deal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #ececf3;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.swap-deal-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swap-deal-card__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff5f8;
+  border: 1px solid #ffd6e7;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.swap-deal-check {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--swap-pink);
+}
+
+.swap-deal-card__option strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f212b;
+}
+
+.swap-deal-card__option div span {
+  display: block;
+  font-size: 13px;
+  color: #6b7385;
+  margin-top: 2px;
+}
+
+.swap-photo--edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e3e5f0;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f212b;
+}
+
+.swap-preview-media {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.swap-preview-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swap-preview-media__count {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.swap-preview-media__tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f212b;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.swap-preview-media__tag--live {
+  background: var(--swap-pink);
+  color: #fff;
+}
+
+.swap-preview-media__actions {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swap-preview-media__actions-right {
+  display: flex;
+  gap: 8px;
+}
+
+.swap-preview-media__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.swap-preview-body {
+  padding: 21px;
+}
+
+.swap-preview-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--swap-blue);
+  margin: 0 0 6px;
+}
+
+.swap-preview-label--live {
+  color: #1f9d55;
+}
+
+.swap-preview-body h3 {
+  font-size: 21px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 0;
+}
+
+.swap-preview-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--swap-pink);
+  margin: 5px 0 0;
+}
+
+.swap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 13px 0 0;
+}
+
+.swap-chips span {
+  background: #f2f2f7;
+  color: #4b4b57;
+  font-size: 13px;
+  padding: 5px 13px;
+  border-radius: 999px;
+}
+
+.swap-seller {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 21px;
+  padding: 12px 14px;
+  background: #f7f8fc;
+  border-radius: 14px;
+}
+
+.swap-seller__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--swap-pink), var(--swap-blue));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.swap-seller > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.swap-seller strong {
+  display: block;
+  font-size: 15px;
+  color: #1f212b;
+}
+
+.swap-seller small {
+  font-size: 12px;
+  color: #6b7385;
+}
+
+.swap-seller__verified {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--swap-blue);
+}
+
+.swap-preview-divider {
+  border: none;
+  border-top: 1px solid #ececf3;
+  margin: 21px 0 0;
+}
+
+.swap-preview-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f212b;
+  margin: 21px 0 0;
+}
+
+.swap-preview-description {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4b4f5a;
+  margin: 8px 0 0;
+}
+
+.swap-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+
+.swap-details-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.swap-details-list__row span {
+  color: #9a94a5;
+}
+
+.swap-details-list__row strong {
+  font-weight: 500;
+  color: #1f212b;
+  text-align: right;
+}
+
+.swap-preview-note {
+  font-size: 12px;
+  color: #4057ad;
+  background: #f4f6ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 21px 0 0;
+}
+
+/* Success toast: hidden by default, JS toggles .is-visible on publish (fades
+   + slides down into place) and .is-leaving ~3s later before removing the
+   class entirely (fades back out). */
+.swap-published-banner {
+  position: absolute;
+  top: 60px;
+  left: 21px;
+  right: 21px;
+  z-index: 1;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(31, 15, 38, 0.14);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium);
+  pointer-events: none;
+}
+
+.swap-published-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.swap-published-banner.is-leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.swap-published-banner__bg,
+.swap-published-banner__check {
+  position: relative;
+}
+
+.swap-published-banner__check {
+  margin-left: -44px;
+}
+
+.swap-published-banner strong {
+  display: block;
+  font-size: 16px;
+  color: #1f212b;
+}
+
+.swap-published-banner small {
+  font-size: 12px;
+  color: #6b7385;
+}
+
+/* Demo controls */
+.swap-demo__controls {
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.swap-demo__replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #201622;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-premium), background-color var(--dur-fast) var(--ease-premium);
+}
+
+.swap-demo__replay:hover {
+  background: var(--swap-pink);
+  transform: translateY(-2px);
+}
+
+.swap-demo__replay-icon {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-premium);
+}
+
+.swap-demo__replay:active .swap-demo__replay-icon {
+  transform: rotate(-180deg);
+}
+
+.swap-demo__fallback-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #8a8394;
+  text-align: center;
+}
+
+/* Floating restart: pinned level with the phone frame's vertical center
+   (not the viewport corner, which drifts far from the phone once it's
+   scrolled into view), toggled in/out by JS while the interaction demo
+   is on screen. */
+.swap-float-restart {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%) translateY(12px);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #201622;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(31, 15, 38, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-premium), transform 0.3s var(--ease-premium), background-color var(--dur-fast) var(--ease-premium);
+}
+
+.swap-float-restart.is-visible {
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.swap-float-restart:hover {
+  background: var(--swap-pink);
+  transform: translateY(-50%) translateY(-2px);
+}
+
+.swap-float-restart__icon {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-premium);
+}
+
+.swap-float-restart:active .swap-float-restart__icon {
+  transform: rotate(-180deg);
+}
+
+/* Tap indicator: a single reusable pulsing cue (mobile-tap style, not a
+   mouse cursor) that JS centers over whichever button the flow expects
+   next. pointer-events:none throughout so it never intercepts the real
+   click; [hidden] (native) fully removes it when not needed. */
+.swap-tap-indicator {
+  position: absolute;
+  z-index: 6;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* White, not brand-pink: every current tap target (Choose files, Next,
+   Preview, Publish) is a solid pink button, so a pink ring/dot would blend
+   straight into it. White (plus a soft dark shadow for definition on the
+   card's own light backgrounds) reads clearly against both. */
+.swap-tap-indicator__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(31, 15, 38, 0.18);
+  animation: swapTapPulse 1.6s ease-out infinite;
+}
+
+.swap-tap-indicator__dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px rgba(31, 15, 38, 0.14), 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes swapTapPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Visually hidden but announced by screen readers — carries the analysis-
+   complete / publish-success messages. */
+.swap-demo__live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 05 · Offer & chat --------------------------------------------------------- */
+.swap-offer__intro {
+  margin-bottom: 56px;
+}
+
+.swap-offer__title {
+  max-width: 900px;
+}
+
+.swap-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.swap-decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.swap-decision-list--row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.swap-decision-list--row .swap-decision {
+  flex: 1;
+  min-width: 220px;
+}
+
+.swap-decision {
+  background: #0b090e;
+  border: 1px solid #382436;
+  border-radius: 14px;
+  padding: 18px 18px 20px;
+}
+
+.swap-decision strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #d5ced8;
+  margin-bottom: 8px;
+}
+
+.swap-decision p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #a8a1af;
+  margin: 0;
+}
+
+/* Coded phone-chat mockups (buyer/seller) inside the offer panel ---------- */
+.swap-chat-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 36px 28px 40px;
+  background: linear-gradient(90deg, #170b1b, #050407);
+  border: 1px solid #3d213b;
+  border-radius: 30px;
+  box-shadow: 0 28px 54px -10px rgba(0, 0, 0, 0.42);
+}
+
+.swap-chat-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swap-chat-role {
+  display: block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #ff5ea3;
+  margin-bottom: 18px;
+}
+
+.swap-chat-divider {
+  align-self: stretch;
+  width: 1px;
+  margin-top: 34px;
+  background: #422640;
+  opacity: 0.9;
+}
+
+.swap-phone {
+  width: 100%;
+  max-width: 340px;
+  /* Height is synced to match its sibling by JS (see swapifly.js) — it
+     measures each phone's natural content height and sets both to the
+     taller value, so they're always pixel-equal without distorting either
+     one's proportions or risking clipped content. */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 22px 40px -16px rgba(0, 0, 0, 0.55);
+}
+
+.swap-phone__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 14px 12px;
+}
+
+.swap-phone__back {
+  display: flex;
+  color: #17131c;
+}
+
+.swap-phone__title {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  color: #17131c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swap-phone__ai {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #7a7580;
+}
+
+.swap-phone__toggle {
+  position: relative;
+  width: 26px;
+  height: 15px;
+  border-radius: 999px;
+  background: #d9d5df;
+}
+
+.swap-phone__toggle--on {
+  background: #34c759;
+}
+
+.swap-phone__toggle--on::before {
+  left: 13px;
+}
+
+.swap-phone__toggle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.swap-phone__listing {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f4f2f6;
+}
+
+.swap-phone__listing-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.swap-phone__listing-info p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  color: #4a4552;
+  line-height: 1.3;
+}
+
+.swap-phone__listing-info strong {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #17131c;
+}
+
+.swap-phone__thread {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: #f8f6fa;
+}
+
+.swap-phone__timestamp {
+  align-self: center;
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  color: #a7a1af;
+  margin-bottom: 2px;
+}
+
+.swap-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 82%;
+  margin: 0;
+}
+
+.swap-bubble > span {
+  padding: 9px 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 1.45;
+  color: #232028;
+}
+
+.swap-bubble time {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: #a7a1af;
+}
+
+.swap-bubble--in {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.swap-bubble--in > span {
+  background: #fff;
+  border: 1px solid #e6e2eb;
+  border-radius: 14px 14px 14px 3px;
+}
+
+.swap-bubble--out {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.swap-bubble--out > span {
+  background: #ebe7f2;
+  border-radius: 14px 14px 3px 14px;
+}
+
+.swap-offer-card {
+  align-self: flex-start;
+  max-width: 92%;
+  margin-top: 2px;
+  padding: 12px 14px 14px;
+  background: #fce6ee;
+  border: 1.5px solid var(--swap-pink);
+  border-radius: 14px;
+}
+
+.swap-offer-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.swap-offer-card__head span:first-child {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #b23568;
+}
+
+.swap-offer-card__pill {
+  padding: 3px 9px;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #7a1f47;
+  background: #fff;
+  border-radius: 999px;
+}
+
+.swap-offer-card__price {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-body);
+  font-size: 19px;
+  font-weight: 700;
+  color: #17131c;
+}
+
+.swap-offer-card__note {
+  margin: 3px 0 0;
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  color: #8a5470;
+}
+
+.swap-offer-card__time {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: #a7a1af;
+}
+
+.swap-phone__footer {
+  flex-shrink: 0;
+  padding: 12px 14px 16px;
+  background: #fff;
+  border-top: 1px solid #eeecf1;
+}
+
+.swap-phone__footer-label {
+  display: block;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  color: #8a8590;
+  margin-bottom: 10px;
+}
+
+.swap-phone__footer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swap-phone__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f2f0f4;
+  color: #4a4552;
+}
+
+.swap-phone__amount {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  height: 30px;
+  background: #f2f0f4;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+}
+
+.swap-phone__amount-cur {
+  font-weight: 700;
+  color: #17131c;
+}
+
+.swap-phone__amount-placeholder {
+  color: #a7a1af;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swap-phone__cta {
+  flex-shrink: 0;
+  padding: 0 16px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--swap-pink);
+  border-radius: 999px;
+}
+
+.swap-phone__pill {
+  flex: 1;
+  min-width: 0;
+  padding: 0 8px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swap-phone__pill--decline {
+  color: #fff;
+  background: #17131c;
+}
+
+.swap-phone__pill--counter {
+  color: #17131c;
+  background: #f2f0f4;
+}
+
+.swap-phone__pill--accept {
+  color: #fff;
+  background: var(--swap-pink);
+}
+
+.swap-phone__pill--ghost {
+  color: #241f2b;
+  background: #fff;
+  border: 1px solid #e0d6e5;
+}
+
+.swap-chat-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 28px auto 0;
+  padding: 13px 22px;
+  width: fit-content;
+  max-width: 100%;
+  background: #0e0911;
+  border: 1px solid #522e4d;
+  border-radius: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #d1c2d6;
+}
+
+.swap-chat-flow__arrow {
+  color: #d1c2d6;
+}
+
+.swap-chat-flow__active {
+  color: var(--swap-pink);
+}
+
+.swap-chat-caption {
+  max-width: 480px;
+  margin: 18px auto 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #b2a8bd;
+}
+
+/* 06 · AI seller -------------------------------------------------------------- */
+.swap-ai-glow {
+  position: absolute;
+  left: -10%;
+  top: 20%;
+  width: 900px;
+  height: 900px;
+  max-width: 120vw;
+  background: radial-gradient(circle, rgba(255, 0, 115, 0.22), transparent 65%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.swap-ai-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  /* The rotated, overlapping phone pair needs real width to hold the exact
+     390:844 ratio without clipping its content — give the visuals column
+     more of the row than the activity-log column needs. */
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.swap-ai-visuals {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0;
+}
+
+.swap-ai-phone {
+  /* Rotated + overlapping, so the pair's combined bounding width is bigger
+     than the sum of their layout widths. 58%, capped at 335px, is the
+     largest size that both (a) fits the wider .swap-ai-grid column above
+     without the rotated edge crossing it and (b) leaves the true 390:844
+     ratio height tall enough for the seller screen's content to fit
+     without clipping. */
+  width: 58%;
+  max-width: 335px;
+  /* Locked to the true 390:844 device ratio — never stretched to match the
+     sibling screen. flex-shrink must stay off, otherwise the flex row (the
+     two overlapping phones sum to well over 100% of the container by
+     design) silently compresses both phones below the width their content
+     needs to fit the ratio without clipping. */
+  aspect-ratio: 390 / 844;
+  flex-shrink: 0;
+  box-shadow: 0 22px 40px -8px rgba(0, 0, 0, 0.4);
+}
+
+.swap-ai-phone--left {
+  transform: rotate(-4deg);
+  margin-right: -18px;
+}
+
+.swap-ai-phone--right {
+  transform: rotate(3deg);
+  margin-top: 30px;
+}
+
+/* Figma-spec chrome overrides — this section's mockups read at closer to
+   true device scale (390px) than the compact Core Flow 02 phones, so the
+   shared .swap-phone chrome needs larger type/targets here. */
+.swap-ai-phone .swap-phone__header {
+  padding: 18px 18px 14px;
+}
+
+.swap-ai-phone .swap-phone__title {
+  font-size: 15px;
+}
+
+.swap-ai-phone .swap-phone__ai {
+  font-size: 13px;
+  gap: 7px;
+}
+
+.swap-ai-phone .swap-phone__toggle {
+  width: 30px;
+  height: 16px;
+}
+
+.swap-ai-phone .swap-phone__toggle::before {
+  width: 12px;
+  height: 12px;
+}
+
+.swap-ai-phone .swap-phone__toggle--on::before {
+  left: 16px;
+}
+
+.swap-ai-phone .swap-bubble > span {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px -8px rgba(0, 0, 0, 0.07);
+  padding: 13px 15px;
+  font-size: 13.5px;
+}
+
+.swap-ai-phone .swap-bubble--in {
+  max-width: 68%;
+}
+
+.swap-ai-phone .swap-bubble--in > span {
+  background: #fff;
+  border: 1px solid #e0d6e5;
+  border-radius: 16px;
+  color: #241f2b;
+}
+
+.swap-ai-phone .swap-bubble--out {
+  max-width: 80%;
+}
+
+.swap-ai-phone .swap-bubble--out > span {
+  background: #f6f4f9;
+  border: 1px solid #e0d6e5;
+  border-radius: 16px;
+  color: #241f2b;
+}
+
+.swap-ai-phone .swap-bubble time {
+  font-size: 11px;
+  color: #7a7085;
+}
+
+.swap-ai-phone__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background: #fcfbfd;
+}
+
+.swap-ai-info {
+  padding: 14px 16px;
+  background: #f6f4f9;
+  border: 1px solid #e0d6e5;
+  border-radius: 16px;
+}
+
+.swap-ai-info strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #241f2b;
+}
+
+.swap-ai-info p {
+  margin: 6px 0 0;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #7a7085;
+}
+
+.swap-ai-tag {
+  display: block;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: #4f63a1;
+  background: #dfeaff;
+  border-radius: 12px;
+}
+
+.swap-ai-note-time {
+  max-width: 260px;
+  white-space: normal;
+  text-align: right;
+  font-size: 11px !important;
+}
+
+.swap-ai-price-tag {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--swap-pink);
+}
+
+.swap-ai-note {
+  flex-shrink: 0;
+  margin: 0 18px;
+  padding: 16px 18px 18px;
+  background: #fff;
+  border: 1px solid #e0d6e5;
+  border-radius: 18px;
+}
+
+.swap-ai-note strong {
+  display: block;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #241f2b;
+}
+
+.swap-ai-note p {
+  margin: 6px 0 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.4;
+  color: #7a7085;
+}
+
+.swap-ai-note__actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.swap-ai-note__actions .swap-phone__pill {
+  flex: none;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-size: 13.5px;
+}
+
+.swap-ai-suggestion {
+  flex-shrink: 0;
+  margin: 0 18px 18px;
+  padding: 16px 18px 18px;
+  background: #f6f4f9;
+  border: 1px solid #e0d6e5;
+  border-radius: 18px;
+}
+
+.swap-ai-suggestion__pill {
+  display: block;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  padding: 7px 14px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #7a7085;
+  background: #fff;
+  border-radius: 13px;
+}
+
+.swap-ai-suggestion__label {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #7a7085;
+}
+
+.swap-ai-suggestion__text {
+  margin: 8px 0 0;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: #241f2b;
+}
+
+.swap-ai-suggestion__note {
+  margin: 12px 0 0;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: #7a7085;
+}
+
+.swap-ai-suggestion__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.swap-ai-suggestion__actions .swap-phone__pill {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-size: 13.5px;
+}
+
+.swap-ai-phone .swap-phone__footer {
+  padding: 16px 18px 18px;
+}
+
+.swap-ai-phone .swap-phone__footer-row {
+  gap: 10px;
+}
+
+.swap-ai-phone .swap-phone__amount {
+  background: transparent;
+  height: auto;
+  padding: 0;
+}
+
+.swap-ai-phone .swap-phone__amount-placeholder {
+  font-size: 13.5px;
+}
+
+.swap-ai-phone .swap-phone__cta {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: 13.5px;
+}
+
+.swap-ai-log {
+  background: #fcfbfe;
+  border: 1px solid #6b4063;
+  border-radius: 24px;
+  box-shadow: 0 22px 40px -8px rgba(0, 0, 0, 0.34);
+  padding: 28px;
+}
+
+.swap-ai-log h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #241f2b;
+  margin: 0 0 18px;
+}
+
+.swap-ai-log__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.swap-ai-log__list li {
+  position: relative;
+  padding-left: 68px;
+}
+
+.swap-ai-log__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--swap-pink);
+}
+
+.swap-ai-log__list li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 3.5px;
+  top: 14px;
+  width: 1px;
+  height: calc(100% + 6px);
+  background: #e0d6e5;
+}
+
+.swap-ai-log__list time {
+  position: absolute;
+  left: 26px;
+  top: 0;
+  font-size: 10.5px;
+  color: #7a7085;
+}
+
+.swap-ai-log__list strong {
+  display: block;
+  font-size: 12.5px;
+  color: #241f2b;
+}
+
+.swap-ai-log__list p {
+  font-size: 11px;
+  color: #7a7085;
+  margin: 2px 0 0;
+}
+
+/* 07 · System showcase ---------------------------------------------------------
+   Figma lays 01-04 out as a bento collage: 02 and 04 sit staggered lower
+   than 01/03, and 04 genuinely overlaps 03's bottom-right corner. That
+   needs true overlap, not just a grid gap, so 01-04 are pinned by percentage
+   inside an aspect-ratio box (.swap-showcase__collage) rather than placed
+   in flow — percentages keep it scaling with the container, and DOM order
+   (04 after 03) gives 04 the top stacking without extra z-index. */
+.swap-showcase {
+  margin-top: 56px;
+}
+
+.swap-showcase__label {
+  margin: 0 0 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--swap-pink);
+}
+
+.swap-showcase__item {
+  margin: 0;
+  background: #fbfbfd;
+  border: 1px solid rgba(201, 189, 207, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 24px 42px rgba(28, 18, 31, 0.14);
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-premium), box-shadow var(--dur-base) var(--ease-premium);
+}
+
+.swap-showcase__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 54px rgba(28, 18, 31, 0.2);
+}
+
+.swap-showcase__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.swap-showcase__group--00 {
+  margin-bottom: 58px;
+}
+
+.swap-showcase__collage {
+  position: relative;
+}
+
+/* Padding-top aspect box: the four groups below are position:absolute (out
+   of flow), so the collage needs its own height to lay them out against. */
+.swap-showcase__collage::before {
+  content: '';
+  display: block;
+  padding-top: 131.8%;
+}
+
+.swap-showcase__collage .swap-showcase__group {
+  position: absolute;
+}
+
+.swap-showcase__group--01 {
+  left: 0;
+  top: 0;
+  width: 48.1%;
+}
+
+.swap-showcase__group--02 {
+  left: 52%;
+  top: 7.9%;
+  width: 48.1%;
+}
+
+.swap-showcase__group--03 {
+  left: 0;
+  top: 37.9%;
+  width: 60%;
+}
+
+.swap-showcase__group--04 {
+  left: 40%;
+  top: 65.1%;
+  width: 60%;
+}
+
+/* Figma right-aligns this label to the card's right edge instead of the
+   card's left edge like the other four labels. */
+.swap-showcase__group--04 .swap-showcase__label {
+  text-align: right;
+}
+
+.swap-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.swap-pill {
+  background: #17131c;
+  color: var(--swap-magenta-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 999px;
+}
+
+/* 08 · Outcome & reflection --------------------------------------------------- */
+.swap-outcome-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.swap-outcome-card {
+  background: #211b27;
+  border: 1px solid #43384c;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.swap-outcome-card h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 26px;
+  color: #faf8fd;
+  margin: 14px 0 0;
+}
+
+.swap-outcome-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #faf8fd;
+  margin: 12px 0 0;
+}
+
+.swap-outcome-card__lead {
+  font-size: 18px !important;
+  margin-top: 14px !important;
+}
+
+.swap-closing {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.swap-closing__statement {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #faf8fd;
+  max-width: 900px;
+  margin: 0;
+}
+
+.swap-closing__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: #bdb6c4;
+}
+
+/* Parallax targets ------------------------------------------------------------- */
+[data-parallax],
+[data-parallax-slow] {
+  will-change: transform;
+}
+
+/* Responsive ------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .swap-ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .swap-offer {
+    grid-template-columns: 1fr;
+  }
+
+  .swap-offer__visual {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Listing demo: the fixed-width two-column row (420px timeline + 390px
+     phone, no shrink) needs ~1150px to avoid the columns colliding, so it
+     reverts to a stacked column here — the mobile layout this section already
+     had before the desktop rebuild, just with the nicer marker/icon/text
+     timeline instead of the old plain 4-column list. Phone-specific sizing
+     (below 640px) is untouched. */
+  .swap-section--listing .container {
+    max-width: var(--max-width);
+  }
+
+  .swap-demo {
+    width: auto;
+    max-width: none;
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Desktop's vertical icon+description timeline is replaced below 1024px
+     by the compact .swap-demo__mtimeline stepper (defined further down),
+     which matches the mobile reference layout. */
+  .swap-demo__timeline {
+    display: none;
+  }
+
+  .swap-demo__mtimeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .swap-demo__mtimeline-line {
+    position: absolute;
+    z-index: -1;
+    top: 31px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #d1a8bf;
+    opacity: 0.72;
+  }
+
+  .swap-demo__mstep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .swap-demo__mstep-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    color: #1a141c;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .swap-demo__frame {
+    margin-top: 40px;
+  }
+
+  .swap-demo__controls {
+    margin-top: 28px;
+    display: flex;
+  }
+
+  /* Mobile already has the inline Replay button above; the floating
+     duplicate has nowhere good to sit once the columns stack. */
+  .swap-float-restart {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .swap-hero__title {
+    font-size: 36px;
+  }
+
+  .swap-h2 {
+    font-size: 30px;
+  }
+
+  /* .swap-listing__heading's desktop line-height (70px, tuned for its
+     66px Figma size) is a fixed px value, so it doesn't scale down with
+     the 30px mobile font-size above — left alone it stretches the gap
+     between wrapped lines. */
+  .swap-listing__heading {
+    line-height: 1.2;
+  }
+
+  .swap-snapshot,
+  .swap-outcome-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .swap-showcase__collage {
+    position: static;
+  }
+
+  .swap-showcase__collage::before {
+    display: none;
+  }
+
+  .swap-showcase__collage .swap-showcase__group {
+    position: static;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .swap-showcase__collage .swap-showcase__group:last-child {
+    margin-bottom: 0;
+  }
+
+  .swap-loop__heading {
+    font-size: 34px;
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  .swap-loop__lead {
+    max-width: 100%;
+  }
+
+  .swap-ai-phone {
+    width: 56%;
+  }
+
+  .swap-closing__statement {
+    font-size: 22px;
+  }
+}
+
+/* Product Ecosystem — mobile vertical journey (<=768px) ---------------------
+   Desktop's absolute-positioned horizontal stage doesn't reflow, so mobile
+   gets its own markup (.swap-loop__mobile, a sibling of .swap-loop__wrap in
+   the HTML) rebuilt top-to-bottom: labels -> List/Browse columns -> curved
+   connectors into the core -> core -> Offer/Negotiate/Close & Rate stacked
+   full-width behind one shared vertical dashed line. Desktop stays untouched
+   above 768px; the tablet horizontal-scroll wrap (769–1024px) is untouched
+   too. Reveal is driven by swapifly.js toggling `.is-in` per [data-loop-m-node]
+   as it individually scrolls into view. */
+@media (max-width: 768px) {
+  .swap-loop {
+    margin-top: 40px;
+  }
+
+  .swap-loop__wrap {
+    display: none;
+  }
+
+  .swap-loop__mobile {
+    display: block;
+  }
+
+  .swap-loop-m__labels {
+    display: flex;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .swap-loop-m__label-col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .swap-loop-m__pair {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .swap-loop-m__pair .swap-loop-m__card {
+    position: relative;
+    flex: 1 1 0;
+    width: auto;
+    min-height: 108px;
+  }
+
+  /* Fixed 1:1 box (viewBox matches width/height exactly) so the curve
+     shape never stretches/distorts the way a percentage-width svg would.
+     Centered via margin auto. Top margin is a small positive gap (not an
+     overlap — curves paint above the cards, so unlike the core/line
+     junctions below there's nothing to hide it behind) keeping the dash
+     start clear of the card border. Bottom margin deliberately overlaps
+     the core by 10px — that overlapped tail is hidden behind the circle
+     (see z-index below) so the visible line always reads as ending exactly
+     on the rim, regardless of small width changes between 390–768px. */
+  .swap-loop-m__curves {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 220px;
+    height: 76px;
+    margin: 4px auto -10px;
+    overflow: visible;
+  }
+
+  /* Core sits above the curves and the vertical flow line (z-index) so any
+     connector overlap is covered by its own opaque fill/rim instead of
+     showing through. */
+  .swap-loop-m__core {
+    position: relative;
+    z-index: 3;
+    left: auto;
+    top: auto;
+    width: 148px;
+    height: 148px;
+    margin: 0 auto;
+  }
+
+  /* The core's svg carries desktop's fixed width/height="170" attributes;
+     without this the browser honors those over the shrunk 148px box
+     (position:absolute + inset:0 does NOT override an explicit replaced-
+     element size), leaving an oversized circle anchored top-left instead of
+     filling — and centered on — its container. */
+  .swap-loop-m__core svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Overlaps the core by 10px (margin-top) — hidden behind it via z-index,
+     same trick as the curves above — so the dashed line reads as starting
+     exactly at the circle's bottom edge. padding-top is the visible dash
+     length from that edge down to the Offer card. */
+  .swap-loop-m__flow {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: -10px;
+    padding-top: 24px;
+  }
+
+  /* Sized as a small fixed-width box (not the old 0-width bordered span) so
+     the inner <line>'s round linecap has room to render without clipping;
+     the line itself is centered by its own x1/x2="50%", independent of this
+     box's exact width. An <svg> with no width/height attributes defaults to
+     an intrinsic 300x150 — top:0/bottom:0 alone does NOT override that
+     (same replaced-element rule that bit the core circle earlier), so
+     height:100% is required or the box silently caps at 150px instead of
+     stretching to the flow's full height. */
+  .swap-loop-m__line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    height: 100%;
+    overflow: visible;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 0;
+  }
+
+  .swap-loop-m__card--full {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  /* Reveal: cards/labels fade up, connectors fade in, the vertical line
+     grows downward — each independently as it enters the viewport. */
+  .swap-loop__mobile [data-loop-m-node] {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .swap-loop-m__card[data-loop-m-node] {
+    transform: translateY(20px);
+  }
+
+  .swap-loop-m__curves[data-loop-m-node] {
+    transform: none;
+  }
+
+  .swap-loop-m__line[data-loop-m-node] {
+    transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .swap-loop__mobile [data-loop-m-node].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .swap-loop-m__line[data-loop-m-node].is-in {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .swap-hero {
+    padding: 128px 0 72px;
+  }
+
+  .swap-hero__title {
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+
+  .swap-hero__lead {
+    font-size: 15px;
+  }
+
+  .swap-section {
+    padding: 64px 0;
+  }
+
+  .swap-chat-panel {
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 20px 32px;
+    gap: 32px;
+  }
+
+  .swap-chat-col {
+    align-items: center;
+    width: 100%;
+  }
+
+  .swap-chat-role {
+    align-self: center;
+  }
+
+  .swap-phone {
+    max-width: 280px;
+  }
+
+  .swap-chat-divider {
+    align-self: stretch;
+    width: auto;
+    height: 1px;
+    margin: 0;
+  }
+
+  .swap-chat-flow {
+    gap: 10px;
+    padding: 12px 16px;
+    font-size: 10px;
+  }
+
+  .swap-demo {
+    padding: 32px 16px;
+  }
+
+  .swap-demo__phone {
+    width: 260px;
+    height: 563px;
+  }
+
+  /* Phone-internal content was resized for the new 390px-wide desktop/tablet
+     demo (see the "04 · Listing flow demo" block above); restore the
+     original, smaller values here so the pre-existing 260px-wide mobile
+     phone (unchanged by this pass) isn't left with oversized padding/type
+     that no longer fits it. */
+  .swap-screen-header {
+    height: auto;
+    gap: 12px;
+    padding: 20px 16px 14px;
+  }
+
+  .swap-screen-header h3 {
+    font-size: 14px;
+  }
+
+  .swap-screen-header span {
+    font-size: 11px;
+  }
+
+  .swap-screen-heading {
+    font-size: 15px;
+    padding: 14px 16px 0;
+  }
+
+  .swap-screen-hint {
+    font-size: 12px;
+    padding: 8px 16px 0;
+  }
+
+  .swap-upload-card {
+    margin: 18px 16px 0;
+    border-radius: 20px;
+    padding: 24px 16px 20px;
+  }
+
+  .swap-upload-card__icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+  }
+
+  .swap-upload-card__title {
+    font-size: 14px;
+  }
+
+  .swap-upload-card__sub {
+    font-size: 11px;
+    margin: 4px 0 14px;
+  }
+
+  .swap-btn {
+    gap: 8px;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .swap-btn--ghost {
+    background: #eef0f7;
+    border: none;
+  }
+
+  .swap-format-note {
+    margin: 14px 16px 0;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .swap-tips-title {
+    font-size: 12px;
+    margin: 16px 16px 0;
+  }
+
+  .swap-tips {
+    margin: 8px 16px 0;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 11px;
+  }
+
+  .swap-bottom-action {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .swap-photos-card {
+    margin: 18px 16px 0;
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  .swap-photos-card__title {
+    font-size: 14px;
+  }
+
+  .swap-photos-card__sub {
+    font-size: 11px;
+  }
+
+  .swap-photo-row {
+    gap: 8px;
+  }
+
+  .swap-photos-card .swap-photo-row {
+    margin-top: 12px;
+  }
+
+  .swap-photo__badge {
+    bottom: 6px;
+    left: 6px;
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+
+  img.swap-photo__remove-bg,
+  img.swap-photo__remove-x {
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+  img.swap-photo__remove-x {
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .swap-add-more {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .swap-analyzing {
+    padding: 20px 24px;
+    gap: 4px;
+  }
+
+  .swap-analyzing__orb {
+    margin-bottom: 18px;
+  }
+
+  .swap-analyzing__title {
+    font-size: 15px;
+  }
+
+  .swap-analyzing__sub {
+    margin: 6px 0 22px;
+  }
+
+  .swap-progress {
+    max-width: 220px;
+  }
+
+  .swap-screen-header--compact {
+    padding: 14px 16px 10px;
+  }
+
+  .swap-review-scroll {
+    padding: 8px 16px 16px;
+  }
+
+  .swap-review-banner {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .swap-review-ready {
+    font-size: 13px;
+  }
+
+  .swap-review-hint {
+    font-size: 11.5px;
+  }
+
+  .swap-review-label {
+    font-size: 11.5px;
+  }
+
+  .swap-review-field-hint {
+    font-size: 10.5px;
+  }
+
+  .swap-review-section-title {
+    font-size: 14px;
+  }
+
+  .swap-field {
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .swap-field__value {
+    font-size: 12.5px;
+  }
+
+  .swap-ai-badge {
+    width: 24px;
+    height: 16px;
+    font-size: 8.5px;
+    border-radius: 8px;
+  }
+
+  .swap-deal-card {
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .swap-deal-card__option {
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+
+  .swap-photo--edit {
+    font-size: 11px;
+  }
+
+  .swap-preview-media {
+    height: 240px;
+  }
+
+  .swap-preview-media__count {
+    bottom: 10px;
+    right: 10px;
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .swap-preview-media__tag {
+    top: 12px;
+    left: 12px;
+    font-size: 9px;
+    padding: 4px 9px;
+  }
+
+  .swap-preview-media__actions {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .swap-preview-media__actions-right {
+    gap: 6px;
+  }
+
+  .swap-preview-media__icon-btn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .swap-preview-media__icon-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .swap-preview-body {
+    padding: 16px;
+  }
+
+  .swap-preview-label {
+    font-size: 9.5px;
+  }
+
+  .swap-preview-body h3 {
+    font-size: 16px;
+  }
+
+  .swap-preview-price {
+    font-size: 15px;
+    margin: 4px 0 0;
+  }
+
+  .swap-chips {
+    gap: 6px;
+    margin: 10px 0 0;
+  }
+
+  .swap-chips span {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .swap-seller {
+    gap: 10px;
+    margin-top: 16px;
+    padding: 10px 12px;
+  }
+
+  .swap-seller__avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .swap-seller strong {
+    font-size: 12px;
+  }
+
+  .swap-seller small {
+    font-size: 10px;
+  }
+
+  .swap-seller__verified {
+    width: 18px;
+    height: 18px;
+  }
+
+  .swap-preview-divider {
+    margin-top: 16px;
+  }
+
+  .swap-preview-section-title {
+    font-size: 13px;
+    margin-top: 16px;
+  }
+
+  .swap-preview-description {
+    font-size: 11.5px;
+  }
+
+  .swap-details-list {
+    gap: 8px;
+  }
+
+  .swap-details-list__row {
+    font-size: 11.5px;
+  }
+
+  .swap-preview-note {
+    font-size: 10.5px;
+    margin: 16px 0 0;
+  }
+
+  .swap-published-banner {
+    top: 48px;
+    left: 16px;
+    right: 16px;
+    border-radius: 16px;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .swap-published-banner__check {
+    margin-left: -34px;
+  }
+
+  .swap-published-banner strong {
+    font-size: 12.5px;
+  }
+
+  .swap-published-banner small {
+    font-size: 10.5px;
+  }
+
+  .swap-loop__heading {
+    font-size: 28px;
+    letter-spacing: -0.4px;
+  }
+
+  .swap-decision-list--row {
+    flex-direction: column;
+  }
+
+  .swap-ai-visuals {
+    flex-wrap: wrap;
+  }
+
+  .swap-ai-phone {
+    /* .swap-phone (shared with the Core Flow 02 mockups, above in this same
+       breakpoint) caps max-width at 280px — override it here since these
+       phones should fill the section's full mobile width instead. */
+    width: 100%;
+    max-width: none;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .swap-closing__footer {
+    flex-direction: column;
+  }
+}
+
+/* Reduced motion ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .swap-analyzing__orb {
+    animation: none;
+  }
+
+  .swap-analyzing-overlay.is-open .swap-progress__fill {
+    animation: none;
+    width: 96%;
+  }
+
+  .swap-analyzing-overlay {
+    transition: none;
+  }
+
+  .swap-spinner {
+    animation: none;
+  }
+
+  .swap-upload-card__idle,
+  .swap-upload-card__loading {
+    transition: none;
+  }
+
+  .swap-review-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .swap-scene {
+    transition: none;
+  }
+
+  .swap-loop [data-loop-node],
+  .swap-loop__connector-line {
+    transition: none !important;
+    transition-delay: 0s !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+
+  .swap-loop__mobile [data-loop-m-node] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .swap-loop-m__line[data-loop-m-node] {
+    transform: translateX(-50%) !important;
+  }
+
+  .swap-tap-indicator__ring {
+    animation: none;
+    opacity: 0.9;
+  }
+
+  .swap-published-banner {
+    transition: none;
+  }
+
+  .swap-demo__step,
+  .swap-demo__connector {
+    transition: none !important;
+  }
+}

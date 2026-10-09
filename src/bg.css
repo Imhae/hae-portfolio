@@ -1,0 +1,6 @@
+/* Nền chuyển động (bg.js). Canvas nằm sau nội dung; nền trang chuyển lên <html> để canvas lộ ra. */
+html.has-bg{background:var(--bg)}
+html.has-bg body{background:transparent}
+.hae-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hae-bg.dots{background-image:radial-gradient(var(--dots,#C9D1C5) 1.1px,transparent 1.4px);background-size:28px 28px}
+.hae-bg.in-box{position:absolute;background:none}

@@ -1,0 +1,125 @@
+/* Lớp theme cho trang Swapifly: giữ nguyên bố cục và demo gốc (swapifly.css),
+   chỉ đổi font, màu nền, nav, footer cho khớp trang chủ và các case study khác.
+   Nạp sau swapifly.css. */
+
+:root{
+  --s-bg:#EEF1EC; --s-surface:#F8FAF6; --s-ink:#1B211D; --s-muted:#56605A; --s-line:#D3DACF;
+  --s-accent:#3645C4; --s-accent-soft:#DFE3FA; --s-mark:#C8285F;
+  --s-out:cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --s-bg:#121613; --s-surface:#1A1F1B; --s-ink:#E4E9E2; --s-muted:#9CA69E; --s-line:#2D352F;
+    --s-accent:#9FA9FF; --s-accent-soft:#262C52; --s-mark:#FF84AC; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --s-bg:#121613; --s-surface:#1A1F1B; --s-ink:#E4E9E2; --s-muted:#9CA69E; --s-line:#2D352F;
+  --s-accent:#9FA9FF; --s-accent-soft:#262C52; --s-mark:#FF84AC; color-scheme:dark;
+}
+:root[data-theme="light"]{color-scheme:light}
+
+/* ---------- Token gốc của trang → token của site ---------- */
+.swap-body{
+  --font-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --font-heading:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;
+
+  --bg:var(--s-bg); --bg-card:var(--s-surface);
+  --accent:var(--s-accent); --accent-hover:var(--s-accent);
+  --accent-bg:color-mix(in srgb,var(--s-accent) 8%,transparent);
+  --accent-bg-soft:color-mix(in srgb,var(--s-accent) 5%,transparent);
+  --accent-border:color-mix(in srgb,var(--s-accent) 20%,transparent);
+  --accent-border-soft:color-mix(in srgb,var(--s-accent) 40%,transparent);
+  --border-faint:var(--s-line); --border-soft:var(--s-line); --border-softer:var(--s-line);
+  --border-nav:var(--s-line); --border-pill:var(--s-line);
+  --text-100:var(--s-ink);
+  --text-60:var(--s-muted); --text-55:var(--s-muted); --text-45:var(--s-muted); --text-40:var(--s-muted);
+  --text-38:var(--s-muted); --text-35:var(--s-muted); --text-32:var(--s-muted); --text-30:var(--s-muted);
+  --text-28:var(--s-muted); --text-22:var(--s-muted);
+  --text-15:color-mix(in srgb,var(--s-ink) 20%,transparent);
+
+  /* Nền các dải của trang: cùng họ màu trung tính với site */
+  --swap-dark-1:#121613; --swap-dark-2:#161B17; --swap-dark-3:#24171D; --swap-dark-4:#1A1F1B;
+  --swap-light-1:#EEF1EC; --swap-light-2:#F8FAF6;
+
+  background:var(--s-bg);
+  color:var(--s-ink);
+  font-size:16px;
+  transition:background-color .4s cubic-bezier(.2,.7,.2,1);
+}
+
+/* Các dải nền tối của trang luôn tối, không đổi theo theme */
+.swap-hero,.swap-section--dark,.swap-section--magenta{
+  --bg:#121613; --bg-card:#1A1F1B;
+  --accent:#9FA9FF; --accent-hover:#9FA9FF;
+  --border-faint:rgba(255,255,255,.05); --border-soft:rgba(255,255,255,.07); --border-softer:rgba(255,255,255,.08);
+  --border-nav:rgba(255,255,255,.06); --border-pill:rgba(255,255,255,.1);
+  --text-100:#fff;
+  --text-60:rgba(255,255,255,.6); --text-55:rgba(255,255,255,.55); --text-45:rgba(255,255,255,.45);
+  --text-40:rgba(255,255,255,.4); --text-38:rgba(255,255,255,.38); --text-35:rgba(255,255,255,.35);
+  --text-32:rgba(255,255,255,.32); --text-30:rgba(255,255,255,.3); --text-28:rgba(255,255,255,.28);
+  --text-22:rgba(255,255,255,.22); --text-15:rgba(255,255,255,.15);
+  color:#fff;
+}
+.swap-section--light{color:#17131c}
+
+/* ---------- Chữ ---------- */
+.swap-hero__title,.swap-h2,.cs-h2,.cs-next__title,.swap-caption{font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+.swap-hero__title em{font-style:normal}
+.swap-body .eyebrow,.swap-hero__kicker,.swap-hero__role,.cs-next__label,.cs-next__view{font-family:var(--font-mono);letter-spacing:.04em}
+.swap-body .eyebrow{font-size:.8125rem}
+.swap-body .tag{font-family:var(--font-mono)}
+
+/* ---------- Thanh tiến độ ---------- */
+.scroll-progress{z-index:40}
+.scroll-progress__bar{background:var(--s-accent)}
+
+/* ---------- Nav dùng chung với các case study khác ---------- */
+.hnav{position:fixed;top:0;left:0;right:0;z-index:30;padding:calc(14px + env(safe-area-inset-top,0px)) clamp(16px,4vw,40px) 14px;display:flex;align-items:center;gap:16px;background:color-mix(in srgb,var(--s-bg) 84%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--s-ink)}
+.hlogo{position:relative;display:inline-flex;align-items:center;padding:4px 10px;font:700 1.25rem/1 var(--font-heading);letter-spacing:.04em;text-decoration:none;border:1px solid var(--s-accent);flex:none}
+.hlogo i{position:absolute;width:7px;height:7px;background:var(--s-surface);border:1px solid var(--s-accent);transition:transform .35s var(--s-out)}
+.hlogo i:nth-child(1){top:-4px;left:-4px}.hlogo i:nth-child(2){top:-4px;right:-4px}
+.hlogo i:nth-child(3){bottom:-4px;left:-4px}.hlogo i:nth-child(4){bottom:-4px;right:-4px}
+.hlogo:hover i:nth-child(1){transform:translate(-3px,-3px)}.hlogo:hover i:nth-child(2){transform:translate(3px,-3px)}
+.hlogo:hover i:nth-child(3){transform:translate(-3px,3px)}.hlogo:hover i:nth-child(4){transform:translate(3px,3px)}
+.hback{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:0 14px;min-height:40px;border-radius:999px;border:1px solid var(--s-line);background:var(--s-surface);text-decoration:none;font-size:.9375rem;font-weight:500;transition:border-color .2s}
+.hback:hover{border-color:var(--s-ink)}
+.hback svg{width:16px;height:16px;transition:transform .3s var(--s-out)}
+.hback:hover svg{transform:translateX(-3px)}
+.hicon{display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:40px;border:1px solid var(--s-line);border-radius:999px;background:var(--s-surface);color:var(--s-ink);cursor:pointer;transition:border-color .2s}
+.hicon:hover{border-color:var(--s-muted)}
+.hicon svg{width:18px;height:18px}
+.hnav :focus-visible,.hfoot :focus-visible{outline:2px solid var(--s-accent);outline-offset:3px;border-radius:6px}
+
+/* ---------- Dự án tiếp theo + CTA + footer ---------- */
+.cs-next__card{border-radius:20px}
+.cs-next__icon{background:var(--s-ink);border-color:var(--s-ink)}
+.swap-body .btn{font-size:.9375rem;font-weight:600}
+.swap-body .btn--primary{background:var(--s-ink);color:var(--s-bg)}
+.swap-body .btn--primary:hover{background:var(--s-ink);box-shadow:none}
+.swap-body .btn--outline{background:var(--s-surface);color:var(--s-ink)}
+.swap-body .btn--outline:hover{border-color:var(--s-ink);box-shadow:none}
+.hfoot{max-width:1120px;margin-inline:auto;padding:36px clamp(16px,4vw,40px) 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;color:var(--s-muted);font-size:.9375rem;border-top:1px solid var(--s-line)}
+.hfoot a{text-decoration:none;background:linear-gradient(var(--s-accent),var(--s-accent)) 0 100%/0 1px no-repeat;transition:background-size .4s var(--s-out)}
+.hfoot a:hover{background-size:100% 1px}
+
+/* Icon mũi tên là SVG trắng: nền mực tối thì giữ nguyên, nền mực sáng (theme tối) thì đảo màu */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .cs-next__icon img,
+  :root:not([data-theme="light"]) .swap-body .btn--primary img{filter:invert(1)}
+}
+:root[data-theme="dark"] .cs-next__icon img,
+:root[data-theme="dark"] .swap-body .btn--primary img{filter:invert(1)}
+
+/* Nền chấm kiểu canvas, giống hero của các case study khác */
+.swap-hero{background-image:radial-gradient(rgba(255,255,255,.11) 1.1px,transparent 1.4px);background-size:28px 28px}
+.cs-cta{background-image:radial-gradient(color-mix(in srgb,var(--s-ink) 14%,transparent) 1.1px,transparent 1.4px);background-size:28px 28px}
+
+/* Nút không nhấc lên khi hover (tránh nhấp nháy ở mép dưới), chỉ đổi màu như các trang khác */
+.swap-body .btn:hover,.swap-body .btn:active{transform:none}
+.cs-next__card{position:relative}
+.cs-next__card::after{content:"";position:absolute;left:0;right:0;top:100%;height:6px}
+
+/* Canvas nền chuyển động nằm sau nội dung hero nhưng trên màu nền của hero */
+.swap-hero{isolation:isolate}

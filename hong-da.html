@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hong Da Landscaping: hệ thống quản trị cho công ty cảnh quan, gom danh mục sản phẩm song ngữ, nhà cung cấp, kho và hồ sơ thầu về một nơi.">
+<title>Hong Da Landscaping · Case study · HAE</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<script src="./loader.js"></script>
+<div class="progress" id="progress"></div>
+<header class="nav">
+  <a href="./index.html" class="logo" aria-label="HAE, về trang chủ"><i></i><i></i><i></i><i></i>HAE</a>
+  <a href="./index.html#projects" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    Tất cả dự án
+  </a>
+  <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono"><span class="dot"></span>Web admin · Hệ thống quản trị · VTL Solutions</span>
+    <h1>Lập hồ sơ thầu khi <em>giá tham chiếu</em> đã nằm sẵn trước mắt.</h1>
+    <p class="lead">Hong Da Landscaping là công ty cảnh quan tại Hong Kong. Hệ thống này gom danh mục cây và vật tư, nhà cung cấp, kho, khách hàng và hồ sơ thầu về một nơi, để người lập giá không phải đi tìm số liệu ở chỗ khác.</p>
+    <dl class="meta">
+      <div><dt>Vai trò</dt><dd>UI/UX Designer</dd></div>
+      <div><dt>Nền tảng</dt><dd>Web admin, desktop 1920</dd></div>
+      <div><dt>Khách hàng</dt><dd>Hong Da Landscaping Ltd, Hong Kong</dd></div>
+      <div><dt>Ngôn ngữ sản phẩm</dt><dd>Tiếng Anh và tiếng Trung</dd></div>
+    </dl>
+    <figure class="hero-shot shot" data-r>
+      <div class="bar"><i></i><i></i><i></i><span>Tenderer Management / Create Tender Proposal</span></div>
+      <img src="/src/assets/images/hongda/tender-create.png" alt="Màn hình tạo hồ sơ thầu: thông tin dự án, khách hàng, bảng sản phẩm với giá vốn, giá thầu và tổng giá trị" width="1600" height="1330">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>01</b> / Bối cảnh</span>
+      <h2>Một bộ dữ liệu, nhiều người cùng dựa vào.</h2>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p>Công việc của Hong Da xoay quanh đấu thầu. Mỗi hồ sơ thầu là một danh sách dài gồm cây, vật tư và dịch vụ. Mỗi dòng cần đúng quy cách, đúng nhà cung cấp, và một mức giá đủ cạnh tranh mà vẫn có lãi.</p>
+        <p>Để ra được một con số như vậy, người lập giá cần biết sản phẩm đó đang có ở kho nào, nhà cung cấp nào bán giá bao nhiêu, và những lần thầu trước công ty đã chào ra sao. Hệ thống được thiết kế để 3 câu hỏi này có câu trả lời ngay trên màn hình đang làm việc.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>Dữ liệu sản phẩm phức tạp.</strong> Cùng một loài cây có nhiều kích cỡ, hình dáng, đơn vị tính và tên gọi ở 2 ngôn ngữ.</span></li>
+        <li><span><strong>Giá thay đổi theo từng lần thầu.</strong> Giá vốn theo nhà cung cấp, giá thầu theo từng dự án, và có cả giá của đối thủ.</span></li>
+        <li><span><strong>Nhiều vai trò cùng dùng.</strong> Người quản trị, người nhập liệu và người lập giá cần quyền khác nhau trên cùng một bộ dữ liệu.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>02</b> / Kiến trúc thông tin</span>
+      <h2>6 nhóm chức năng, sắp theo công việc.</h2>
+      <p>Menu bên trái đi theo thứ tự công việc hằng ngày: đấu thầu đặt trên cùng, dữ liệu nền nằm bên dưới, quản trị ở cuối.</p>
+    </div>
+    <div class="cards">
+      <div class="c" data-r><span class="k">01</span><h3>Tenderer Management</h3><p>Đơn vị dự thầu, hồ sơ thầu và so sánh giá sản phẩm.</p><ul><li>Tender proposal</li><li>Price comparison</li></ul></div>
+      <div class="c" data-r><span class="k">02</span><h3>Client Management</h3><p>Tổ chức, phòng ban khách hàng và người liên hệ dùng lại trong mỗi hồ sơ.</p><ul><li>Organisation</li><li>Client</li></ul></div>
+      <div class="c" data-r><span class="k">03</span><h3>Product Management</h3><p>Sản phẩm, nhà cung cấp và toàn bộ dữ liệu phân loại đi kèm.</p><ul><li>Category</li><li>Attribute</li><li>Unit</li><li>Tag</li><li>Import</li></ul></div>
+      <div class="c" data-r><span class="k">04</span><h3>Warehouse Management</h3><p>Danh sách kho và tồn kho của từng sản phẩm theo kho.</p><ul><li>Warehouse</li></ul></div>
+      <div class="c" data-r><span class="k">05</span><h3>Administration</h3><p>Tài khoản quản trị, vai trò và quyền trên từng chức năng.</p><ul><li>Administrator</li><li>Role</li><li>Permission</li></ul></div>
+      <div class="c" data-r><span class="k">06</span><h3>Others</h3><p>Thư viện ảnh dùng chung và báo cáo hoạt động.</p><ul><li>Photo library</li><li>Report</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>03</b> / Luồng trọng tâm</span>
+      <h2>Chọn sản phẩm cho hồ sơ thầu trong 4 bước.</h2>
+      <p>Thêm một dòng vào hồ sơ thầu là lúc người dùng phải quyết định nhiều nhất. Tôi gom cả quyết định đó vào một hộp thoại, mỗi bước chỉ mở khi bước trước đã xong.</p>
+    </div>
+    <ol class="steps" data-r>
+      <li><b>Tìm sản phẩm</b><span>Lọc hoặc gõ tên, có ảnh thu nhỏ để nhận ra nhanh.</span></li>
+      <li><b>Chọn thuộc tính</b><span>Kích cỡ và hình dáng, lấy từ thuộc tính đã khai báo cho sản phẩm.</span></li>
+      <li><b>Chọn nhà cung cấp</b><span>Danh sách kèm giá vốn của từng nhà cung cấp.</span></li>
+      <li><b>Nhập giá thầu</b><span>Giá mặc định gợi ý sẵn, kèm 4 nhóm giá tham chiếu.</span></li>
+    </ol>
+    <div class="shots" style="margin-top:clamp(28px,4vw,48px)">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Select Product · đang tải nhà cung cấp</span></div>
+          <img src="/src/assets/images/hongda/price-3-supplier.png" alt="Hộp thoại chọn sản phẩm ở bước 3, các bước sau còn mờ" width="1440" height="900" loading="lazy"></div>
+        <figcaption><b>Mở dần từng bước.</b> Bước chưa tới lượt được làm mờ, nên người dùng luôn biết mình đang ở đâu và còn gì phải điền.</figcaption>
+      </figure>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Select Product · giá tham chiếu</span></div>
+          <img src="/src/assets/images/hongda/price-4-tender-price.png" alt="Hộp thoại ở bước 4 với 4 cột giá tham chiếu: giá thắng thầu gần nhất, giá chào gần nhất, giá thắng trung bình, giá chào trung bình" width="1440" height="900" loading="lazy"></div>
+        <figcaption><b>Giá tham chiếu ngay dưới ô nhập.</b> 4 cột: giá thắng thầu gần nhất, giá chào gần nhất, giá thắng trung bình và giá chào trung bình, tách riêng Hong Da với đối thủ.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>04</b> / Hồ sơ thầu</span>
+      <h2>Lãi hay lỗ, thấy ngay khi còn đang nhập.</h2>
+    </div>
+    <div class="cols wide-right">
+      <div class="prose" data-r>
+        <p>Trang hồ sơ thầu chia làm 3 vùng: thông tin dự án, khách hàng và người liên hệ, rồi tới bảng sản phẩm. Chọn người liên hệ là số điện thoại và email hiện ra ngay bên dưới, không cần mở trang khác.</p>
+        <p>Trong bảng, số lượng và giá thầu sửa được tại chỗ. Mỗi dòng có nút <strong>Reference</strong> để mở lại giá tham chiếu. Phần tổng kết ở cuối tách rõ tổng giá vốn, tổng giá thầu, khoản điều chỉnh một lần và mức lãi lỗ.</p>
+        <p>Hồ sơ đi qua 3 trạng thái: nháp, đã công bố và trúng thầu. Hồ sơ đã trúng thầu chuyển sang chế độ chỉ đọc, có thể xuất file hoặc nhân bản để làm hồ sơ mới.</p>
+      </div>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Tender Proposal detail · Awarded</span></div>
+          <img src="/src/assets/images/hongda/tender-awarded.png" alt="Chi tiết hồ sơ thầu đã trúng, có nút Export và Clone" width="1600" height="1070" loading="lazy"></div>
+        <figcaption>Hồ sơ đã trúng thầu: chỉ đọc, có nhãn trạng thái, nút <b>Export</b> và <b>Clone</b>.</figcaption>
+      </figure>
+    </div>
+    <figure style="margin-top:clamp(28px,4vw,48px)" data-r>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Tenderer Management / Product Price Comparison</span></div>
+        <img src="/src/assets/images/hongda/price-comparison.png" alt="Trang so sánh giá sản phẩm: chọn sản phẩm, chọn thuộc tính, xem bảng giá tham chiếu theo ngày mua, mã dự án và nhà cung cấp" width="1600" height="900" loading="lazy"></div>
+      <figcaption><b>So sánh giá sản phẩm.</b> Cùng trình tự 3 bước của hộp thoại chọn sản phẩm, nhưng mở thành một trang riêng để tra giá mà không cần tạo hồ sơ thầu.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>05</b> / Dữ liệu sản phẩm</span>
+      <h2>Cây và vật tư, 2 ngôn ngữ, 1 cấu trúc.</h2>
+      <p>Danh mục chia 2 nhánh Plant và Material, mỗi nhánh có 2 cấp. Tên tiếng Anh và tiếng Trung luôn đứng cạnh nhau, vì người dùng tra theo cả hai.</p>
+    </div>
+    <div class="stack">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Product Management / Category Information / Plant</span></div>
+          <img src="/src/assets/images/hongda/category-plant.png" alt="Danh mục cây dạng cây thư mục 2 cấp, cột tiếng Anh và tiếng Trung song song" width="1600" height="900" loading="lazy"></div>
+        <figcaption><b>Danh mục dạng cây.</b> Mở rộng tại chỗ để xem cấp con, số trong ngoặc cho biết có bao nhiêu mục bên trong. Ẩn một danh mục bằng biểu tượng con mắt, không cần xoá.</figcaption>
+      </figure>
+      <div class="shots">
+        <figure data-r>
+          <div class="shot tall"><div class="bar"><i></i><i></i><i></i><span>Create Product</span></div>
+            <div class="img"><img src="/src/assets/images/hongda/product-create.png" alt="Form tạo sản phẩm: ảnh, tên 2 ngôn ngữ, danh mục, tag, thuộc tính, nhà cung cấp và kho" width="1603" height="1800" loading="lazy"></div></div>
+          <figcaption><b>Một form cho cả sản phẩm.</b> Ảnh lấy từ thư viện, tên theo tab ngôn ngữ, thuộc tính chọn dạng chip, rồi tới nhà cung cấp và tồn kho theo từng kho.</figcaption>
+        </figure>
+        <figure data-r>
+          <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Product Import</span></div>
+            <img src="/src/assets/images/hongda/product-import.png" alt="Danh sách file Excel đã nhập, mỗi file có trạng thái thành công hoặc thất bại" width="1600" height="900" loading="lazy"></div>
+          <figcaption><b>Nhập hàng loạt bằng Excel.</b> Mỗi file có trạng thái riêng và thời điểm hoàn tất. Mở từng file để xem chi tiết kết quả nhập.</figcaption>
+        </figure>
+      </div>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Product Management / Product Information</span></div>
+          <img src="/src/assets/images/hongda/product-list.png" alt="Bảng sản phẩm nhiều cột có tuỳ chỉnh cột, bộ lọc và xuất file" width="1600" height="900" loading="lazy"></div>
+        <figcaption><b>Bảng nhiều cột, người dùng tự chọn cột.</b> Bảng sản phẩm có hơn 10 cột. Nút Column Setting cho từng người bật tắt cột theo việc mình làm.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>06</b> / Thư viện ảnh và phân quyền</span>
+      <h2>Tải ảnh lên một lần, dùng lại ở mọi nơi.</h2>
+    </div>
+    <div class="shots">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Others / Photo Library</span></div>
+          <img src="/src/assets/images/hongda/photo-library.png" alt="Thư viện ảnh với các album, thư mục con và ảnh có gắn tag" width="1600" height="900" loading="lazy"></div>
+        <figcaption><b>Thư viện ảnh.</b> Album ở cột trái, thư mục con tự tạo, ảnh có tag để tìm. Xoá một ảnh đang được sản phẩm dùng sẽ hiện cảnh báo riêng.</figcaption>
+      </figure>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>Administration / Permissions</span></div>
+          <img src="/src/assets/images/hongda/permission.png" alt="Bảng phân quyền theo từng chức năng với các hành động xem, thêm, sửa, xoá" width="1600" height="900" loading="lazy"></div>
+        <figcaption><b>Phân quyền theo chức năng.</b> Mỗi chức năng tách thành 4 hành động: xem, thêm, sửa, xoá. Vai trò là một tập các quyền này.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>07</b> / Quyết định thiết kế</span>
+      <h2>3 lựa chọn định hình sản phẩm.</h2>
+    </div>
+    <div class="cards">
+      <div class="c" data-r><span class="k">A</span><h3>Một mẫu cho mọi đối tượng</h3><p>Tổ chức, khách hàng, kho, nhà cung cấp, danh mục, thuộc tính, đơn vị, tag đều đi theo cùng một trình tự: danh sách, tạo, sửa, chi tiết. Học một lần là dùng được hết.</p></div>
+      <div class="c" data-r><span class="k">B</span><h3>Đưa giá tham chiếu tới chỗ ra quyết định</h3><p>Lịch sử giá không nằm trong một trang báo cáo riêng. Nó xuất hiện ngay dưới ô nhập giá thầu, đúng lúc người dùng cần so sánh.</p></div>
+      <div class="c" data-r><span class="k">C</span><h3>Song ngữ ngay từ cấu trúc dữ liệu</h3><p>Tên tiếng Anh và tiếng Trung là 2 trường ngang hàng trên mọi bảng và form, không phải bản dịch của giao diện.</p></div>
+    </div>
+    <div class="stats" style="margin-top:clamp(32px,5vw,56px)" data-r>
+      <div class="stat"><span class="n">74</span><span class="kk">Màn hình desktop</span><span class="d">Chưa kể hộp thoại và trạng thái</span></div>
+      <div class="stat"><span class="n">6</span><span class="kk">Nhóm chức năng</span><span class="d">Từ đấu thầu tới quản trị</span></div>
+      <div class="stat"><span class="n">4</span><span class="kk">Bước chọn sản phẩm</span><span class="d">Trong một hộp thoại</span></div>
+      <div class="stat"><span class="n">2</span><span class="kk">Ngôn ngữ dữ liệu</span><span class="d">Tiếng Anh và tiếng Trung</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <a class="next" href="./paragon.html" data-r>
+      <div><span class="mono">Dự án tiếp theo · Mobile app</span><h3>Paragon Asia</h3><p>Ứng dụng đặt phòng họp và tiện ích bằng credit cho thành viên coworking.</p></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 HAE. Dự án thực hiện tại VTL Solutions.</span>
+  <a href="./index.html#contact">Liên hệ</a>
+</footer>
+<script type="module" src="/src/case.js"></script>
+</body>
+</html>

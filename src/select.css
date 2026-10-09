@@ -1,0 +1,52 @@
+/* "Khung chọn": chuyển động nhận diện của site.
+   Khi một khung hình vào tầm nhìn, con trỏ HAE kéo một vùng chọn kiểu Figma quanh nó,
+   bốn tay nắm bật ra, nhãn kích thước đếm lên, rồi bỏ chọn. Rê chuột vào thì khung chọn hiện lại. */
+:root{
+  --sel-c:var(--s-accent,var(--accent,#3645C4));
+  --sel-m:var(--s-mark,var(--mark,#C8285F));
+  --sel-out:cubic-bezier(.16,1,.3,1);
+}
+.sel-wrap{position:relative}
+:where(.sel-host){position:relative}
+.sel{position:absolute;inset:-7px;z-index:5;pointer-events:none;opacity:0}
+.sel-host > .sel{inset:7px}
+.sel::before{content:"";position:absolute;inset:0;border:1.5px solid var(--sel-c);border-radius:2px;background:color-mix(in srgb,var(--sel-c) 6%,transparent);clip-path:inset(0 100% 100% 0)}
+.sel i{position:absolute;width:8px;height:8px;background:#fff;border:1.5px solid var(--sel-c);transform:scale(0)}
+.sel i:nth-of-type(1){top:-4px;left:-4px}.sel i:nth-of-type(2){top:-4px;right:-4px}
+.sel i:nth-of-type(3){bottom:-4px;left:-4px}.sel i:nth-of-type(4){bottom:-4px;right:-4px}
+.sel b{position:absolute;left:50%;top:100%;transform:translate(-50%,-50%);padding:2px 7px;border-radius:4px;background:var(--sel-c);color:#fff;font:500 11px/1.5 "JetBrains Mono",ui-monospace,Menlo,monospace;letter-spacing:.02em;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:0}
+.sel-host > .sel b{top:100%;transform:translate(-50%,-50%)}
+.sel .cur{position:absolute;left:0;top:0;display:flex;align-items:flex-start;opacity:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+.sel .cur svg{width:18px;height:18px;flex:none;fill:var(--sel-m);stroke:#fff;stroke-width:1.5;stroke-linejoin:round}
+.sel .cur em{margin:14px 0 0 -2px;padding:1px 7px;border-radius:3px 9px 9px 9px;background:var(--sel-m);color:#fff;font:600 11px/1.6 "JetBrains Mono",ui-monospace,Menlo,monospace;font-style:normal;letter-spacing:.04em}
+
+/* Chạy một lần khi vào tầm nhìn */
+.on > .sel{animation:sel-life 2.7s linear both}
+.on > .sel::before{animation:sel-drag .85s var(--sel-out) .1s both}
+.on > .sel i{animation:sel-pop .35s var(--sel-out) .9s both}
+.on > .sel b{animation:sel-label .35s var(--sel-out) .95s both}
+.on > .sel .cur{animation:sel-cur .85s var(--sel-out) .1s both,sel-cur-out .5s ease-in 1.7s forwards}
+.sel-wrap:not(.on) > .sel-t{opacity:0}
+.sel-wrap.on > .sel-t{animation:sel-in .8s var(--sel-out) .3s both}
+
+@keyframes sel-life{0%{opacity:0}4%,82%{opacity:1}100%{opacity:0}}
+@keyframes sel-drag{to{clip-path:inset(0)}}
+@keyframes sel-pop{to{transform:scale(1)}}
+@keyframes sel-label{from{opacity:0}to{opacity:1}}
+@keyframes sel-cur{0%{left:0;top:0;opacity:0}12%{opacity:1}100%{left:100%;top:100%;opacity:1}}
+@keyframes sel-cur-out{from{left:100%;top:100%;opacity:1}to{left:calc(100% + 36px);top:calc(100% + 28px);opacity:0}}
+@keyframes sel-in{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+
+/* Sau lần đầu: rê chuột để chọn lại */
+.done > .sel{animation:none;transition:opacity .25s}
+.done > .sel::before{animation:none;clip-path:none}
+.done > .sel i{animation:none;transform:scale(1)}
+.done > .sel b{animation:none;opacity:1}
+.done > .sel .cur{display:none}
+.done:hover > .sel{opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .sel{display:none}
+  .sel-wrap:not(.on) > .sel-t{opacity:1}
+  .sel-wrap.on > .sel-t{animation:none}
+}
