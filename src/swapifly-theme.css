@@ -83,7 +83,7 @@
 .hlogo i:nth-child(3){bottom:-4px;left:-4px}.hlogo i:nth-child(4){bottom:-4px;right:-4px}
 .hlogo:hover i:nth-child(1){transform:translate(-3px,-3px)}.hlogo:hover i:nth-child(2){transform:translate(3px,-3px)}
 .hlogo:hover i:nth-child(3){transform:translate(-3px,3px)}.hlogo:hover i:nth-child(4){transform:translate(3px,3px)}
-.hback{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:0 14px;min-height:40px;border-radius:999px;border:1px solid var(--s-line);background:var(--s-surface);text-decoration:none;font-size:.9375rem;font-weight:500;transition:border-color .2s}
+.hback{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:0 14px;min-height:40px;border-radius:999px;border:1px solid var(--s-line);background:var(--s-surface);text-decoration:none;font-size:.9375rem;font-weight:500;transition:border-color .2s}
 .hback:hover{border-color:var(--s-ink)}
 .hback svg{width:16px;height:16px;transition:transform .3s var(--s-out)}
 .hback:hover svg{transform:translateX(-3px)}
@@ -123,3 +123,10 @@
 
 /* Canvas nền chuyển động nằm sau nội dung hero nhưng trên màu nền của hero */
 .swap-hero{isolation:isolate}
+
+/* Điện thoại: nav gọn lại, và không để phần tử trang trí làm trang rộng quá màn hình */
+.swap-body{overflow-x:clip}
+@media (max-width:480px){
+  .hnav{gap:8px;padding-inline:14px}
+  .hback{padding:0 12px;font-size:.875rem}
+}

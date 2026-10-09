@@ -55,7 +55,7 @@ export default {
   "App học tiếng Anh cho trẻ": "English-learning app for kids",
   "Thiết kế bài học dạng thẻ và hệ thống phần thưởng, thử nghiệm cùng 12 phụ huynh và các bé 6–9 tuổi.": "Designed card-based lessons and a reward system, tested with 12 parents and children aged 6–9.",
   "Kinh nghiệm làm việc": "Work experience",
-  "Đi từ trái sang phải: mới nhất trước.": "Left to right: most recent first.",
+  "Mới nhất trước.": "Most recent first.",
   "Mốc hồng = đang diễn ra": "Pink marker = ongoing",
   "Đầu 2026 – nay": "Early 2026 – present",
   "● Hiện tại · Onsite": "● Current · Onsite",

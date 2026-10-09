@@ -45,7 +45,7 @@ p{margin:0}
 .logo i:nth-child(3){bottom:-4px;left:-4px}.logo i:nth-child(4){bottom:-4px;right:-4px}
 .logo:hover i:nth-child(1){transform:translate(-3px,-3px)}.logo:hover i:nth-child(2){transform:translate(3px,-3px)}
 .logo:hover i:nth-child(3){transform:translate(-3px,3px)}.logo:hover i:nth-child(4){transform:translate(3px,3px)}
-.back{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:0 14px;min-height:40px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-size:.9375rem;font-weight:500;transition:border-color .2s}
+.back{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:0 14px;min-height:40px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-size:.9375rem;font-weight:500;transition:border-color .2s}
 .back:hover{border-color:var(--ink)}
 .back svg{width:16px;height:16px;transition:transform .3s var(--out)}
 .back:hover svg{transform:translateX(-3px)}
@@ -55,8 +55,8 @@ p{margin:0}
 
 /* ---------- Hero ---------- */
 .hero{padding-top:clamp(120px,16vw,170px);padding-bottom:clamp(40px,6vw,72px)}
-.eyebrow{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;color:var(--muted)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.eyebrow{display:inline-flex;align-items:flex-start;gap:10px;color:var(--muted)}
+.dot{flex:none;width:8px;height:8px;margin-top:.5em;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .hero h1{font-size:var(--step-4);margin:22px 0 22px;max-width:18ch}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .lead{font-size:var(--step-1);color:var(--muted);max-width:58ch;line-height:1.6}
@@ -182,3 +182,14 @@ figcaption b{color:var(--ink);font-weight:600}
 /* Thẻ nhấc lên khi hover: nới vùng nhận chuột xuống dưới để con trỏ ở mép dưới không làm thẻ nhấp nháy */
 .c,.next{position:relative}
 .c::after,.next::after{content:"";position:absolute;left:0;right:0;top:100%;height:5px}
+
+/* Điện thoại: con trỏ HAE của khung chọn trượt ra ngoài mép phải ảnh, không được làm trang rộng quá màn hình */
+body{overflow-x:clip}
+@media (max-width:480px){
+  .nav{gap:8px;padding-inline:14px}
+  .back{padding:0 12px;font-size:.875rem}
+}
+
+/* Phần tử trong lưới không được nở rộng theo dòng chữ không xuống hàng (tên màn hình trên thanh tiêu đề ảnh) */
+figure,.shots>*,.cols>*,.stack>*,.sel-wrap{min-width:0}
+.shot .bar span{min-width:0;flex:1}
