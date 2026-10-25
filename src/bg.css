@@ -1,6 +1,32 @@
-/* Nền chuyển động (bg.js). Canvas nằm sau nội dung; nền trang chuyển lên <html> để canvas lộ ra. */
+/* Nền (bg.js): lưới chấm tĩnh + một cụm chấm sáng đi theo con trỏ, dựng bằng CSS mask (không canvas).
+   Nền trang chuyển lên <html> để lớp nền lộ ra phía sau nội dung trong suốt. */
 html.has-bg{background:var(--bg)}
 html.has-bg body{background:transparent}
-.hae-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+
+.hae-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden}
 .hae-bg.dots{background-image:radial-gradient(var(--dots,#C9D1C5) 1.1px,transparent 1.4px);background-size:28px 28px}
 .hae-bg.in-box{position:absolute;background:none}
+
+/* Cụm chấm sáng: cùng lưới chấm nhưng màu nổi bật hơn, chỉ lộ ra trong một vòng tròn quanh con trỏ
+   nhờ mask-image — con trỏ đi tới đâu, chấm ở đó sáng lên, không để lại vệt. */
+.hae-bg__glow{position:absolute;inset:0;
+  background-image:radial-gradient(var(--glow-color,var(--accent)) 1.4px,transparent 1.7px);
+  background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(circle 170px at var(--mx,-9999px) var(--my,-9999px),#000 0%,transparent 72%);
+  mask-image:radial-gradient(circle 170px at var(--mx,-9999px) var(--my,-9999px),#000 0%,transparent 72%);
+}
+
+/* Con trỏ dùng chung của site: khung vuông 4 tay nắm kiểu logo HAE, bọc trong một vòng tròn outline.
+   Đi cùng con trỏ hệ thống (không ẩn nó), chỉ là một lớp trang trí mượt theo sau. */
+.hae-cursor{position:fixed;top:0;left:0;z-index:60;pointer-events:none;opacity:0;transition:opacity .25s}
+.hae-cursor.on{opacity:1}
+.hae-cursor .ring{position:absolute;top:0;left:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1.5px solid var(--accent);transition:width .3s var(--out),height .3s var(--out),margin .3s var(--out),background-color .3s}
+.hae-cursor.big .ring{width:64px;height:64px;margin:-32px 0 0 -32px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.hae-cursor .mark{position:absolute;top:0;left:0;width:12px;height:12px;margin:-6px 0 0 -6px;border:1.2px solid var(--accent);transition:transform .3s var(--out)}
+.hae-cursor.big .mark{transform:scale(.72)}
+.hae-cursor .mark i{position:absolute;width:4px;height:4px;background:var(--surface);border:1.2px solid var(--accent)}
+.hae-cursor .mark i:nth-child(1){top:-2.5px;left:-2.5px}
+.hae-cursor .mark i:nth-child(2){top:-2.5px;right:-2.5px}
+.hae-cursor .mark i:nth-child(3){bottom:-2.5px;left:-2.5px}
+.hae-cursor .mark i:nth-child(4){bottom:-2.5px;right:-2.5px}
+@media (pointer:coarse){.hae-cursor{display:none}}

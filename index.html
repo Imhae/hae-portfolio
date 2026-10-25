@@ -228,14 +228,6 @@ html:not(.h-mode) body{overflow-x:clip}
 .js [data-r].in{clip-path:inset(0 0 0 0 round var(--radius))}
 
 /* ---------- Cursor ---------- */
-.cursor{position:fixed;top:0;left:0;z-index:50;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid var(--accent);border-radius:50%;pointer-events:none;display:grid;place-items:center;font:600 .6875rem var(--f-mono);color:var(--surface);opacity:0;transition:width .35s var(--out),height .35s var(--out),margin .35s var(--out),background-color .35s,opacity .3s}
-.cursor span{opacity:0;transition:opacity .2s}
-.cursor.on{opacity:1}
-.cursor.link{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
-.cursor.view{width:84px;height:84px;margin:-42px 0 0 -42px;background:var(--accent);border-color:var(--accent)}
-.cursor.view span{opacity:1}
-@media (pointer:coarse){.cursor{display:none}}
-
 /* ---------- Ruler (chỉ ở chế độ ngang) ---------- */
 .ruler{display:none}
 
@@ -312,7 +304,7 @@ html:not(.h-mode) body{overflow-x:clip}
 .ruler .keys{flex:none;color:var(--muted)}
 @media (max-width:1100px){.ruler .mk span,.ruler .keys{display:none}}
 
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}.cursor{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}.hae-cursor{display:none}}
 </style>
 </head>
 <body>
@@ -668,7 +660,6 @@ html:not(.h-mode) body{overflow-x:clip}
   <span class="keys mono">← → để chuyển frame</span>
 </nav>
 
-<div class="cursor" id="cursor" aria-hidden="true"><span>Xem</span></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -840,18 +831,8 @@ function frame(now){
   requestAnimationFrame(frame);
 }
 
-/* ---------- Con trỏ + nút hút ---------- */
-const cursor = $('#cursor');
+/* ---------- Nút hút (nghiêng ảnh chân dung theo con trỏ) ---------- */
 if (matchMedia('(pointer: fine)').matches && !mqReduce.matches) {
-  let mx = -100, my = -100, cx = -100, cy = -100;
-  addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; cursor.classList.add('on');
-    const t = e.target.closest('a,button');
-    cursor.classList.toggle('view', !!e.target.closest('.card'));
-    cursor.classList.toggle('link', !!t && !e.target.closest('.card'));
-  });
-  document.addEventListener('pointerleave', () => cursor.classList.remove('on'));
-  (function loop(){ cx += (mx - cx) * .2; cy += (my - cy) * .2; cursor.style.transform = `translate3d(${cx}px,${cy}px,0)`; requestAnimationFrame(loop); })();
-
   const tk = $('#portrait');
   tk.addEventListener('pointermove', e => { const r = tk.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
