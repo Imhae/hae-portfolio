@@ -11,6 +11,7 @@ export default defineConfig({
         hongDa: resolve(__dirname, 'hong-da.html'),
         paragon: resolve(__dirname, 'paragon.html'),
         cityuVmc: resolve(__dirname, 'cityu-vmc.html'),
+        listenfield: resolve(__dirname, 'listenfield.html'),
       },
     },
   },

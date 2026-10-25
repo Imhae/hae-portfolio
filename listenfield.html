@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ListenField: dashboard web và app di động cho nền tảng nông nghiệp dự báo FarmAI, cùng thiết kế truyền thông cho nền tảng chọn giống cây trồng DDB.">
+<title>ListenField · Case study · HAE</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<script src="./loader.js"></script>
+<div class="progress" id="progress"></div>
+<header class="nav">
+  <a href="./index.html" class="logo" aria-label="HAE, về trang chủ"><i></i><i></i><i></i><i></i>HAE</a>
+  <a href="./index.html#projects" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    Tất cả dự án
+  </a>
+  <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng/tối" title="Đổi giao diện sáng/tối">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow mono"><span class="dot"></span>Web dashboard + Mobile app · AgTech · ListenField · 2020–2026</span>
+    <h1>Biến dữ liệu vệ tinh, cảm biến đất và thời tiết thành <em>một câu trả lời nông dân tin được</em>.</h1>
+    <p class="lead">ListenField là công ty AgTech Nhật–Thái, xây dựng FarmAI — nền tảng phân tích dự báo cho nông nghiệp từ dữ liệu vệ tinh, cảm biến đất và thời tiết. Tôi thiết kế và duy trì dashboard web cho doanh nghiệp nông nghiệp cùng app di động cho nông dân, làm việc với đội vận hành và chuyên gia nông học để đưa các mô hình dự báo phức tạp thành sản phẩm dùng được mỗi ngày.</p>
+    <dl class="meta">
+      <div><dt>Vai trò</dt><dd>Product Designer</dd></div>
+      <div><dt>Nền tảng</dt><dd>Web dashboard + Mobile app</dd></div>
+      <div><dt>Công ty</dt><dd>ListenField, Nhật Bản – Thái Lan</dd></div>
+      <div><dt>Thời gian</dt><dd>2020 – 06/2026, remote</dd></div>
+    </dl>
+    <figure class="hero-shot band r" data-r>
+      <div class="cols" style="gap:clamp(18px,3vw,32px)">
+        <div class="shot">
+          <div class="bar"><i></i><i></i><i></i><span>FarmAI Dashboard · minh họa</span></div>
+          <svg viewBox="0 0 960 620" role="img" aria-label="Minh họa bố cục dashboard: thanh điều hướng trái, bản đồ field ở giữa, biểu đồ bên phải" style="display:block;width:100%;height:auto">
+            <rect width="960" height="620" style="fill:var(--surface)"/>
+            <rect x="0" y="0" width="190" height="620" style="fill:var(--bg)"/>
+            <rect x="28" y="32" width="134" height="16" rx="4" style="fill:var(--accent)"/>
+            <rect x="28" y="76" width="134" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="28" y="104" width="100" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="28" y="132" width="118" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="28" y="160" width="90" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="222" y="28" width="420" height="34" rx="8" style="fill:var(--bg)"/>
+            <rect x="222" y="80" width="420" height="340" rx="12" style="fill:var(--c1)"/>
+            <circle cx="300" cy="150" r="7" style="fill:var(--accent)"/>
+            <circle cx="360" cy="210" r="7" style="fill:var(--mark)"/>
+            <circle cx="420" cy="170" r="7" style="fill:var(--accent)"/>
+            <circle cx="470" cy="260" r="7" style="fill:var(--accent)"/>
+            <circle cx="540" cy="200" r="7" style="fill:var(--mark)"/>
+            <circle cx="580" cy="300" r="7" style="fill:var(--accent)"/>
+            <circle cx="380" cy="320" r="7" style="fill:var(--accent)"/>
+            <rect x="222" y="440" width="420" height="140" rx="12" style="fill:var(--bg)"/>
+            <rect x="244" y="470" width="10" height="90" style="fill:var(--accent-soft)"/>
+            <rect x="266" y="500" width="10" height="60" style="fill:var(--accent)"/>
+            <rect x="288" y="450" width="10" height="110" style="fill:var(--accent-soft)"/>
+            <rect x="310" y="485" width="10" height="75" style="fill:var(--accent)"/>
+            <rect x="332" y="460" width="10" height="100" style="fill:var(--accent-soft)"/>
+            <rect x="354" y="505" width="10" height="55" style="fill:var(--accent)"/>
+            <rect x="662" y="28" width="270" height="130" rx="12" style="fill:var(--bg)"/>
+            <rect x="662" y="170" width="270" height="130" rx="12" style="fill:var(--bg)"/>
+            <rect x="662" y="312" width="270" height="268" rx="12" style="fill:var(--bg)"/>
+            <rect x="686" y="52" width="110" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="686" y="78" width="70" height="24" rx="6" style="fill:var(--accent-soft)"/>
+            <rect x="686" y="194" width="110" height="12" rx="4" style="fill:var(--line)"/>
+            <rect x="686" y="220" width="70" height="24" rx="6" style="fill:var(--mark-soft)"/>
+          </svg>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div class="phone" style="max-width:220px"><div class="frame"><div class="img" style="aspect-ratio:375/560">
+            <svg viewBox="0 0 375 560" role="img" aria-label="Minh họa bố cục app: thẻ thời tiết, thẻ sức khỏe cây trồng, thẻ gợi ý bón phân" style="width:100%;height:100%;display:block">
+              <rect width="375" height="560" style="fill:var(--surface)"/>
+              <rect x="20" y="24" width="335" height="90" rx="14" style="fill:var(--c1)"/>
+              <rect x="40" y="48" width="120" height="14" rx="4" style="fill:var(--ink)" opacity=".7"/>
+              <rect x="40" y="72" width="80" height="12" rx="4" style="fill:var(--muted)" opacity=".6"/>
+              <rect x="20" y="130" width="335" height="150" rx="14" style="fill:var(--bg)"/>
+              <rect x="40" y="152" width="140" height="14" rx="4" style="fill:var(--ink)" opacity=".7"/>
+              <rect x="40" y="186" width="295" height="10" rx="5" style="fill:var(--line)"/>
+              <rect x="40" y="186" width="190" height="10" rx="5" style="fill:var(--accent)"/>
+              <rect x="40" y="210" width="90" height="24" rx="12" style="fill:var(--accent-soft)"/>
+              <rect x="20" y="296" width="335" height="150" rx="14" style="fill:var(--bg)"/>
+              <rect x="40" y="318" width="160" height="14" rx="4" style="fill:var(--ink)" opacity=".7"/>
+              <rect x="40" y="352" width="295" height="60" rx="10" style="fill:var(--mark-soft)"/>
+            </svg>
+          </div></div></div>
+        </div>
+      </div>
+      <figcaption style="margin-top:14px">Ảnh minh họa bố cục, không phải ảnh chụp màn hình thật — màn hình chi tiết của FarmAI được giữ kín theo thỏa thuận với khách hàng doanh nghiệp của ListenField.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 01 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>01</b> / Bối cảnh</span>
+      <h2>Hai người dùng, một bộ dữ liệu, hai cách cần hiểu nó.</h2>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p>FarmAI gom dữ liệu từ ảnh vệ tinh (chỉ số NDVI, NDMI, NDWI), cảm biến đất, nhật ký canh tác và hơn 30 năm dữ liệu khí hậu lịch sử, rồi đưa qua mô hình dự báo để ra năng suất, sức khỏe cây trồng và khuyến nghị bón phân.</p>
+        <p>Cùng một dữ liệu đó phải phục vụ hai người dùng rất khác nhau: doanh nghiệp nông nghiệp quản lý hàng nghìn field từ văn phòng, và nông dân đứng ngoài đồng chỉ có vài giây để liếc điện thoại.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>Dashboard cho doanh nghiệp.</strong> Theo dõi từ xa hàng nghìn field và nông dân, không cần ra hiện trường.</span></li>
+        <li><span><strong>App cho nông dân.</strong> Quyết định nhanh ngoài đồng: hôm nay có nên bón phân không, trời có mưa không.</span></li>
+        <li><span><strong>Một tầng dữ liệu chung.</strong> Cả hai sản phẩm đọc từ cùng một nguồn phân tích phía sau.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>02</b> / FarmAI Dashboard</span>
+      <h2>Theo dõi hàng nghìn field, không cần ra đồng.</h2>
+      <p>Dashboard web cho doanh nghiệp nông nghiệp: sức khỏe cây trồng, dinh dưỡng đất, dự báo năng suất và cảnh báo khu vực đang kém hiệu quả — tất cả trên một màn hình.</p>
+    </div>
+    <div class="cards">
+      <div class="c" data-r><span class="k">01</span><h3>Bản đồ field</h3><p>Nhìn toàn bộ field đang quản lý trên một bản đồ, đánh dấu theo tình trạng sức khỏe cây trồng.</p></div>
+      <div class="c" data-r><span class="k">02</span><h3>Dự báo năng suất</h3><p>Biểu đồ năng suất dự báo theo thời gian, dựng trên mô hình kết hợp dữ liệu vệ tinh và thời tiết.</p></div>
+      <div class="c" data-r><span class="k">03</span><h3>Cảnh báo sớm</h3><p>Khu vực đang kém hiệu quả được đẩy lên đầu, để người quản lý biết nên ưu tiên kiểm tra đâu trước.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>03</b> / FarmAI Mobile App</span>
+      <h2>Một nông trại số, gọn trong túi áo.</h2>
+      <p>App cho nông dân: nhật ký canh tác, gợi ý thời điểm bón phân, dự báo thời tiết theo từng field, và tính năng chia sẻ máy móc giữa các hộ canh tác. Hơn 20.000 người dùng.</p>
+    </div>
+    <ol class="steps" data-r>
+      <li><b>Xem field</b><span>Tình trạng sức khỏe cây trồng của field mình đang canh tác.</span></li>
+      <li><b>Xem thời tiết</b><span>Dự báo theo đúng vị trí field, không phải thời tiết chung cả vùng.</span></li>
+      <li><b>Nhận gợi ý</b><span>Thời điểm bón phân tối ưu, dựa trên mô hình dự báo.</span></li>
+      <li><b>Ghi nhật ký</b><span>Lưu lại hoạt động canh tác: gieo trồng, thu hoạch, bón phân.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>04</b> / Tầng dữ liệu phía sau</span>
+      <h2>AgroAPI: nơi cả hai sản phẩm cùng lấy dữ liệu.</h2>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p>Dưới cả Dashboard và App là <strong>AgroAPI</strong> — tầng dữ liệu của ListenField, gồm API thời tiết, mô phỏng sinh trưởng cây trồng, tích hợp cảm biến field và viễn thám vệ tinh. Đây cũng là API mà ListenField cung cấp cho đối tác doanh nghiệp (như AIS, nhà mạng lớn nhất Thái Lan) để họ tự xây giải pháp nông nghiệp riêng.</p>
+        <p>Tôi không trực tiếp thiết kế AgroAPI vì bản thân nó không có giao diện người dùng, nhưng hiểu tầng dữ liệu này định hình cách tôi cấu trúc thông tin ở Dashboard và App — con số hiển thị chỉ đáng tin bằng chính đường ống dữ liệu phía sau nó.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>Weather Generator API.</strong> Dựng hàng loạt kịch bản thời tiết tương lai cho mô hình dự báo.</span></li>
+        <li><span><strong>Crop Simulation API.</strong> Dự báo sinh trưởng và năng suất, kèm khoảng tin cậy.</span></li>
+        <li><span><strong>Satellite Remote Sensing API.</strong> Chỉ số thực vật NDVI, NDMI, NDWI từ ảnh vệ tinh.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>05</b> / Ngoài FarmAI</span>
+      <h2>Thiết kế brochure song ngữ cho DDB.</h2>
+      <p>Data-Driven Breeding (DDB) là nền tảng web của ListenField cho nhà chọn giống cây trồng và nhà khoa học — công cụ Genomic Selection, GWAS và Crossing Simulation giúp giảm chi phí thử nghiệm thực địa truyền thống. Khách hàng gồm NARO (Viện Nghiên cứu Nông nghiệp Nhật Bản) và tỉnh Wakayama.</p>
+    </div>
+    <div class="cols">
+      <div class="prose" data-r>
+        <p><strong>Việc tôi làm ở đây khác với Dashboard và App:</strong> tôi thiết kế brochure và tài liệu marketing song ngữ Nhật–Anh cho DDB, không phải giao diện sản phẩm. Bài toán là lấy các màn hình khoa học dày đặc — biểu đồ Manhattan của GWAS, scatter plot của mô hình GS, luồng mô phỏng lai giống nhiều bước — và khiến một người không rành di truyền học hiểu được giá trị sản phẩm trong vài giây.</p>
+        <p>Tôi dựng lưới tính năng dễ quét với icon đơn giản cho 6+ tính năng kỹ thuật, kể “cách hoạt động” theo 2 bước (tải dữ liệu lên → dự đoán và quyết định) dựa trên chính ảnh chụp màn hình thật của sản phẩm, và thiết kế bảng giá Individual / Team đủ rõ để người không chuyên tự chọn được gói phù hợp.</p>
+      </div>
+      <ul class="list" data-r>
+        <li><span><strong>Song ngữ.</strong> Bản tiếng Nhật cho thị trường Nagoya, bản tiếng Anh cho khách hàng quốc tế.</span></li>
+        <li><span><strong>Mượn ảnh thật làm bằng chứng.</strong> Không minh họa lại màn hình, dùng chính screenshot sản phẩm để chứng minh độ tin cậy.</span></li>
+        <li><span><strong>Bảng giá tự chọn được.</strong> So sánh gói Individual và Team theo tính năng, không cần hỏi sales.</span></li>
+      </ul>
+    </div>
+    <div class="shots" style="margin-top:clamp(28px,4vw,48px)">
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>DDB Brochure · Tổng quan & bảng giá</span></div>
+          <img src="/src/assets/images/listenfield/ddb-overview.jpg" alt="Trang brochure DDB tiếng Nhật: tổng quan tính năng Genomic Selection, GWAS, Crossing Simulation và bảng giá Individual/Team" width="1400" height="1953" loading="lazy"></div>
+        <figcaption><b>Tổng quan & bảng giá.</b> Lưới tính năng dạng icon, 2 gói Individual và Team so sánh cạnh nhau.</figcaption>
+      </figure>
+      <figure data-r>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>DDB Brochure · Cách hoạt động & khách hàng</span></div>
+          <img src="/src/assets/images/listenfield/ddb-system.jpg" alt="Trang brochure DDB tiếng Nhật: 2 bước sử dụng nền tảng kèm ảnh chụp màn hình GS, GWAS, Crossing Simulation thật, và logo khách hàng NARO, tỉnh Wakayama" width="1400" height="1953" loading="lazy"></div>
+        <figcaption><b>Cách hoạt động.</b> Kể bằng 2 bước, dựng trên ảnh chụp màn hình thật của GS, GWAS và Crossing Simulation.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <span class="mono"><b>06</b> / Nhìn lại</span>
+      <h2>6 năm, hai cách kể cùng một dữ liệu.</h2>
+    </div>
+    <div class="cards">
+      <div class="c" data-r><span class="k">A</span><h3>Rõ ràng hơn phô diễn</h3><p>Dashboard và app đều phục vụ quyết định thật — sức khỏe cây trồng, thời điểm bón phân — nên thông tin phải rõ trước, đẹp sau.</p></div>
+      <div class="c" data-r><span class="k">B</span><h3>Cùng dữ liệu, hai nhịp độ khác nhau</h3><p>Doanh nghiệp cần nhìn tổng quan hàng nghìn field; nông dân cần một câu trả lời đúng lúc đứng ngoài đồng.</p></div>
+      <div class="c" data-r><span class="k">C</span><h3>Thiết kế truyền thông cũng là thiết kế</h3><p>Brochure DDB không có UI riêng để vẽ, nhưng vẫn là bài toán thật: dịch sản phẩm khoa học phức tạp thành thứ người ngoài ngành hiểu được.</p></div>
+    </div>
+    <div class="stats" style="margin-top:clamp(32px,5vw,56px)" data-r>
+      <div class="stat"><span class="n">6</span><span class="kk">Năm làm việc</span><span class="d">2020 – 06/2026, remote</span></div>
+      <div class="stat"><span class="n">2</span><span class="kk">Sản phẩm chính</span><span class="d">FarmAI Dashboard và Mobile App</span></div>
+      <div class="stat"><span class="n">20k+</span><span class="kk">Người dùng app</span><span class="d">Theo số liệu công khai của ListenField</span></div>
+      <div class="stat"><span class="n">2</span><span class="kk">Ngôn ngữ brochure</span><span class="d">Nhật và Anh, cho DDB</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT ============ -->
+<section class="sec">
+  <div class="wrap">
+    <a class="next" href="./swapifly.html" data-r>
+      <div><span class="mono">Dự án tiếp theo · Marketplace</span><h3>Swapifly</h3><p>Sàn mua bán C2C trên web và app, có AI hỗ trợ đăng tin.</p></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 HAE. Dự án thực hiện tại ListenField.</span>
+  <a href="./index.html#contact">Liên hệ</a>
+</footer>
+<script type="module" src="/src/case.js"></script>
+</body>
+</html>
