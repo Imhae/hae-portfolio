@@ -100,6 +100,9 @@ p{margin:0}
 .c{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .3s,transform .5s var(--out)}
 .c:hover{border-color:var(--accent);transform:translateY(-3px)}
 .c .k{font:500 .75rem var(--f-mono);letter-spacing:.04em;color:var(--accent)}
+.c .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:2px}
+.c .ico svg{width:20px;height:20px}
+.c.q .ico{background:color-mix(in srgb,var(--mark) 16%,transparent);color:var(--mark)}
 .c h3{font-size:var(--step-1);letter-spacing:-.01em}
 .c p{color:var(--muted);font-size:.9375rem;line-height:1.55}
 .c ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
